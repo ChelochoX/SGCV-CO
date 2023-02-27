@@ -431,6 +431,7 @@ Public Class VISUALIZAR_CUENTA_CLIENTE
     Private Sub btnImprimir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnImprimir.Click
 
         Dim instance As New Printing.PrinterSettings
+        instance.PrinterName = "OneNote for Windows 10"
         Dim impresosaPredt As String = instance.PrinterName
 
         If Me.rbPendientes.Checked = True Then
@@ -444,7 +445,7 @@ Public Class VISUALIZAR_CUENTA_CLIENTE
                 Dim ds As New Data.DataSet
                 ds.Tables.Add(dt)
 
-                Dim info As New CUENTA_CLIENTE_PENDIENTE
+                Dim info As New CUENTA_CLIENTE_PENDIENTE_SIN_INTERES_MORATORIO
 
                 info.SetDataSource(ds)
                 info.SetParameterValue("@COD_CLIENTE", codigo_pimpre)

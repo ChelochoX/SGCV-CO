@@ -1,0 +1,6 @@
+##Historial de Cambios Realizados
+*Fecha 27/03/2023
+Se agrego columna para tabla CABECERA RECIBO para saldo por pagar
+Se modificaron los reportes de 
+RECIBO DE PAGO se agrego campo SALDO X PAGAR y se saco concepto de INTERES MORATORIO.
+Se modifico reporte Cuenta Cliente Pendiente, se muestra sin interes moratorio
