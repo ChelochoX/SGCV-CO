@@ -374,7 +374,7 @@
     End Sub
 
     Private Sub btnQuitarGarante_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        If MessageBox.Show("Desea realmente quitar el garante?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Information) = Windows.Forms.DialogResult.Yes Then
+        If MessageBox.Show("Desea realmente quitar el garante?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Information) = System.Windows.Forms.DialogResult.Yes Then
             Try
                 Dim sel As String
                 sel = "DELETE FROM TP_CLIENTE_GARANTE WHERE COD_CLIENTE = " & codigo & ""

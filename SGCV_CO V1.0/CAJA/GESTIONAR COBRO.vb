@@ -645,11 +645,11 @@ Public Class GESTIONAR_COBRO
         End Try
     End Function
 
-    Function CalculoSaldoXfactura(ByVal a As String, ByVal b As Integer) As Integer
+    Function CalculoSaldoXfactura(ByVal b As Integer) As Integer
         Try
             conectar()
             Dim sel As String
-            sel = "SELECT COALESCE(SUM(MONTO_CUOTA),0) FROM VF_DETALLE_CUENTACLIENTE WHERE COD_CLIENTE = " & b & " AND DOCUMENTO_FACTURACION = '" & a & "' AND ESTADO_CUOTA LIKE '" & "PENDIENTE" & "'"
+            sel = "SELECT COALESCE(SUM(MONTO_CUOTA),0) FROM VF_DETALLE_CUENTACLIENTE WHERE COD_CLIENTE = " & b & " AND ESTADO_CUOTA LIKE '" & "PENDIENTE" & "'"
             cmm = New SqlClient.SqlCommand(sel, SQLconexion)
             SQLconexion.Open()
             Dim t As Integer = CInt(cmm.ExecuteScalar())
@@ -910,7 +910,7 @@ Public Class GESTIONAR_COBRO
 
                                         ' verificamos el saldo para insertar en campo saldo
                                         '** ACTUALIZAMOS SALDO POR FACTURA** '
-                                        saldoXfactura = CalculoSaldoXfactura(valor_doc, CODIGO_CLIENTE_)
+                                        saldoXfactura = CalculoSaldoXfactura(CODIGO_CLIENTE_)
 
                                         Try
                                             conectar()
@@ -992,7 +992,7 @@ Public Class GESTIONAR_COBRO
 
                         ' verificamos el saldo para insertar en campo saldo
                         '** ACTUALIZAMOS SALDO POR FACTURA** '
-                        saldoXfactura = CalculoSaldoXfactura(VALOR_DOCUMENTO, CODIGO_CLIENTE_)
+                        saldoXfactura = CalculoSaldoXfactura(CODIGO_CLIENTE_)
 
                         '*ACTUALIZAR MONTO CABECERA RECIBO***
                         SUMATORIA_TOTAL = SUMATORIATOTAL(contador_cabRecibo)
@@ -1000,7 +1000,7 @@ Public Class GESTIONAR_COBRO
                         Try
                             conectar()
                             Dim sel As String
-                            sel = "UPDATE CP_CABECERA_RECIBO SET IMPORTE_TOTAL = " & SUMATORIA_TOTAL1 & ", DESCUENTOS_ESPECIALES = " & CInt(Me.txtDescuentoInteres.Text) & ", COBRADOR = '" & cobrador & "', SALDO_COBRAR = " & saldoXfactura & "" & _
+                            sel = "UPDATE CP_CABECERA_RECIBO SET IMPORTE_TOTAL = " & SUMATORIA_TOTAL1 & ", DESCUENTOS_ESPECIALES = " & CInt(Me.txtDescuentoInteres.Text) & ", COBRADOR = '" & cobrador & "', SALDO_A_COBRAR = " & saldoXfactura & "" & _
                             " WHERE COD_CABECERA_RECIBO = " & contador_cabRecibo & ""
                             cmm = New SqlClient.SqlCommand(sel, SQLconexion)
                             SQLconexion.Open()
@@ -1696,6 +1696,7 @@ Public Class GESTIONAR_COBRO
     Private Sub btnImprimirRecibo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnImprimirRecibo.Click
 
         Dim instance As New Printing.PrinterSettings
+        instance.PrinterName = "Microsoft Print to PDF"
         Dim impresosaPredt As String = instance.PrinterName
 
         If NUM_RECIBO = "" Then
@@ -1798,7 +1799,7 @@ Public Class GESTIONAR_COBRO
                 Try
                     conectar()
                     Dim dt As New DataTable
-                    Dim da As New SqlDataAdapter("PAGO_RECIBO", SQLconexion)
+                    Dim da As New SqlDataAdapter("PAGO_RECIBO_SIN_INTERES_MORATORIO", SQLconexion)
                     da.SelectCommand.CommandType = CommandType.StoredProcedure
                     da.SelectCommand.Parameters.AddWithValue("@NUMERO_RECIBO", NUM_RECIBO)
                     da.Fill(dt)
@@ -1818,30 +1819,6 @@ Public Class GESTIONAR_COBRO
                     MessageBox.Show(ex.ToString)
                     SQLconexion.Close()
                 End Try
-
-                'Try
-                '    conectar()
-                '    Dim dt As New DataTable
-                '    Dim da As New SqlDataAdapter("SALDO_X_FACTURA", SQLconexion)
-                '    da.SelectCommand.CommandType = CommandType.StoredProcedure
-                '    da.SelectCommand.Parameters.AddWithValue("@CODIGO_CLIENTE", CODIGO_CLIENTE_)
-                '    da.SelectCommand.Parameters.AddWithValue("@FECHA", CDate(Today))
-                '    da.Fill(dt)
-
-                '    Dim ds As New Data.DataSet
-                '    ds.Tables.Add(dt)
-
-                '    Dim info As New SALDO_POR_FACTURA
-                '    info.SetDataSource(ds)
-                '    info.SetParameterValue("@CODIGO_CLIENTE", CODIGO_CLIENTE_)
-                '    info.SetParameterValue("@FECHA", CDate(Today))
-                '    SetDBLogonForReport(iconexion, info)
-                '    info.PrintOptions.PrinterName = impresosaPredt
-                '    info.PrintToPrinter(2, False, 0, 0)
-                'Catch ex As Exception
-                '    MessageBox.Show(ex.ToString)
-                '    SQLconexion.Close()
-                'End Try
             End If
         End If
 

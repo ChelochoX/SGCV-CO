@@ -113,6 +113,12 @@
       <DependentUpon>CUENTA CLIENTE PAGADO.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="CAJA\CUENTA CLIENTE PENDIENTE SIN INTERES MORATORIO.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CUENTA CLIENTE PENDIENTE SIN INTERES MORATORIO.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="CAJA\CUENTA CLIENTE PENDIENTE.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -730,6 +736,10 @@
     <EmbeddedResource Include="CAJA\CUENTA CLIENTE PAGADO.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CUENTA CLIENTE PAGADO.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CAJA\CUENTA CLIENTE PENDIENTE SIN INTERES MORATORIO.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CUENTA CLIENTE PENDIENTE SIN INTERES MORATORIO.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="CAJA\CUENTA CLIENTE PENDIENTE.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
