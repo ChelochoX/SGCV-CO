@@ -915,8 +915,7 @@ Public Class GESTIONAR_COBRO
                                         Try
                                             conectar()
                                             Dim sel As String
-                                            sel = "UPDATE CP_DETALLE_RECIBO SET IMPORTE_CUOTA = " & PARA_PAGOCUOTAS & "," & _
-                                            "SALDO_COBRAR =" & saldoXfactura & "" & _
+                                            sel = "UPDATE CP_DETALLE_RECIBO SET IMPORTE_CUOTA = " & PARA_PAGOCUOTAS & "" & _
                                             "WHERE FACTURA_NUMERO = '" & valor_doc & "' AND " & _
                                             "CUOTA_NUMERO = '" & auxiliar_cadena & "' AND COD_CABECERA_RECIBO = " & contador_cabRecibo & ""
                                             cmm = New SqlClient.SqlCommand(sel, SQLconexion)
@@ -1696,7 +1695,7 @@ Public Class GESTIONAR_COBRO
     Private Sub btnImprimirRecibo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnImprimirRecibo.Click
 
         Dim instance As New Printing.PrinterSettings
-        instance.PrinterName = "Microsoft Print to PDF"
+        instance.PrinterName = "ZKP8008"
         Dim impresosaPredt As String = instance.PrinterName
 
         If NUM_RECIBO = "" Then
