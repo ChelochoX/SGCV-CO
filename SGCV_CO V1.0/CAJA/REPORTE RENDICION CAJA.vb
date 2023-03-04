@@ -147,6 +147,7 @@ Public Class REPORTE_RENDICION_CAJA
         valor = Trim(Me.ltsDetallesBusqueda.Text)
 
         Dim instance As New Printing.PrinterSettings
+        instance.PrinterName = "HP DeskJet 2130 series"
         Dim impresosaPredt As String = instance.PrinterName
 
         Try

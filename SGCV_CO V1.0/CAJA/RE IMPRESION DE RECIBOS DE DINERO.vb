@@ -138,6 +138,7 @@ Public Class RE_IMPRESION_DE_RECIBOS_DE_DINERO
     Private Sub btnReImprimir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnReImprimir.Click
 
         Dim instance As New Printing.PrinterSettings
+        instance.PrinterName = "ZKP8008"
         Dim impresosaPredt As String = instance.PrinterName
 
         If valor = "" Then

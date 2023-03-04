@@ -840,15 +840,26 @@ Public Class MENU_PRINCIPAL
         fechaultimo = DateSerial(Year(Today), Month(Today) + 1, 0)
         
 
-        ''INICIALIZAMOS LOS VALORES
-        Label15.Text = "Generando Datos..."
-        Label16.Text = "Generando Datos..."
-        Label17.Text = "Generando Datos..."
-        Label18.Text = "Generando Datos..."
-        Label9.Text = "Generando Datos..."
-        Label10.Text = "Generando Datos..."
-        Label11.Text = "Generando Datos..."
-        Label19.Text = "Generando Datos..."
+        ' ''INICIALIZAMOS LOS VALORES
+        'Label15.Text = "Generando Datos..."
+        'Label16.Text = "Generando Datos..."
+        'Label17.Text = "Generando Datos..."
+        'Label18.Text = "Generando Datos..."
+        'Label9.Text = "Generando Datos..."
+        'Label10.Text = "Generando Datos..."
+        'Label11.Text = "Generando Datos..."
+        'Label19.Text = "Generando Datos..."
+
+        'INHABILITAMOS MIENTRAS HACEMOS LA CORRECCION DEL PEDIDO -FECHA 04-03-2023
+        Label15.Text = "INHABILITADO TEMPORALMENTE..."
+        Label16.Text = "INHABILITADO TEMPORALMENTE..."
+        Label17.Text = "INHABILITADO TEMPORALMENTE..."
+        Label18.Text = "INHABILITADO TEMPORALMENTE..."
+        Label9.Text = "INHABILITADO TEMPORALMENTE..."
+        Label10.Text = "INHABILITADO TEMPORALMENTE..."
+        Label11.Text = "INHABILITADO TEMPORALMENTE..."
+        Label19.Text = "INHABILITADO TEMPORALMENTE..."
+
 
         ' ''INICIALIZAMOS LA TAREA
         TareaSegundoPlano.RunWorkerAsync()
@@ -1034,258 +1045,258 @@ Public Class MENU_PRINCIPAL
         FORM_REPORTE_COBRANZAS_VS_FECHA.Show()
     End Sub
 
-    Private Sub TareaSegundoPlano_DoWork(ByVal sender As Object, ByVal e As System.ComponentModel.DoWorkEventArgs) Handles TareaSegundoPlano.DoWork
-        '' TRABAJAMOS POR EL DASH BOARD
-        'PRIMERO ACTUALIZAMOS LAS CUENTAS DE LOS CLIENTES
-        'ACTUALIZA LAS FECHAS DE VENCIMIENTO DE LAS CUOTAS********************************
-        Dim NUM_CUOTA, COD_CUENTA, MONTO As Integer
-        Dim AUX_FECHAVENC As Date
-        Dim CLIENTE_ As String
-        Dim PAGADO As String
-        Dim dias_cuota As Integer
-        Dim pendiente As String
-        pendiente = "PENDIENTE"
-        Dim codigo_cliente As Integer
+    'Private Sub TareaSegundoPlano_DoWork(ByVal sender As Object, ByVal e As System.ComponentModel.DoWorkEventArgs) Handles TareaSegundoPlano.DoWork
+    '    '' TRABAJAMOS POR EL DASH BOARD
+    '    'PRIMERO ACTUALIZAMOS LAS CUENTAS DE LOS CLIENTES
+    '    'ACTUALIZA LAS FECHAS DE VENCIMIENTO DE LAS CUOTAS********************************
+    '    Dim NUM_CUOTA, COD_CUENTA, MONTO As Integer
+    '    Dim AUX_FECHAVENC As Date
+    '    Dim CLIENTE_ As String
+    '    Dim PAGADO As String
+    '    Dim dias_cuota As Integer
+    '    Dim pendiente As String
+    '    pendiente = "PENDIENTE"
+    '    Dim codigo_cliente As Integer
 
-        ''
-        'VERIFICA VALORES PARA INTERES MORATORIO
-        Dim MONTO_INTERES, DIAS_DE_GRACIA As Integer
+    '    ''
+    '    'VERIFICA VALORES PARA INTERES MORATORIO
+    '    Dim MONTO_INTERES, DIAS_DE_GRACIA As Integer
 
-        For j = 0 To Me.BindingContext(Me.DsInteres, "TP_INTERES").Count - 1
-            Me.BindingContext(Me.DsInteres, "TP_INTERES").Position = j
-            If "INTERES MORATORIO" = Me.DsInteres.Tables("TP_INTERES").Rows(Me.BindingContext(Me.DsInteres, "TP_INTERES").Position).Item("CONCEPTO") Then
-                MONTO_INTERES = Me.DsInteres.Tables("TP_INTERES").Rows(Me.BindingContext(Me.DsInteres, "TP_INTERES").Position).Item("MONTO_INTERES")
-                DIAS_DE_GRACIA = Me.DsInteres.Tables("TP_INTERES").Rows(Me.BindingContext(Me.DsInteres, "TP_INTERES").Position).Item("DIAS_DE_GRACIA")
-            End If
-        Next
-        ''
-        Dim A As Integer
-        For A = 0 To Me.BindingContext(Me.DsDetCuenta_Cliente, "VF_DETALLE_CUENTACLIENTE").Count - 1
-            Me.BindingContext(Me.DsDetCuenta_Cliente, "VF_DETALLE_CUENTACLIENTE").Position = A
-            codigo_cliente = Me.DsDetCuenta_Cliente.Tables("VF_DETALLE_CUENTACLIENTE").Rows(Me.BindingContext(Me.DsDetCuenta_Cliente, "VF_DETALLE_CUENTACLIENTE").Position).Item("COD_CLIENTE")
-            AUX_FECHAVENC = Me.DsDetCuenta_Cliente.Tables("VF_DETALLE_CUENTACLIENTE").Rows(Me.BindingContext(Me.DsDetCuenta_Cliente, "VF_DETALLE_CUENTACLIENTE").Position).Item("FECHA_VENCIMIENTO")
-            PAGADO = Trim(Me.DsDetCuenta_Cliente.Tables("VF_DETALLE_CUENTACLIENTE").Rows(Me.BindingContext(Me.DsDetCuenta_Cliente, "VF_DETALLE_CUENTACLIENTE").Position).Item("ESTADO_CUOTA"))
-            NUM_CUOTA = Me.DsDetCuenta_Cliente.Tables("VF_DETALLE_CUENTACLIENTE").Rows(Me.BindingContext(Me.DsDetCuenta_Cliente, "VF_DETALLE_CUENTACLIENTE").Position).Item("CUOTA")
-            COD_CUENTA = Me.DsDetCuenta_Cliente.Tables("VF_DETALLE_CUENTACLIENTE").Rows(Me.BindingContext(Me.DsDetCuenta_Cliente, "VF_DETALLE_CUENTACLIENTE").Position).Item("COD_CABECERA_CUENTACLI")
-            MONTO = Me.DsDetCuenta_Cliente.Tables("VF_DETALLE_CUENTACLIENTE").Rows(Me.BindingContext(Me.DsDetCuenta_Cliente, "VF_DETALLE_CUENTACLIENTE").Position).Item("MONTO_CUOTA")
-            dias_cuota = DateDiff(DateInterval.Day, Today, AUX_FECHAVENC)
+    '    For j = 0 To Me.BindingContext(Me.DsInteres, "TP_INTERES").Count - 1
+    '        Me.BindingContext(Me.DsInteres, "TP_INTERES").Position = j
+    '        If "INTERES MORATORIO" = Me.DsInteres.Tables("TP_INTERES").Rows(Me.BindingContext(Me.DsInteres, "TP_INTERES").Position).Item("CONCEPTO") Then
+    '            MONTO_INTERES = Me.DsInteres.Tables("TP_INTERES").Rows(Me.BindingContext(Me.DsInteres, "TP_INTERES").Position).Item("MONTO_INTERES")
+    '            DIAS_DE_GRACIA = Me.DsInteres.Tables("TP_INTERES").Rows(Me.BindingContext(Me.DsInteres, "TP_INTERES").Position).Item("DIAS_DE_GRACIA")
+    '        End If
+    '    Next
+    '    ''
+    '    Dim A As Integer
+    '    For A = 0 To Me.BindingContext(Me.DsDetCuenta_Cliente, "VF_DETALLE_CUENTACLIENTE").Count - 1
+    '        Me.BindingContext(Me.DsDetCuenta_Cliente, "VF_DETALLE_CUENTACLIENTE").Position = A
+    '        codigo_cliente = Me.DsDetCuenta_Cliente.Tables("VF_DETALLE_CUENTACLIENTE").Rows(Me.BindingContext(Me.DsDetCuenta_Cliente, "VF_DETALLE_CUENTACLIENTE").Position).Item("COD_CLIENTE")
+    '        AUX_FECHAVENC = Me.DsDetCuenta_Cliente.Tables("VF_DETALLE_CUENTACLIENTE").Rows(Me.BindingContext(Me.DsDetCuenta_Cliente, "VF_DETALLE_CUENTACLIENTE").Position).Item("FECHA_VENCIMIENTO")
+    '        PAGADO = Trim(Me.DsDetCuenta_Cliente.Tables("VF_DETALLE_CUENTACLIENTE").Rows(Me.BindingContext(Me.DsDetCuenta_Cliente, "VF_DETALLE_CUENTACLIENTE").Position).Item("ESTADO_CUOTA"))
+    '        NUM_CUOTA = Me.DsDetCuenta_Cliente.Tables("VF_DETALLE_CUENTACLIENTE").Rows(Me.BindingContext(Me.DsDetCuenta_Cliente, "VF_DETALLE_CUENTACLIENTE").Position).Item("CUOTA")
+    '        COD_CUENTA = Me.DsDetCuenta_Cliente.Tables("VF_DETALLE_CUENTACLIENTE").Rows(Me.BindingContext(Me.DsDetCuenta_Cliente, "VF_DETALLE_CUENTACLIENTE").Position).Item("COD_CABECERA_CUENTACLI")
+    '        MONTO = Me.DsDetCuenta_Cliente.Tables("VF_DETALLE_CUENTACLIENTE").Rows(Me.BindingContext(Me.DsDetCuenta_Cliente, "VF_DETALLE_CUENTACLIENTE").Position).Item("MONTO_CUOTA")
+    '        dias_cuota = DateDiff(DateInterval.Day, Today, AUX_FECHAVENC)
 
-            'SI LA CUOTA NO FUE ABONADA SE MODIFICA LOS DIAS DE VENCIMIENTO***
-            If PAGADO = pendiente Then
-                actualizar_diasVencimiento(dias_cuota, codigo_cliente, NUM_CUOTA, COD_CUENTA)
+    '        'SI LA CUOTA NO FUE ABONADA SE MODIFICA LOS DIAS DE VENCIMIENTO***
+    '        If PAGADO = pendiente Then
+    '            actualizar_diasVencimiento(dias_cuota, codigo_cliente, NUM_CUOTA, COD_CUENTA)
 
-                'CALCULAR INTERES MORATORIO EN CASO DE ATRASO
-                If dias_cuota < 0 Then
-                    Dim AUX_DIAS_CUOTA As Integer
-                    Dim CALCULO_AUXILIAR, CALCULO_AUXILIAR1 As Double
-                    Dim para_InteresMora As Integer
+    '            'CALCULAR INTERES MORATORIO EN CASO DE ATRASO
+    '            If dias_cuota < 0 Then
+    '                Dim AUX_DIAS_CUOTA As Integer
+    '                Dim CALCULO_AUXILIAR, CALCULO_AUXILIAR1 As Double
+    '                Dim para_InteresMora As Integer
 
-                    AUX_DIAS_CUOTA = dias_cuota * -1
-                    If AUX_DIAS_CUOTA > DIAS_DE_GRACIA Then
-                        CALCULO_AUXILIAR1 = MONTO_INTERES / 100
-                        CALCULO_AUXILIAR = (MONTO * CALCULO_AUXILIAR1) / 30
-                        para_InteresMora = CInt(CALCULO_AUXILIAR) * AUX_DIAS_CUOTA
-                        actualizar_diasMoraVencimiento(para_InteresMora, codigo_cliente, NUM_CUOTA, COD_CUENTA)
-                    Else
-                        If DIAS_DE_GRACIA <= 5 Then
-                            actualizar_diasMoraVencimiento(0, codigo_cliente, NUM_CUOTA, COD_CUENTA)
-                        End If
-                    End If
-                Else
-                    actualizar_diasMoraVencimiento(0, codigo_cliente, NUM_CUOTA, COD_CUENTA)
-                End If
+    '                AUX_DIAS_CUOTA = dias_cuota * -1
+    '                If AUX_DIAS_CUOTA > DIAS_DE_GRACIA Then
+    '                    CALCULO_AUXILIAR1 = MONTO_INTERES / 100
+    '                    CALCULO_AUXILIAR = (MONTO * CALCULO_AUXILIAR1) / 30
+    '                    para_InteresMora = CInt(CALCULO_AUXILIAR) * AUX_DIAS_CUOTA
+    '                    actualizar_diasMoraVencimiento(para_InteresMora, codigo_cliente, NUM_CUOTA, COD_CUENTA)
+    '                Else
+    '                    If DIAS_DE_GRACIA <= 5 Then
+    '                        actualizar_diasMoraVencimiento(0, codigo_cliente, NUM_CUOTA, COD_CUENTA)
+    '                    End If
+    '                End If
+    '            Else
+    '                actualizar_diasMoraVencimiento(0, codigo_cliente, NUM_CUOTA, COD_CUENTA)
+    '            End If
 
-            End If
-        Next
-        ''************************************************************************
-        'ACTUALIZAR CABECERA DE CUENTA DE CLIENTE****
-        Dim Cabecera_CuentaCliente, Sumatoria_porCuenta, Sumatoria_porMora, y As Integer
+    '        End If
+    '    Next
+    '    ''************************************************************************
+    '    'ACTUALIZAR CABECERA DE CUENTA DE CLIENTE****
+    '    Dim Cabecera_CuentaCliente, Sumatoria_porCuenta, Sumatoria_porMora, y As Integer
 
-        For y = 0 To Me.BindingContext(Me.DsCabCuenta_Cliente, "VF_CABECERA_CUENTACLIENTE").Count - 1
-            Me.BindingContext(Me.DsCabCuenta_Cliente, "VF_CABECERA_CUENTACLIENTE").Position = y
-            If (codigo_cliente) = Me.DsCabCuenta_Cliente.Tables("VF_CABECERA_CUENTACLIENTE").Rows(Me.BindingContext(Me.DsCabCuenta_Cliente, "VF_CABECERA_CUENTACLIENTE").Position).Item("COD_CLIENTE") Then
-                Cabecera_CuentaCliente = CInt(Me.DsCabCuenta_Cliente.Tables("VF_CABECERA_CUENTACLIENTE").Rows(Me.BindingContext(Me.DsCabCuenta_Cliente, "VF_CABECERA_CUENTACLIENTE").Position).Item("COD_CABECERA_CUENTACLI"))
+    '    For y = 0 To Me.BindingContext(Me.DsCabCuenta_Cliente, "VF_CABECERA_CUENTACLIENTE").Count - 1
+    '        Me.BindingContext(Me.DsCabCuenta_Cliente, "VF_CABECERA_CUENTACLIENTE").Position = y
+    '        If (codigo_cliente) = Me.DsCabCuenta_Cliente.Tables("VF_CABECERA_CUENTACLIENTE").Rows(Me.BindingContext(Me.DsCabCuenta_Cliente, "VF_CABECERA_CUENTACLIENTE").Position).Item("COD_CLIENTE") Then
+    '            Cabecera_CuentaCliente = CInt(Me.DsCabCuenta_Cliente.Tables("VF_CABECERA_CUENTACLIENTE").Rows(Me.BindingContext(Me.DsCabCuenta_Cliente, "VF_CABECERA_CUENTACLIENTE").Position).Item("COD_CABECERA_CUENTACLI"))
 
-                Sumatoria_porCuenta = Sumatoria_PorCuentaCliente(codigo_cliente, Cabecera_CuentaCliente, "PENDIENTE")
-                Sumatoria_porMora = Sumatoria_PorMoraCliente(codigo_cliente, Cabecera_CuentaCliente, "PENDIENTE")
-                Actualizar_Cuenta_Cliente((Sumatoria_porCuenta + Sumatoria_porMora), codigo_cliente, Cabecera_CuentaCliente)
+    '            Sumatoria_porCuenta = Sumatoria_PorCuentaCliente(codigo_cliente, Cabecera_CuentaCliente, "PENDIENTE")
+    '            Sumatoria_porMora = Sumatoria_PorMoraCliente(codigo_cliente, Cabecera_CuentaCliente, "PENDIENTE")
+    '            Actualizar_Cuenta_Cliente((Sumatoria_porCuenta + Sumatoria_porMora), codigo_cliente, Cabecera_CuentaCliente)
 
-            End If
-        Next
+    '        End If
+    '    Next
 
-    End Sub
+    'End Sub
 
-    Private Sub TareaSegundoPlano_RunWorkerCompleted(ByVal sender As Object, ByVal e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles TareaSegundoPlano.RunWorkerCompleted
-        If e.Cancelled = True Then
-            MessageBox.Show("OCURRIO UN ERROR", "SGCV_CO VERSION EXTENDIDA", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        Else
-            '' CARGAMOS LOS VALORES PARA MOSTRAR EN EL DASH BOARD
-            '' PRIMERO MOSTRAMOS LOS DE ATRASOS MENORES O IGUALES A 30
-            Try
-                conectar()
-                Dim dt As New DataTable
-                Dim da As New SqlDataAdapter("DASH_COBROATRASOS_HASTA_30", SQLconexion)
-                da.SelectCommand.CommandType = CommandType.StoredProcedure
-                da.Fill(dt)
+    'Private Sub TareaSegundoPlano_RunWorkerCompleted(ByVal sender As Object, ByVal e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles TareaSegundoPlano.RunWorkerCompleted
+    '    If e.Cancelled = True Then
+    '        MessageBox.Show("OCURRIO UN ERROR", "SGCV_CO VERSION EXTENDIDA", MessageBoxButtons.OK, MessageBoxIcon.Information)
+    '    Else
+    '        '' CARGAMOS LOS VALORES PARA MOSTRAR EN EL DASH BOARD
+    '        '' PRIMERO MOSTRAMOS LOS DE ATRASOS MENORES O IGUALES A 30
+    '        Try
+    '            conectar()
+    '            Dim dt As New DataTable
+    '            Dim da As New SqlDataAdapter("DASH_COBROATRASOS_HASTA_30", SQLconexion)
+    '            da.SelectCommand.CommandType = CommandType.StoredProcedure
+    '            da.Fill(dt)
 
-                Dim ds As New Data.DataSet
-                ds.Tables.Add(dt)
-                If (dt.Rows.Count > 0) Then
-                    Label15.Text = Puntos(dt.Rows(0)("TOTAL").ToString) & " " & "GS"
-                End If
+    '            Dim ds As New Data.DataSet
+    '            ds.Tables.Add(dt)
+    '            If (dt.Rows.Count > 0) Then
+    '                Label15.Text = Puntos(dt.Rows(0)("TOTAL").ToString) & " " & "GS"
+    '            End If
 
-            Catch ex As Exception
-                MessageBox.Show(ex.ToString)
-                SQLconexion.Close()
-            End Try
-            '' PRIMERO MOSTRAMOS LOS DE ATRASOS MAYOR A 30 Y MENOR A 61
-            Try
-                conectar()
-                Dim dt As New DataTable
-                Dim da As New SqlDataAdapter("DASH_COBROATRASOS_HASTA_60", SQLconexion)
-                da.SelectCommand.CommandType = CommandType.StoredProcedure
-                da.Fill(dt)
+    '        Catch ex As Exception
+    '            MessageBox.Show(ex.ToString)
+    '            SQLconexion.Close()
+    '        End Try
+    '        '' PRIMERO MOSTRAMOS LOS DE ATRASOS MAYOR A 30 Y MENOR A 61
+    '        Try
+    '            conectar()
+    '            Dim dt As New DataTable
+    '            Dim da As New SqlDataAdapter("DASH_COBROATRASOS_HASTA_60", SQLconexion)
+    '            da.SelectCommand.CommandType = CommandType.StoredProcedure
+    '            da.Fill(dt)
 
-                Dim ds As New Data.DataSet
-                ds.Tables.Add(dt)
-                If (dt.Rows.Count > 0) Then
-                    Label16.Text = Puntos(dt.Rows(0)("TOTAL").ToString) & " " & "GS"
-                End If
+    '            Dim ds As New Data.DataSet
+    '            ds.Tables.Add(dt)
+    '            If (dt.Rows.Count > 0) Then
+    '                Label16.Text = Puntos(dt.Rows(0)("TOTAL").ToString) & " " & "GS"
+    '            End If
 
-            Catch ex As Exception
-                MessageBox.Show(ex.ToString)
-                SQLconexion.Close()
-            End Try
-            '' PRIMERO MOSTRAMOS LOS DE ATRASOS MAYOR A 60 Y MENOR A 91
-            Try
-                conectar()
-                Dim dt As New DataTable
-                Dim da As New SqlDataAdapter("DASH_COBROATRASOS_HASTA_90", SQLconexion)
-                da.SelectCommand.CommandType = CommandType.StoredProcedure
-                da.Fill(dt)
+    '        Catch ex As Exception
+    '            MessageBox.Show(ex.ToString)
+    '            SQLconexion.Close()
+    '        End Try
+    '        '' PRIMERO MOSTRAMOS LOS DE ATRASOS MAYOR A 60 Y MENOR A 91
+    '        Try
+    '            conectar()
+    '            Dim dt As New DataTable
+    '            Dim da As New SqlDataAdapter("DASH_COBROATRASOS_HASTA_90", SQLconexion)
+    '            da.SelectCommand.CommandType = CommandType.StoredProcedure
+    '            da.Fill(dt)
 
-                Dim ds As New Data.DataSet
-                ds.Tables.Add(dt)
-                If (dt.Rows.Count > 0) Then
-                    Label17.Text = Puntos(dt.Rows(0)("TOTAL").ToString) & " " & "GS"
-                End If
+    '            Dim ds As New Data.DataSet
+    '            ds.Tables.Add(dt)
+    '            If (dt.Rows.Count > 0) Then
+    '                Label17.Text = Puntos(dt.Rows(0)("TOTAL").ToString) & " " & "GS"
+    '            End If
 
-            Catch ex As Exception
-                MessageBox.Show(ex.ToString)
-                SQLconexion.Close()
-            End Try
-            '' PRIMERO MOSTRAMOS LOS DE ATRASOS MAYOR A 90 
-            Try
-                conectar()
-                Dim dt As New DataTable
-                Dim da As New SqlDataAdapter("DASH_COBROATRASOS_MAYOR_A_90", SQLconexion)
-                da.SelectCommand.CommandType = CommandType.StoredProcedure
-                da.Fill(dt)
+    '        Catch ex As Exception
+    '            MessageBox.Show(ex.ToString)
+    '            SQLconexion.Close()
+    '        End Try
+    '        '' PRIMERO MOSTRAMOS LOS DE ATRASOS MAYOR A 90 
+    '        Try
+    '            conectar()
+    '            Dim dt As New DataTable
+    '            Dim da As New SqlDataAdapter("DASH_COBROATRASOS_MAYOR_A_90", SQLconexion)
+    '            da.SelectCommand.CommandType = CommandType.StoredProcedure
+    '            da.Fill(dt)
 
-                Dim ds As New Data.DataSet
-                ds.Tables.Add(dt)
-                If (dt.Rows.Count > 0) Then
-                    Label18.Text = Puntos(dt.Rows(0)("TOTAL").ToString) & " " & "GS"
-                End If
+    '            Dim ds As New Data.DataSet
+    '            ds.Tables.Add(dt)
+    '            If (dt.Rows.Count > 0) Then
+    '                Label18.Text = Puntos(dt.Rows(0)("TOTAL").ToString) & " " & "GS"
+    '            End If
 
-            Catch ex As Exception
-                MessageBox.Show(ex.ToString)
-                SQLconexion.Close()
-            End Try
+    '        Catch ex As Exception
+    '            MessageBox.Show(ex.ToString)
+    '            SQLconexion.Close()
+    '        End Try
 
-            'PARA MOSTRAR LO QUE SE DEBE COBRAR HOY
-            Try
-                conectar()
-                Dim dt As New DataTable
-                Dim da As New SqlDataAdapter("DASH_MONTO_A_COBRAR_HOY", SQLconexion)
-                da.SelectCommand.CommandType = CommandType.StoredProcedure
-                da.Fill(dt)
+    '        'PARA MOSTRAR LO QUE SE DEBE COBRAR HOY
+    '        Try
+    '            conectar()
+    '            Dim dt As New DataTable
+    '            Dim da As New SqlDataAdapter("DASH_MONTO_A_COBRAR_HOY", SQLconexion)
+    '            da.SelectCommand.CommandType = CommandType.StoredProcedure
+    '            da.Fill(dt)
 
-                Dim ds As New Data.DataSet
-                ds.Tables.Add(dt)
-                If (dt.Rows.Count > 0) Then
-                    Label9.Text = Puntos(dt.Rows(0)("TOTAL").ToString) & " " & "GS"
-                End If
+    '            Dim ds As New Data.DataSet
+    '            ds.Tables.Add(dt)
+    '            If (dt.Rows.Count > 0) Then
+    '                Label9.Text = Puntos(dt.Rows(0)("TOTAL").ToString) & " " & "GS"
+    '            End If
 
-            Catch ex As Exception
-                MessageBox.Show(ex.ToString)
-                SQLconexion.Close()
-            End Try
-
-
-            'PARA MOSTRAR LO QUE SE DEBE COBRAR EN LA SEMANA
-            Try
-                conectar()
-                Dim dt As New DataTable
-                Dim da As New SqlDataAdapter("DASH_MONTO_A_COBRAR_ESTA_SEMANA", SQLconexion)
-                da.SelectCommand.CommandType = CommandType.StoredProcedure
-                da.Fill(dt)
-
-                Dim ds As New Data.DataSet
-                ds.Tables.Add(dt)
-                If (dt.Rows.Count > 0) Then
-                    Label10.Text = Puntos(dt.Rows(0)("TOTAL").ToString) & " " & "GS"
-                End If
-
-            Catch ex As Exception
-                MessageBox.Show(ex.ToString)
-                SQLconexion.Close()
-            End Try
-
-            'PARA MOSTRAR LO QUE SE DEBE COBRAR EN EL MES
-            Try
-                conectar()
-                Dim dt As New DataTable
-                Dim da As New SqlDataAdapter("DASH_MONTO_A_COBRAR_EN_EL_MES", SQLconexion)
-                da.SelectCommand.CommandType = CommandType.StoredProcedure
-                da.Fill(dt)
-
-                Dim ds As New Data.DataSet
-                ds.Tables.Add(dt)
-                If (dt.Rows.Count > 0) Then
-                    Label11.Text = Puntos(dt.Rows(0)("TOTAL").ToString) & " " & "GS"
-                End If
-
-            Catch ex As Exception
-                MessageBox.Show(ex.ToString)
-                SQLconexion.Close()
-            End Try
-
-            'PARA MOSTRAR LO QUE SE COBRO EN EL MES
-            Try
-                conectar()
-                Dim dt As New DataTable
-                Dim da As New SqlDataAdapter("DASH_MONTO_COBRADO_EN_EL_MES", SQLconexion)
-                da.SelectCommand.CommandType = CommandType.StoredProcedure
-                da.SelectCommand.Parameters.AddWithValue("@fechaprimero", fechaprimero)
-                da.SelectCommand.Parameters.AddWithValue("@fechaultimo", fechaultimo)
-                da.Fill(dt)
-
-                Dim ds As New Data.DataSet
-                ds.Tables.Add(dt)
-                If (dt.Rows.Count > 0) Then
-                    Label19.Text = Puntos(dt.Rows(0)("TOTAL").ToString) & " " & "GS"
-                End If
-
-            Catch ex As Exception
-                MessageBox.Show(ex.ToString)
-                SQLconexion.Close()
-            End Try
+    '        Catch ex As Exception
+    '            MessageBox.Show(ex.ToString)
+    '            SQLconexion.Close()
+    '        End Try
 
 
-        End If
+    '        'PARA MOSTRAR LO QUE SE DEBE COBRAR EN LA SEMANA
+    '        Try
+    '            conectar()
+    '            Dim dt As New DataTable
+    '            Dim da As New SqlDataAdapter("DASH_MONTO_A_COBRAR_ESTA_SEMANA", SQLconexion)
+    '            da.SelectCommand.CommandType = CommandType.StoredProcedure
+    '            da.Fill(dt)
 
-        ''DESBLOQUEAMOS LOS BOTONES
-        Me.btnListado30.Enabled = True
-        Me.btnListado60.Enabled = True
-        Me.btnListadoMenor90.Enabled = True
-        Me.btnListadoMayor90.Enabled = True
-        Me.btnParaCobrarHoy.Enabled = True
-        Me.btnParaCobrarEstaSemana.Enabled = True
-        Me.btnMontoCobrarenelMes.Enabled = True
-        Me.btnMontoCobradoenelMes.Enabled = True
+    '            Dim ds As New Data.DataSet
+    '            ds.Tables.Add(dt)
+    '            If (dt.Rows.Count > 0) Then
+    '                Label10.Text = Puntos(dt.Rows(0)("TOTAL").ToString) & " " & "GS"
+    '            End If
 
-    End Sub
+    '        Catch ex As Exception
+    '            MessageBox.Show(ex.ToString)
+    '            SQLconexion.Close()
+    '        End Try
+
+    '        'PARA MOSTRAR LO QUE SE DEBE COBRAR EN EL MES
+    '        Try
+    '            conectar()
+    '            Dim dt As New DataTable
+    '            Dim da As New SqlDataAdapter("DASH_MONTO_A_COBRAR_EN_EL_MES", SQLconexion)
+    '            da.SelectCommand.CommandType = CommandType.StoredProcedure
+    '            da.Fill(dt)
+
+    '            Dim ds As New Data.DataSet
+    '            ds.Tables.Add(dt)
+    '            If (dt.Rows.Count > 0) Then
+    '                Label11.Text = Puntos(dt.Rows(0)("TOTAL").ToString) & " " & "GS"
+    '            End If
+
+    '        Catch ex As Exception
+    '            MessageBox.Show(ex.ToString)
+    '            SQLconexion.Close()
+    '        End Try
+
+    '        'PARA MOSTRAR LO QUE SE COBRO EN EL MES
+    '        Try
+    '            conectar()
+    '            Dim dt As New DataTable
+    '            Dim da As New SqlDataAdapter("DASH_MONTO_COBRADO_EN_EL_MES", SQLconexion)
+    '            da.SelectCommand.CommandType = CommandType.StoredProcedure
+    '            da.SelectCommand.Parameters.AddWithValue("@fechaprimero", fechaprimero)
+    '            da.SelectCommand.Parameters.AddWithValue("@fechaultimo", fechaultimo)
+    '            da.Fill(dt)
+
+    '            Dim ds As New Data.DataSet
+    '            ds.Tables.Add(dt)
+    '            If (dt.Rows.Count > 0) Then
+    '                Label19.Text = Puntos(dt.Rows(0)("TOTAL").ToString) & " " & "GS"
+    '            End If
+
+    '        Catch ex As Exception
+    '            MessageBox.Show(ex.ToString)
+    '            SQLconexion.Close()
+    '        End Try
+
+
+    '    End If
+
+    '    ''DESBLOQUEAMOS LOS BOTONES
+    '    Me.btnListado30.Enabled = True
+    '    Me.btnListado60.Enabled = True
+    '    Me.btnListadoMenor90.Enabled = True
+    '    Me.btnListadoMayor90.Enabled = True
+    '    Me.btnParaCobrarHoy.Enabled = True
+    '    Me.btnParaCobrarEstaSemana.Enabled = True
+    '    Me.btnMontoCobrarenelMes.Enabled = True
+    '    Me.btnMontoCobradoenelMes.Enabled = True
+
+    'End Sub
 
     Private Sub btnListado30_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnListado30.Click
         Try
