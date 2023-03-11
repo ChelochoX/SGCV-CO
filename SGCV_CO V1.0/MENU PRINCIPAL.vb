@@ -851,28 +851,28 @@ Public Class MENU_PRINCIPAL
         'Label19.Text = "Generando Datos..."
 
         'INHABILITAMOS MIENTRAS HACEMOS LA CORRECCION DEL PEDIDO -FECHA 04-03-2023
-        Label15.Text = "INHABILITADO TEMPORALMENTE..."
-        Label16.Text = "INHABILITADO TEMPORALMENTE..."
-        Label17.Text = "INHABILITADO TEMPORALMENTE..."
-        Label18.Text = "INHABILITADO TEMPORALMENTE..."
-        Label9.Text = "INHABILITADO TEMPORALMENTE..."
-        Label10.Text = "INHABILITADO TEMPORALMENTE..."
-        Label11.Text = "INHABILITADO TEMPORALMENTE..."
-        Label19.Text = "INHABILITADO TEMPORALMENTE..."
+        'Label15.Text = "INHABILITADO TEMPORALMENTE..."
+        'Label16.Text = "INHABILITADO TEMPORALMENTE..."
+        'Label17.Text = "INHABILITADO TEMPORALMENTE..."
+        'Label18.Text = "INHABILITADO TEMPORALMENTE..."
+        'Label9.Text = "INHABILITADO TEMPORALMENTE..."
+        'Label10.Text = "INHABILITADO TEMPORALMENTE..."
+        'Label11.Text = "INHABILITADO TEMPORALMENTE..."
+        'Label19.Text = "INHABILITADO TEMPORALMENTE..."
 
 
         ' ''INICIALIZAMOS LA TAREA
         TareaSegundoPlano.RunWorkerAsync()
 
         'BLOQUEAMOS LOS BOTONES
-        Me.btnListado30.Enabled = False
-        Me.btnListado60.Enabled = False
-        Me.btnListadoMenor90.Enabled = False
-        Me.btnListadoMayor90.Enabled = False
-        Me.btnParaCobrarHoy.Enabled = False
-        Me.btnParaCobrarEstaSemana.Enabled = False
-        Me.btnMontoCobrarenelMes.Enabled = False
-        Me.btnMontoCobradoenelMes.Enabled = False
+        'Me.btnListado30.Enabled = False
+        'Me.btnListado60.Enabled = False
+        'Me.btnListadoMenor90.Enabled = False
+        'Me.btnListadoMayor90.Enabled = False
+        'Me.btnParaCobrarHoy.Enabled = False
+        'Me.btnParaCobrarEstaSemana.Enabled = False
+        'Me.btnMontoCobrarenelMes.Enabled = False
+        'Me.btnMontoCobradoenelMes.Enabled = False
 
     End Sub
 
@@ -1298,219 +1298,9 @@ Public Class MENU_PRINCIPAL
 
     'End Sub
 
-    Private Sub btnListado30_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnListado30.Click
-        Try
-            conectar()
-            Dim dt As New DataTable
-            Dim da As New SqlDataAdapter("DASH_LISTADOSATRASOS_HASTA_30", SQLconexion)
-            da.SelectCommand.CommandType = CommandType.StoredProcedure
-            da.Fill(dt)
-
-            Dim ds As New Data.DataSet
-            ds.Tables.Add(dt)
-
-            Dim info As New DSH_LISTADO_ATRASOS_HASTA_30
-            info.SetDataSource(ds)
-            SetDBLogonForReport(iconexion, info)
-            Me.CrystalReportViewer1.ReportSource = info
-            Me.CrystalReportViewer1.Zoom(85)
-
-        Catch ex As Exception
-            MessageBox.Show(ex.ToString)
-            SQLconexion.Close()
-        End Try
-    End Sub
-
-    Private Sub btnListado60_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnListado60.Click
-        Try
-            conectar()
-            Dim dt As New DataTable
-            Dim da As New SqlDataAdapter("DASH_LISTADOSATRASOS_HASTA_60", SQLconexion)
-            da.SelectCommand.CommandType = CommandType.StoredProcedure
-            da.Fill(dt)
-
-            Dim ds As New Data.DataSet
-            ds.Tables.Add(dt)
-
-            Dim info As New DSH_LISTADO_ATRASOS_HASTA_60
-            info.SetDataSource(ds)
-            SetDBLogonForReport(iconexion, info)
-            Me.CrystalReportViewer1.ReportSource = info
-            Me.CrystalReportViewer1.Zoom(85)
-
-        Catch ex As Exception
-            MessageBox.Show(ex.ToString)
-            SQLconexion.Close()
-        End Try
-    End Sub
-
-    Private Sub btnListadoMenor90_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnListadoMenor90.Click
-        Try
-            conectar()
-            Dim dt As New DataTable
-            Dim da As New SqlDataAdapter("DASH_LISTADOSATRASOS_HASTA_90", SQLconexion)
-            da.SelectCommand.CommandType = CommandType.StoredProcedure
-            da.Fill(dt)
-
-            Dim ds As New Data.DataSet
-            ds.Tables.Add(dt)
-
-            Dim info As New DSH_LISTADO_ATRASOS_HASTA_90
-            info.SetDataSource(ds)
-            SetDBLogonForReport(iconexion, info)
-            Me.CrystalReportViewer1.ReportSource = info
-            Me.CrystalReportViewer1.Zoom(85)
-
-        Catch ex As Exception
-            MessageBox.Show(ex.ToString)
-            SQLconexion.Close()
-        End Try
-    End Sub
-
-    Private Sub btnListadoMayor90_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnListadoMayor90.Click
-        Try
-            conectar()
-            Dim dt As New DataTable
-            Dim da As New SqlDataAdapter("DASH_LISTADOSATRASOS_MAYOR_A_90", SQLconexion)
-            da.SelectCommand.CommandType = CommandType.StoredProcedure
-            da.Fill(dt)
-
-            Dim ds As New Data.DataSet
-            ds.Tables.Add(dt)
-
-            Dim info As New DSH_LISTADOSATRASOS_MAYOR_A_90
-            info.SetDataSource(ds)
-            SetDBLogonForReport(iconexion, info)
-            Me.CrystalReportViewer1.ReportSource = info
-            Me.CrystalReportViewer1.Zoom(85)
-
-        Catch ex As Exception
-            MessageBox.Show(ex.ToString)
-            SQLconexion.Close()
-        End Try
-    End Sub
-
-    Private Sub btnParaCobrarHoy_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnParaCobrarHoy.Click
-        Try
-            conectar()
-            Dim dt As New DataTable
-            Dim da As New SqlDataAdapter("DASH_MONTO_A_COBRAR_HOY", SQLconexion)
-            da.SelectCommand.CommandType = CommandType.StoredProcedure
-            da.Fill(dt)
-
-            Dim ds As New Data.DataSet
-            ds.Tables.Add(dt)
-
-            Dim info As New DSH_LISTADO_MONTO_PARA_COBRAR_HOY
-            info.SetDataSource(ds)
-            SetDBLogonForReport(iconexion, info)
-            Me.CrystalReportViewer1.ReportSource = info
-            Me.CrystalReportViewer1.Zoom(85)
-
-        Catch ex As Exception
-            MessageBox.Show(ex.ToString)
-            SQLconexion.Close()
-        End Try
-    End Sub
-
-    Private Sub btnParaCobrarEstaSemana_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnParaCobrarEstaSemana.Click
-        Try
-            conectar()
-            Dim dt As New DataTable
-            Dim da As New SqlDataAdapter("DASH_LISTADO_MONTO_PARA_COBRAR_ESTA_SEMANA", SQLconexion)
-            da.SelectCommand.CommandType = CommandType.StoredProcedure
-            da.Fill(dt)
-
-            Dim ds As New Data.DataSet
-            ds.Tables.Add(dt)
-
-            Dim info As New DSH_LISTADO_MONTO_PARA_COBRAR_ESTA_SEMANA
-            info.SetDataSource(ds)
-            SetDBLogonForReport(iconexion, info)
-            Me.CrystalReportViewer1.ReportSource = info
-            Me.CrystalReportViewer1.Zoom(85)
-
-        Catch ex As Exception
-            MessageBox.Show(ex.ToString)
-            SQLconexion.Close()
-        End Try
-    End Sub
-
-    Private Sub btnMontoCobrarenelMes_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnMontoCobrarenelMes.Click
-        Try
-            conectar()
-            Dim dt As New DataTable
-            Dim da As New SqlDataAdapter("DASH_LISTADO_MONTO_PARA_COBRAR_ESTE_MES", SQLconexion)
-            da.SelectCommand.CommandType = CommandType.StoredProcedure
-            da.Fill(dt)
-
-            Dim ds As New Data.DataSet
-            ds.Tables.Add(dt)
-
-            Dim info As New DSH_LISTADO_MONTO_PARA_COBRAR_EN_EL_MES
-            info.SetDataSource(ds)
-            SetDBLogonForReport(iconexion, info)
-            Me.CrystalReportViewer1.ReportSource = info
-            Me.CrystalReportViewer1.Zoom(85)
-
-        Catch ex As Exception
-            MessageBox.Show(ex.ToString)
-            SQLconexion.Close()
-        End Try
-    End Sub
-
-    Private Sub btnMontoCobradoenelMes_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnMontoCobradoenelMes.Click
-        Try
-            conectar()
-            Dim dt As New DataTable
-            Dim da As New SqlDataAdapter("DASH_LISTADO_MONTO_COBRADO_EN_EL_MES", SQLconexion)
-            da.SelectCommand.CommandType = CommandType.StoredProcedure
-            da.SelectCommand.Parameters.AddWithValue("@fechaprimero", fechaprimero)
-            da.SelectCommand.Parameters.AddWithValue("@fechaultimo", fechaultimo)
-            da.Fill(dt)
-
-            Dim ds As New Data.DataSet
-            ds.Tables.Add(dt)
-
-            Dim info As New DSH_LISTADO_MONTO_COBRADO_EN_EL_MES
-            info.SetDataSource(ds)
-            info.SetParameterValue("@fechaprimero", fechaprimero)
-            info.SetParameterValue("@fechaultimo", fechaultimo)
-            SetDBLogonForReport(iconexion, info)
-            Me.CrystalReportViewer1.ReportSource = info
-            Me.CrystalReportViewer1.Zoom(85)
-
-        Catch ex As Exception
-            MessageBox.Show(ex.ToString)
-            SQLconexion.Close()
-        End Try
-    End Sub
-
     Private Sub btnGenerarDash_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnGenerarDash.Click
-
-        ''INICIALIZAMOS LOS VALORES
-        Label15.Text = "Generando Datos..."
-        Label16.Text = "Generando Datos..."
-        Label17.Text = "Generando Datos..."
-        Label18.Text = "Generando Datos..."
-        Label9.Text = "Generando Datos..."
-        Label10.Text = "Generando Datos..."
-        Label11.Text = "Generando Datos..."
-        Label19.Text = "Generando Datos..."
-
-        ' ''INICIALIZAMOS LA TAREA
-        TareaSegundoPlano.RunWorkerAsync()
-
-        ''BLOQUEAMOS LOS BOTONES
-        Me.btnListado30.Enabled = False
-        Me.btnListado60.Enabled = False
-        Me.btnListadoMenor90.Enabled = False
-        Me.btnListadoMayor90.Enabled = False
-        Me.btnParaCobrarHoy.Enabled = False
-        Me.btnParaCobrarEstaSemana.Enabled = False
-        Me.btnMontoCobrarenelMes.Enabled = False
-        Me.btnMontoCobradoenelMes.Enabled = False
-     
+        Dim FRM_ESTADO_COBRANZAS_ATRASOS As New Reporte_Atrasos_Cobranzas
+        FRM_ESTADO_COBRANZAS_ATRASOS.Show()
     End Sub
-
+   
 End Class
