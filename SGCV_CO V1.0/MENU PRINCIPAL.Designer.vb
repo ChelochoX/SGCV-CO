@@ -79,52 +79,9 @@ Partial Class MENU_PRINCIPAL
         Me.CERRARToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.btnListado30 = New System.Windows.Forms.Button()
-        Me.Label15 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.btnListado60 = New System.Windows.Forms.Button()
-        Me.Label16 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.btnListadoMenor90 = New System.Windows.Forms.Button()
-        Me.Label17 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.btnListadoMayor90 = New System.Windows.Forms.Button()
-        Me.Label18 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.GroupBox5 = New System.Windows.Forms.GroupBox()
-        Me.btnParaCobrarHoy = New System.Windows.Forms.Button()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.GroupBox8 = New System.Windows.Forms.GroupBox()
-        Me.btnMontoCobrarenelMes = New System.Windows.Forms.Button()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.GroupBox10 = New System.Windows.Forms.GroupBox()
-        Me.btnParaCobrarEstaSemana = New System.Windows.Forms.Button()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.Label14 = New System.Windows.Forms.Label()
         Me.TareaSegundoPlano = New System.ComponentModel.BackgroundWorker()
-        Me.CrystalReportViewer1 = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
-        Me.GroupBox6 = New System.Windows.Forms.GroupBox()
-        Me.btnMontoCobradoenelMes = New System.Windows.Forms.Button()
-        Me.Label19 = New System.Windows.Forms.Label()
-        Me.Label20 = New System.Windows.Forms.Label()
         Me.btnGenerarDash = New System.Windows.Forms.Button()
         Me.MenuStrip1.SuspendLayout()
-        Me.GroupBox1.SuspendLayout()
-        Me.GroupBox2.SuspendLayout()
-        Me.GroupBox3.SuspendLayout()
-        Me.GroupBox4.SuspendLayout()
-        Me.GroupBox5.SuspendLayout()
-        Me.GroupBox8.SuspendLayout()
-        Me.GroupBox10.SuspendLayout()
-        Me.GroupBox6.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -637,458 +594,27 @@ Partial Class MENU_PRINCIPAL
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(189, 5)
+        Me.Label1.Location = New System.Drawing.Point(251, 34)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(184, 19)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "SUMARIO DEL SISTEMA"
-        '
-        'GroupBox1
-        '
-        Me.GroupBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.GroupBox1.Controls.Add(Me.btnListado30)
-        Me.GroupBox1.Controls.Add(Me.Label15)
-        Me.GroupBox1.Controls.Add(Me.Label2)
-        Me.GroupBox1.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.ForeColor = System.Drawing.Color.Black
-        Me.GroupBox1.Location = New System.Drawing.Point(174, 50)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(159, 117)
-        Me.GroupBox1.TabIndex = 2
-        Me.GroupBox1.TabStop = False
-        '
-        'btnListado30
-        '
-        Me.btnListado30.BackColor = System.Drawing.Color.White
-        Me.btnListado30.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnListado30.Location = New System.Drawing.Point(0, 82)
-        Me.btnListado30.Name = "btnListado30"
-        Me.btnListado30.Size = New System.Drawing.Size(159, 23)
-        Me.btnListado30.TabIndex = 5
-        Me.btnListado30.Text = "IMPRIMIR LISTADO"
-        Me.btnListado30.UseVisualStyleBackColor = False
-        '
-        'Label15
-        '
-        Me.Label15.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.Label15.Location = New System.Drawing.Point(3, 49)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(159, 23)
-        Me.Label15.TabIndex = 4
-        Me.Label15.Text = "Label15"
-        Me.Label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label2
-        '
-        Me.Label2.BackColor = System.Drawing.Color.DimGray
-        Me.Label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label2.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(0, 11)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(159, 30)
-        Me.Label2.TabIndex = 3
-        Me.Label2.Text = "CLIENTES CON ATRASOS RANGO 0 A 30 DIAS"
-        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'GroupBox2
-        '
-        Me.GroupBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.GroupBox2.Controls.Add(Me.btnListado60)
-        Me.GroupBox2.Controls.Add(Me.Label16)
-        Me.GroupBox2.Controls.Add(Me.Label3)
-        Me.GroupBox2.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox2.ForeColor = System.Drawing.Color.Black
-        Me.GroupBox2.Location = New System.Drawing.Point(174, 173)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(159, 108)
-        Me.GroupBox2.TabIndex = 4
-        Me.GroupBox2.TabStop = False
-        '
-        'btnListado60
-        '
-        Me.btnListado60.BackColor = System.Drawing.Color.White
-        Me.btnListado60.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnListado60.Location = New System.Drawing.Point(0, 70)
-        Me.btnListado60.Name = "btnListado60"
-        Me.btnListado60.Size = New System.Drawing.Size(159, 23)
-        Me.btnListado60.TabIndex = 7
-        Me.btnListado60.Text = "IMPRIMIR LISTADO"
-        Me.btnListado60.UseVisualStyleBackColor = False
-        '
-        'Label16
-        '
-        Me.Label16.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.Label16.Location = New System.Drawing.Point(4, 37)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(151, 23)
-        Me.Label16.TabIndex = 6
-        Me.Label16.Text = "Label16"
-        Me.Label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label3
-        '
-        Me.Label3.BackColor = System.Drawing.Color.DimGray
-        Me.Label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label3.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(0, -2)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(159, 30)
-        Me.Label3.TabIndex = 3
-        Me.Label3.Text = "CLIENTES CON ATRASOS RANGO 31 A 60 DIAS"
-        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'GroupBox3
-        '
-        Me.GroupBox3.BackColor = System.Drawing.Color.Red
-        Me.GroupBox3.Controls.Add(Me.btnListadoMenor90)
-        Me.GroupBox3.Controls.Add(Me.Label17)
-        Me.GroupBox3.Controls.Add(Me.Label4)
-        Me.GroupBox3.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox3.ForeColor = System.Drawing.Color.Black
-        Me.GroupBox3.Location = New System.Drawing.Point(174, 288)
-        Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(159, 110)
-        Me.GroupBox3.TabIndex = 4
-        Me.GroupBox3.TabStop = False
-        '
-        'btnListadoMenor90
-        '
-        Me.btnListadoMenor90.BackColor = System.Drawing.Color.White
-        Me.btnListadoMenor90.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnListadoMenor90.Location = New System.Drawing.Point(0, 73)
-        Me.btnListadoMenor90.Name = "btnListadoMenor90"
-        Me.btnListadoMenor90.Size = New System.Drawing.Size(159, 23)
-        Me.btnListadoMenor90.TabIndex = 7
-        Me.btnListadoMenor90.Text = "IMPRIMIR LISTADO"
-        Me.btnListadoMenor90.UseVisualStyleBackColor = False
-        '
-        'Label17
-        '
-        Me.Label17.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label17.ForeColor = System.Drawing.Color.White
-        Me.Label17.Location = New System.Drawing.Point(3, 39)
-        Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(152, 23)
-        Me.Label17.TabIndex = 6
-        Me.Label17.Text = "Label17"
-        Me.Label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label4
-        '
-        Me.Label4.BackColor = System.Drawing.Color.DimGray
-        Me.Label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label4.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(0, 0)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(159, 30)
-        Me.Label4.TabIndex = 3
-        Me.Label4.Text = "CLIENTES CON ATRASOS RANGO 61 A 90 DIAS"
-        Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'GroupBox4
-        '
-        Me.GroupBox4.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.GroupBox4.Controls.Add(Me.btnListadoMayor90)
-        Me.GroupBox4.Controls.Add(Me.Label18)
-        Me.GroupBox4.Controls.Add(Me.Label5)
-        Me.GroupBox4.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox4.ForeColor = System.Drawing.Color.Black
-        Me.GroupBox4.Location = New System.Drawing.Point(174, 406)
-        Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(159, 115)
-        Me.GroupBox4.TabIndex = 5
-        Me.GroupBox4.TabStop = False
-        '
-        'btnListadoMayor90
-        '
-        Me.btnListadoMayor90.BackColor = System.Drawing.Color.White
-        Me.btnListadoMayor90.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnListadoMayor90.Location = New System.Drawing.Point(0, 77)
-        Me.btnListadoMayor90.Name = "btnListadoMayor90"
-        Me.btnListadoMayor90.Size = New System.Drawing.Size(159, 23)
-        Me.btnListadoMayor90.TabIndex = 7
-        Me.btnListadoMayor90.Text = "IMPRIMIR LISTADO"
-        Me.btnListadoMayor90.UseVisualStyleBackColor = False
-        '
-        'Label18
-        '
-        Me.Label18.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label18.ForeColor = System.Drawing.Color.White
-        Me.Label18.Location = New System.Drawing.Point(6, 42)
-        Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(147, 23)
-        Me.Label18.TabIndex = 6
-        Me.Label18.Text = "Label18"
-        Me.Label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label5
-        '
-        Me.Label5.BackColor = System.Drawing.Color.DimGray
-        Me.Label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label5.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(0, 0)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(159, 30)
-        Me.Label5.TabIndex = 3
-        Me.Label5.Text = "CLIENTES CON ATRASOS MAYORES A 90 DIAS"
-        Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label6
-        '
-        Me.Label6.BackColor = System.Drawing.Color.DimGray
-        Me.Label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label6.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.Yellow
-        Me.Label6.Location = New System.Drawing.Point(174, 28)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(159, 24)
-        Me.Label6.TabIndex = 4
-        Me.Label6.Text = "ATRASOS"
-        Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label7
-        '
-        Me.Label7.BackColor = System.Drawing.Color.DimGray
-        Me.Label7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label7.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.ForeColor = System.Drawing.Color.Yellow
-        Me.Label7.Location = New System.Drawing.Point(339, 28)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(159, 24)
-        Me.Label7.TabIndex = 7
-        Me.Label7.Text = "COBRANZA"
-        Me.Label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'GroupBox5
-        '
-        Me.GroupBox5.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.GroupBox5.Controls.Add(Me.btnParaCobrarHoy)
-        Me.GroupBox5.Controls.Add(Me.Label9)
-        Me.GroupBox5.Controls.Add(Me.Label8)
-        Me.GroupBox5.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox5.ForeColor = System.Drawing.Color.Black
-        Me.GroupBox5.Location = New System.Drawing.Point(339, 50)
-        Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Size = New System.Drawing.Size(159, 117)
-        Me.GroupBox5.TabIndex = 6
-        Me.GroupBox5.TabStop = False
-        '
-        'btnParaCobrarHoy
-        '
-        Me.btnParaCobrarHoy.BackColor = System.Drawing.Color.White
-        Me.btnParaCobrarHoy.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnParaCobrarHoy.Location = New System.Drawing.Point(0, 82)
-        Me.btnParaCobrarHoy.Name = "btnParaCobrarHoy"
-        Me.btnParaCobrarHoy.Size = New System.Drawing.Size(159, 23)
-        Me.btnParaCobrarHoy.TabIndex = 7
-        Me.btnParaCobrarHoy.Text = "IMPRIMIR LISTADO"
-        Me.btnParaCobrarHoy.UseVisualStyleBackColor = False
-        '
-        'Label9
-        '
-        Me.Label9.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.Label9.Location = New System.Drawing.Point(2, 49)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(156, 23)
-        Me.Label9.TabIndex = 6
-        Me.Label9.Text = "Label9"
-        Me.Label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label8
-        '
-        Me.Label8.BackColor = System.Drawing.Color.DimGray
-        Me.Label8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label8.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.ForeColor = System.Drawing.Color.White
-        Me.Label8.Location = New System.Drawing.Point(0, 11)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(159, 30)
-        Me.Label8.TabIndex = 3
-        Me.Label8.Text = "MONTO PARA COBRAR HOY"
-        Me.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'GroupBox8
-        '
-        Me.GroupBox8.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.GroupBox8.Controls.Add(Me.btnMontoCobrarenelMes)
-        Me.GroupBox8.Controls.Add(Me.Label11)
-        Me.GroupBox8.Controls.Add(Me.Label12)
-        Me.GroupBox8.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox8.ForeColor = System.Drawing.Color.Black
-        Me.GroupBox8.Location = New System.Drawing.Point(339, 287)
-        Me.GroupBox8.Name = "GroupBox8"
-        Me.GroupBox8.Size = New System.Drawing.Size(159, 111)
-        Me.GroupBox8.TabIndex = 7
-        Me.GroupBox8.TabStop = False
-        '
-        'btnMontoCobrarenelMes
-        '
-        Me.btnMontoCobrarenelMes.BackColor = System.Drawing.Color.White
-        Me.btnMontoCobrarenelMes.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnMontoCobrarenelMes.Location = New System.Drawing.Point(-1, 74)
-        Me.btnMontoCobrarenelMes.Name = "btnMontoCobrarenelMes"
-        Me.btnMontoCobrarenelMes.Size = New System.Drawing.Size(159, 23)
-        Me.btnMontoCobrarenelMes.TabIndex = 9
-        Me.btnMontoCobrarenelMes.Text = "IMPRIMIR LISTADO"
-        Me.btnMontoCobrarenelMes.UseVisualStyleBackColor = False
-        '
-        'Label11
-        '
-        Me.Label11.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.Label11.Location = New System.Drawing.Point(2, 40)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(152, 23)
-        Me.Label11.TabIndex = 8
-        Me.Label11.Text = "Label11"
-        Me.Label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label12
-        '
-        Me.Label12.BackColor = System.Drawing.Color.DimGray
-        Me.Label12.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label12.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.ForeColor = System.Drawing.Color.White
-        Me.Label12.Location = New System.Drawing.Point(0, 0)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(159, 30)
-        Me.Label12.TabIndex = 3
-        Me.Label12.Text = "MONTO PARA COBRAR EN EL MES"
-        Me.Label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'GroupBox10
-        '
-        Me.GroupBox10.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.GroupBox10.Controls.Add(Me.btnParaCobrarEstaSemana)
-        Me.GroupBox10.Controls.Add(Me.Label10)
-        Me.GroupBox10.Controls.Add(Me.Label14)
-        Me.GroupBox10.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox10.ForeColor = System.Drawing.Color.Black
-        Me.GroupBox10.Location = New System.Drawing.Point(339, 173)
-        Me.GroupBox10.Name = "GroupBox10"
-        Me.GroupBox10.Size = New System.Drawing.Size(159, 108)
-        Me.GroupBox10.TabIndex = 9
-        Me.GroupBox10.TabStop = False
-        '
-        'btnParaCobrarEstaSemana
-        '
-        Me.btnParaCobrarEstaSemana.BackColor = System.Drawing.Color.White
-        Me.btnParaCobrarEstaSemana.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnParaCobrarEstaSemana.Location = New System.Drawing.Point(-1, 70)
-        Me.btnParaCobrarEstaSemana.Name = "btnParaCobrarEstaSemana"
-        Me.btnParaCobrarEstaSemana.Size = New System.Drawing.Size(159, 23)
-        Me.btnParaCobrarEstaSemana.TabIndex = 9
-        Me.btnParaCobrarEstaSemana.Text = "IMPRIMIR LISTADO"
-        Me.btnParaCobrarEstaSemana.UseVisualStyleBackColor = False
-        '
-        'Label10
-        '
-        Me.Label10.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.Label10.Location = New System.Drawing.Point(1, 37)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(151, 23)
-        Me.Label10.TabIndex = 8
-        Me.Label10.Text = "Label10"
-        Me.Label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label14
-        '
-        Me.Label14.BackColor = System.Drawing.Color.DimGray
-        Me.Label14.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label14.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.ForeColor = System.Drawing.Color.White
-        Me.Label14.Location = New System.Drawing.Point(0, 0)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(159, 30)
-        Me.Label14.TabIndex = 3
-        Me.Label14.Text = "MONTO PARA COBRAR ESTA SEMANA"
-        Me.Label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'TareaSegundoPlano
         '
         Me.TareaSegundoPlano.WorkerReportsProgress = True
         Me.TareaSegundoPlano.WorkerSupportsCancellation = True
         '
-        'CrystalReportViewer1
-        '
-        Me.CrystalReportViewer1.ActiveViewIndex = -1
-        Me.CrystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.CrystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default
-        Me.CrystalReportViewer1.DisplayStatusBar = False
-        Me.CrystalReportViewer1.Location = New System.Drawing.Point(601, 28)
-        Me.CrystalReportViewer1.Name = "CrystalReportViewer1"
-        Me.CrystalReportViewer1.Size = New System.Drawing.Size(722, 663)
-        Me.CrystalReportViewer1.TabIndex = 10
-        Me.CrystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None
-        '
-        'GroupBox6
-        '
-        Me.GroupBox6.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.GroupBox6.Controls.Add(Me.btnMontoCobradoenelMes)
-        Me.GroupBox6.Controls.Add(Me.Label19)
-        Me.GroupBox6.Controls.Add(Me.Label20)
-        Me.GroupBox6.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox6.ForeColor = System.Drawing.Color.Black
-        Me.GroupBox6.Location = New System.Drawing.Point(338, 406)
-        Me.GroupBox6.Name = "GroupBox6"
-        Me.GroupBox6.Size = New System.Drawing.Size(159, 115)
-        Me.GroupBox6.TabIndex = 10
-        Me.GroupBox6.TabStop = False
-        '
-        'btnMontoCobradoenelMes
-        '
-        Me.btnMontoCobradoenelMes.BackColor = System.Drawing.Color.White
-        Me.btnMontoCobradoenelMes.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnMontoCobradoenelMes.Location = New System.Drawing.Point(0, 77)
-        Me.btnMontoCobradoenelMes.Name = "btnMontoCobradoenelMes"
-        Me.btnMontoCobradoenelMes.Size = New System.Drawing.Size(159, 23)
-        Me.btnMontoCobradoenelMes.TabIndex = 9
-        Me.btnMontoCobradoenelMes.Text = "IMPRIMIR LISTADO"
-        Me.btnMontoCobradoenelMes.UseVisualStyleBackColor = False
-        '
-        'Label19
-        '
-        Me.Label19.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label19.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.Label19.Location = New System.Drawing.Point(4, 42)
-        Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(152, 23)
-        Me.Label19.TabIndex = 8
-        Me.Label19.Text = "Label19"
-        Me.Label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label20
-        '
-        Me.Label20.BackColor = System.Drawing.Color.DimGray
-        Me.Label20.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label20.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label20.ForeColor = System.Drawing.Color.White
-        Me.Label20.Location = New System.Drawing.Point(0, 0)
-        Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(159, 30)
-        Me.Label20.TabIndex = 3
-        Me.Label20.Text = "MONTO COBRADO EN EL MES"
-        Me.Label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
         'btnGenerarDash
         '
         Me.btnGenerarDash.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.btnGenerarDash.Enabled = False
         Me.btnGenerarDash.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnGenerarDash.ForeColor = System.Drawing.Color.MediumBlue
-        Me.btnGenerarDash.Location = New System.Drawing.Point(504, 28)
+        Me.btnGenerarDash.Location = New System.Drawing.Point(192, 56)
         Me.btnGenerarDash.Name = "btnGenerarDash"
-        Me.btnGenerarDash.Size = New System.Drawing.Size(91, 36)
+        Me.btnGenerarDash.Size = New System.Drawing.Size(306, 26)
         Me.btnGenerarDash.TabIndex = 11
-        Me.btnGenerarDash.Text = "GENERAR DATOS"
+        Me.btnGenerarDash.Text = "IR AL SUMARIO DEL SISTEMA"
         Me.btnGenerarDash.UseVisualStyleBackColor = False
         '
         'MENU_PRINCIPAL
@@ -1099,19 +625,8 @@ Partial Class MENU_PRINCIPAL
         Me.ClientSize = New System.Drawing.Size(1335, 733)
         Me.ControlBox = False
         Me.Controls.Add(Me.btnGenerarDash)
-        Me.Controls.Add(Me.GroupBox6)
-        Me.Controls.Add(Me.GroupBox10)
-        Me.Controls.Add(Me.GroupBox8)
-        Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.GroupBox5)
-        Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.GroupBox3)
-        Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.MenuStrip1)
-        Me.Controls.Add(Me.GroupBox1)
-        Me.Controls.Add(Me.GroupBox4)
-        Me.Controls.Add(Me.CrystalReportViewer1)
         Me.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ForeColor = System.Drawing.Color.Blue
         Me.MainMenuStrip = Me.MenuStrip1
@@ -1122,14 +637,6 @@ Partial Class MENU_PRINCIPAL
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox2.ResumeLayout(False)
-        Me.GroupBox3.ResumeLayout(False)
-        Me.GroupBox4.ResumeLayout(False)
-        Me.GroupBox5.ResumeLayout(False)
-        Me.GroupBox8.ResumeLayout(False)
-        Me.GroupBox10.ResumeLayout(False)
-        Me.GroupBox6.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1189,41 +696,6 @@ Partial Class MENU_PRINCIPAL
     Friend WithEvents REPORTEVENTASPORVENDEDORVSFECHAToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents REPORTECOBRANZASPORVENDEDORVSFECHAToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
-    Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
-    Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
-    Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents GroupBox4 As System.Windows.Forms.GroupBox
-    Friend WithEvents Label5 As System.Windows.Forms.Label
-    Friend WithEvents Label6 As System.Windows.Forms.Label
-    Friend WithEvents Label7 As System.Windows.Forms.Label
-    Friend WithEvents GroupBox5 As System.Windows.Forms.GroupBox
-    Friend WithEvents Label8 As System.Windows.Forms.Label
-    Friend WithEvents GroupBox8 As System.Windows.Forms.GroupBox
-    Friend WithEvents Label12 As System.Windows.Forms.Label
-    Friend WithEvents GroupBox10 As System.Windows.Forms.GroupBox
-    Friend WithEvents Label14 As System.Windows.Forms.Label
-    Friend WithEvents btnListado30 As System.Windows.Forms.Button
-    Friend WithEvents Label15 As System.Windows.Forms.Label
     Friend WithEvents TareaSegundoPlano As System.ComponentModel.BackgroundWorker
-    Friend WithEvents btnListado60 As System.Windows.Forms.Button
-    Friend WithEvents Label16 As System.Windows.Forms.Label
-    Friend WithEvents btnListadoMenor90 As System.Windows.Forms.Button
-    Friend WithEvents Label17 As System.Windows.Forms.Label
-    Friend WithEvents btnListadoMayor90 As System.Windows.Forms.Button
-    Friend WithEvents Label18 As System.Windows.Forms.Label
-    Friend WithEvents CrystalReportViewer1 As CrystalDecisions.Windows.Forms.CrystalReportViewer
-    Friend WithEvents btnParaCobrarHoy As System.Windows.Forms.Button
-    Friend WithEvents Label9 As System.Windows.Forms.Label
-    Friend WithEvents btnParaCobrarEstaSemana As System.Windows.Forms.Button
-    Friend WithEvents Label10 As System.Windows.Forms.Label
-    Friend WithEvents btnMontoCobrarenelMes As System.Windows.Forms.Button
-    Friend WithEvents Label11 As System.Windows.Forms.Label
-    Friend WithEvents GroupBox6 As System.Windows.Forms.GroupBox
-    Friend WithEvents btnMontoCobradoenelMes As System.Windows.Forms.Button
-    Friend WithEvents Label19 As System.Windows.Forms.Label
-    Friend WithEvents Label20 As System.Windows.Forms.Label
     Friend WithEvents btnGenerarDash As System.Windows.Forms.Button
 End Class

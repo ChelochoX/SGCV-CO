@@ -157,7 +157,7 @@ Partial Class UTILIDAD_COMPRA_VS_VENTA
         '
         Me.crw.ActiveViewIndex = -1
         Me.crw.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.crw.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.crw.Cursor = System.Windows.Forms.Cursors.Default
         Me.crw.DisplayStatusBar = False
@@ -268,7 +268,7 @@ Partial Class UTILIDAD_COMPRA_VS_VENTA
         Me.Name = "UTILIDAD_COMPRA_VS_VENTA"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "UTILIDAD COMPRA VS VENTA   ** SGCV + CO (E) V1.1.0          CONSULTAS Y PRECIOS A" & _
-            "L 0994 60 60 48  / 0982 12 12 69     *** TU VENDEDOR SOFT ***"
+    "L 0994 60 60 48  / 0982 12 12 69     *** TU VENDEDOR SOFT ***"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox4.ResumeLayout(False)
