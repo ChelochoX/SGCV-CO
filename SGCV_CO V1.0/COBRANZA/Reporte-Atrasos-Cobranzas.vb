@@ -382,11 +382,6 @@ Public Class Reporte_Atrasos_Cobranzas
     End Sub
 
     Private Sub btnListado30_Click(sender As System.Object, e As System.EventArgs) Handles btnListado30.Click
-
-        Dim instance As New Printing.PrinterSettings
-        instance.PrinterName = "HP DeskJet 2130 series"
-        Dim impresosaPredt As String = instance.PrinterName
-
         Try
             conectar()
             Dim dt As New DataTable
@@ -401,9 +396,7 @@ Public Class Reporte_Atrasos_Cobranzas
             info.SetDataSource(ds)
             SetDBLogonForReport(iconexion, info)
             Me.CrystalReportViewer1.ReportSource = info
-            info.PrintOptions.PrinterName = impresosaPredt
-            info.PrintToPrinter(1, False, 0, 0)
-
+            Me.CrystalReportViewer1.Zoom(65)
         Catch ex As Exception
             MessageBox.Show(ex.ToString)
             SQLconexion.Close()
@@ -412,11 +405,6 @@ Public Class Reporte_Atrasos_Cobranzas
     End Sub
 
     Private Sub btnListado60_Click(sender As System.Object, e As System.EventArgs) Handles btnListado60.Click
-
-        Dim instance As New Printing.PrinterSettings
-        instance.PrinterName = "HP DeskJet 2130 series"
-        Dim impresosaPredt As String = instance.PrinterName
-
         Try
             conectar()
             Dim dt As New DataTable
@@ -431,8 +419,7 @@ Public Class Reporte_Atrasos_Cobranzas
             info.SetDataSource(ds)
             SetDBLogonForReport(iconexion, info)
             Me.CrystalReportViewer1.ReportSource = info
-            info.PrintOptions.PrinterName = impresosaPredt
-            info.PrintToPrinter(1, False, 0, 0)
+            Me.CrystalReportViewer1.Zoom(65)
 
         Catch ex As Exception
             MessageBox.Show(ex.ToString)
@@ -441,11 +428,6 @@ Public Class Reporte_Atrasos_Cobranzas
     End Sub
 
     Private Sub btnListadoMenor90_Click(sender As System.Object, e As System.EventArgs) Handles btnListadoMenor90.Click
-
-        Dim instance As New Printing.PrinterSettings
-        instance.PrinterName = "HP DeskJet 2130 series"
-        Dim impresosaPredt As String = instance.PrinterName
-
         Try
             conectar()
             Dim dt As New DataTable
@@ -460,8 +442,7 @@ Public Class Reporte_Atrasos_Cobranzas
             info.SetDataSource(ds)
             SetDBLogonForReport(iconexion, info)
             Me.CrystalReportViewer1.ReportSource = info
-            info.PrintOptions.PrinterName = impresosaPredt
-            info.PrintToPrinter(1, False, 0, 0)
+            Me.CrystalReportViewer1.Zoom(65)
 
         Catch ex As Exception
             MessageBox.Show(ex.ToString)
@@ -470,10 +451,6 @@ Public Class Reporte_Atrasos_Cobranzas
     End Sub
 
     Private Sub btnListadoMayor90_Click(sender As System.Object, e As System.EventArgs) Handles btnListadoMayor90.Click
-
-        Dim instance As New Printing.PrinterSettings
-        instance.PrinterName = "HP DeskJet 2130 series"
-        Dim impresosaPredt As String = instance.PrinterName
 
         Try
             conectar()
@@ -489,8 +466,7 @@ Public Class Reporte_Atrasos_Cobranzas
             info.SetDataSource(ds)
             SetDBLogonForReport(iconexion, info)
             Me.CrystalReportViewer1.ReportSource = info
-            info.PrintOptions.PrinterName = impresosaPredt
-            info.PrintToPrinter(1, False, 0, 0)
+            Me.CrystalReportViewer1.Zoom(65)
 
         Catch ex As Exception
             MessageBox.Show(ex.ToString)
@@ -499,10 +475,6 @@ Public Class Reporte_Atrasos_Cobranzas
     End Sub
 
     Private Sub btnParaCobrarHoy_Click(sender As System.Object, e As System.EventArgs) Handles btnParaCobrarHoy.Click
-
-        Dim instance As New Printing.PrinterSettings
-        instance.PrinterName = "HP DeskJet 2130 series"
-        Dim impresosaPredt As String = instance.PrinterName
 
         Try
             conectar()
@@ -518,8 +490,7 @@ Public Class Reporte_Atrasos_Cobranzas
             info.SetDataSource(ds)
             SetDBLogonForReport(iconexion, info)
             Me.CrystalReportViewer1.ReportSource = info
-            info.PrintOptions.PrinterName = impresosaPredt
-            info.PrintToPrinter(1, False, 0, 0)
+            Me.CrystalReportViewer1.Zoom(65)
 
         Catch ex As Exception
             MessageBox.Show(ex.ToString)
@@ -528,10 +499,6 @@ Public Class Reporte_Atrasos_Cobranzas
     End Sub
 
     Private Sub btnParaCobrarEstaSemana_Click(sender As System.Object, e As System.EventArgs) Handles btnParaCobrarEstaSemana.Click
-
-        Dim instance As New Printing.PrinterSettings
-        instance.PrinterName = "HP DeskJet 2130 series"
-        Dim impresosaPredt As String = instance.PrinterName
 
         Try
             conectar()
@@ -547,8 +514,7 @@ Public Class Reporte_Atrasos_Cobranzas
             info.SetDataSource(ds)
             SetDBLogonForReport(iconexion, info)
             Me.CrystalReportViewer1.ReportSource = info
-            info.PrintOptions.PrinterName = impresosaPredt
-            info.PrintToPrinter(1, False, 0, 0)
+            Me.CrystalReportViewer1.Zoom(65)
 
         Catch ex As Exception
             MessageBox.Show(ex.ToString)
@@ -557,11 +523,6 @@ Public Class Reporte_Atrasos_Cobranzas
     End Sub
 
     Private Sub btnMontoCobrarenelMes_Click(sender As System.Object, e As System.EventArgs) Handles btnMontoCobrarenelMes.Click
- 
-        Dim instance As New Printing.PrinterSettings
-        instance.PrinterName = "HP DeskJet 2130 series"
-        Dim impresosaPredt As String = instance.PrinterName
-
         Try
             conectar()
             Dim dt As New DataTable
@@ -576,8 +537,7 @@ Public Class Reporte_Atrasos_Cobranzas
             info.SetDataSource(ds)
             SetDBLogonForReport(iconexion, info)
             Me.CrystalReportViewer1.ReportSource = info
-            info.PrintOptions.PrinterName = impresosaPredt
-            info.PrintToPrinter(1, False, 0, 0)
+            Me.CrystalReportViewer1.Zoom(65)
 
         Catch ex As Exception
             MessageBox.Show(ex.ToString)
@@ -587,10 +547,6 @@ Public Class Reporte_Atrasos_Cobranzas
     End Sub
 
     Private Sub btnMontoCobradoenelMes_Click(sender As System.Object, e As System.EventArgs) Handles btnMontoCobradoenelMes.Click
-
-        Dim instance As New Printing.PrinterSettings
-        instance.PrinterName = "HP DeskJet 2130 series"
-        Dim impresosaPredt As String = instance.PrinterName
         Try
             conectar()
             Dim dt As New DataTable
@@ -609,8 +565,7 @@ Public Class Reporte_Atrasos_Cobranzas
             info.SetParameterValue("@fechaultimo", fechaultimo)
             SetDBLogonForReport(iconexion, info)
             Me.CrystalReportViewer1.ReportSource = info
-            info.PrintOptions.PrinterName = impresosaPredt
-            info.PrintToPrinter(1, False, 0, 0)
+            Me.CrystalReportViewer1.Zoom(65)
 
         Catch ex As Exception
             MessageBox.Show(ex.ToString)
