@@ -150,7 +150,8 @@ Public Class VISUALIZAR_CUENTA_CLIENTE
         Next
 
         'CUENTA total gral
-        Me.txtDeudaTotalGral.Text = Puntos(Math.Round(Cuenta_Actual_Cliente(codigo_cliente) + Cuenta_Mora_Cliente(codigo_cliente))) & " " & "GS"
+        'Me.txtDeudaTotalGral.Text = Puntos(Math.Round(Cuenta_Actual_Cliente(codigo_cliente) + Cuenta_Mora_Cliente(codigo_cliente))) & " " & "GS"
+        Me.txtDeudaTotalGral.Text = Puntos(Math.Round(Cuenta_Actual_Cliente(codigo_cliente))) & " " & "GS"
 
         If Me.rbPendientes.Checked = True Then
             'BUSCAMOS TODAS LAS FACTURAS PENDIENTES DE PAGO DEL CLIENTE
@@ -867,7 +868,8 @@ Public Class VISUALIZAR_CUENTA_CLIENTE
                 End Try
 
                 'CUENTA POR FACTURA!!
-                Me.txtCuentaActual.Text = Puntos(Math.Round(Cuenta_Actual_Cliente_porFactura(codigo_cliente, Num_CabeceraCuenta) + Cuenta_Mora_Cliente_porFactura(codigo_cliente, Num_CabeceraCuenta))) & " " & "GS"
+                'Me.txtCuentaActual.Text = Puntos(Math.Round(Cuenta_Actual_Cliente_porFactura(codigo_cliente, Num_CabeceraCuenta) + Cuenta_Mora_Cliente_porFactura(codigo_cliente, Num_CabeceraCuenta))) & " " & "GS"
+                Me.txtCuentaActual.Text = Puntos(Math.Round(Cuenta_Actual_Cliente_porFactura(codigo_cliente, Num_CabeceraCuenta))) & " " & "GS"
 
                 Me.dg_Historial_PagoCC.Hide()
                 Me.dg_CuentaCliente.Show()
