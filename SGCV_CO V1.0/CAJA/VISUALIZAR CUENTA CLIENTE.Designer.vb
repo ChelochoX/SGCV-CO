@@ -932,7 +932,7 @@ Partial Class VISUALIZAR_CUENTA_CLIENTE
         Me.Name = "VISUALIZAR_CUENTA_CLIENTE"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "VISUALIZAR CUENTA CLIENTE   ** SGCV + CO (E) V1.1.0          CONSULTAS Y PRECIOS " & _
-            "AL 0994 60 60 48  / 0982 12 12 69     *** TU VENDEDOR SOFT ***"
+    "AL 0994 60 60 48  / 0982 12 12 69     *** TU VENDEDOR SOFT ***"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox2.ResumeLayout(False)
