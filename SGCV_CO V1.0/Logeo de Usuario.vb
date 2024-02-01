@@ -7,6 +7,7 @@ Public Class Logeo_de_Usuario
     Inherits System.Windows.Forms.Form
 
     Dim fecha, fecha1 As DateTime
+    Friend WithEvents txtPassword As System.Windows.Forms.TextBox
 
     'INSERTAR TABLA HISTORIAL USUARIO***
     Function Insertar_Historial_Usuario(ByVal a As Integer, _
@@ -41,15 +42,15 @@ Public Class Logeo_de_Usuario
 
     End Function
 
-#Region " Código generado por el Diseñador de Windows Forms "
+#Region " Cï¿½digo generado por el Diseï¿½ador de Windows Forms "
 
     Public Sub New()
         MyBase.New()
 
-        'El Diseñador de Windows Forms requiere esta llamada.
+        'El Diseï¿½ador de Windows Forms requiere esta llamada.
         InitializeComponent()
 
-        'Agregar cualquier inicialización después de la llamada a InitializeComponent()
+        'Agregar cualquier inicializaciï¿½n despuï¿½s de la llamada a InitializeComponent()
 
     End Sub
 
@@ -63,15 +64,14 @@ Public Class Logeo_de_Usuario
         MyBase.Dispose(disposing)
     End Sub
 
-    'Requerido por el Diseñador de Windows Forms
+    'Requerido por el Diseï¿½ador de Windows Forms
     Private components As System.ComponentModel.IContainer
 
-    'NOTA: el Diseñador de Windows Forms requiere el siguiente procedimiento
-    'Puede modificarse utilizando el Diseñador de Windows Forms. 
-    'No lo modifique con el editor de código.
+    'NOTA: el Diseï¿½ador de Windows Forms requiere el siguiente procedimiento
+    'Puede modificarse utilizando el Diseï¿½ador de Windows Forms. 
+    'No lo modifique con el editor de cï¿½digo.
     Friend WithEvents btnSalir As System.Windows.Forms.Button
     Friend WithEvents btnIngresar As System.Windows.Forms.Button
-    Friend WithEvents txtContraseña As System.Windows.Forms.TextBox
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents Button2 As System.Windows.Forms.Button
     Friend WithEvents Label1 As System.Windows.Forms.Label
@@ -80,13 +80,13 @@ Public Class Logeo_de_Usuario
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Logeo_de_Usuario))
         Me.btnSalir = New System.Windows.Forms.Button()
-        Me.txtContraseña = New System.Windows.Forms.TextBox()
         Me.txtUsuario = New System.Windows.Forms.TextBox()
         Me.btnIngresar = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.txtPassword = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'btnSalir
@@ -103,20 +103,6 @@ Public Class Logeo_de_Usuario
         Me.btnSalir.Text = "SALIR"
         Me.btnSalir.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnSalir.UseVisualStyleBackColor = False
-        '
-        'txtContraseña
-        '
-        Me.txtContraseña.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.txtContraseña.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtContraseña.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower
-        Me.txtContraseña.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtContraseña.ForeColor = System.Drawing.Color.Blue
-        Me.txtContraseña.Location = New System.Drawing.Point(191, 178)
-        Me.txtContraseña.Name = "txtContraseña"
-        Me.txtContraseña.PasswordChar = Global.Microsoft.VisualBasic.ChrW(9679)
-        Me.txtContraseña.Size = New System.Drawing.Size(230, 18)
-        Me.txtContraseña.TabIndex = 58
-        Me.txtContraseña.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtUsuario
         '
@@ -194,8 +180,22 @@ Public Class Logeo_de_Usuario
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(230, 21)
         Me.Label2.TabIndex = 67
-        Me.Label2.Text = "CONTRASEÑA"
+        Me.Label2.Text = "PASSWORD"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'txtPassword
+        '
+        Me.txtPassword.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtPassword.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtPassword.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPassword.ForeColor = System.Drawing.Color.Blue
+        Me.txtPassword.Location = New System.Drawing.Point(191, 181)
+        Me.txtPassword.Name = "txtPassword"
+        Me.txtPassword.Size = New System.Drawing.Size(230, 18)
+        Me.txtPassword.TabIndex = 58
+        Me.txtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txtPassword.UseSystemPasswordChar = True
         '
         'Logeo_de_Usuario
         '
@@ -203,11 +203,11 @@ Public Class Logeo_de_Usuario
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(571, 366)
         Me.ControlBox = False
+        Me.Controls.Add(Me.txtPassword)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.txtContraseña)
         Me.Controls.Add(Me.txtUsuario)
         Me.Controls.Add(Me.btnSalir)
         Me.Controls.Add(Me.btnIngresar)
@@ -245,7 +245,7 @@ Public Class Logeo_de_Usuario
     Private Sub btnIngresar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnIngresar.Click
         Dim usuario, contrasena As String
         usuario = Trim(Me.txtUsuario.Text)
-        contrasena = Trim(Me.txtContraseña.Text)
+        contrasena = Trim(Me.txtPassword.Text)
         '***********************************************************
         If Usuario_Habilitado(usuario, "HABILITADO") = 0 Then
             MessageBox.Show("USUARIO INHABILITADO PARA OPERAR,VER CON SU ADMINISTRADOR", "SGCV_CO VERSION EXTENDIDA", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -255,7 +255,7 @@ Public Class Logeo_de_Usuario
             ESTADO_ABIERTO("CERRADO", "ABIERTO")
 
             If verificar_usuario(usuario, contrasena) = 0 Then
-                MessageBox.Show("ERROR AL INGRESAR USUARIO O CONTRASEÑA. VUELVA A INTENTAR", "SGCV_CO VERSION EXTENDIDA", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("ERROR AL INGRESAR USUARIO O PASSWORD. VUELVA A INTENTAR", "SGCV_CO VERSION EXTENDIDA", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Me.txtUsuario.Focus()
             Else
                 Try
@@ -284,7 +284,7 @@ Public Class Logeo_de_Usuario
                 End Try
 
                 usuario_AUX = Trim(Me.txtUsuario.Text)
-                contrasena_AUX = Trim(Me.txtContraseña.Text)
+                contrasena_AUX = Trim(Me.txtPassword.Text)
 
                 Dim FRM_MENU_PRINCIPAL As New MENU_PRINCIPAL
                 FRM_MENU_PRINCIPAL.Show()
@@ -353,5 +353,4 @@ Public Class Logeo_de_Usuario
             SQLconexion.Close()
         End Try
     End Function
-
 End Class

@@ -53,12 +53,10 @@ C:\Users\chelo\OneDrive\Escritorio\SGCV_CO V1.0\SGCV_CO V1.0\obj\x86\Release\SGC
 C:\Users\chelo\OneDrive\Escritorio\SGCV_CO V1.0\SGCV_CO V1.0\obj\x86\Release\SGCV_CO V1.0.xml
 C:\Users\chelo\OneDrive\Escritorio\SGCV_CO V1.0\SGCV_CO V1.0\obj\x86\Release\SGCV_CO V1.0.pdb
 C:\Sistema Ventas\SGCV-CO\SGCV_CO V1.0\bin\Release\SGCV_CO V1.0.exe.config
-C:\Sistema Ventas\SGCV-CO\SGCV_CO V1.0\obj\x86\Release\SGCV_CO V1.0.exe
-C:\Sistema Ventas\SGCV-CO\SGCV_CO V1.0\obj\x86\Release\SGCV_CO V1.0.xml
-C:\Sistema Ventas\SGCV-CO\SGCV_CO V1.0\obj\x86\Release\SGCV_CO V1.0.pdb
 C:\Sistema Ventas\SGCV-CO\SGCV_CO V1.0\bin\Release\SGCV_CO V1.0.exe
 C:\Sistema Ventas\SGCV-CO\SGCV_CO V1.0\bin\Release\SGCV_CO V1.0.pdb
 C:\Sistema Ventas\SGCV-CO\SGCV_CO V1.0\bin\Release\SGCV_CO V1.0.xml
+C:\Sistema Ventas\SGCV-CO\SGCV_CO V1.0\obj\x86\Release\SGCV_CO V1.0.vbprojResolveAssemblyReference.cache
 C:\Sistema Ventas\SGCV-CO\SGCV_CO V1.0\obj\x86\Release\SGCV_CO_V1._0.ANULAR_RECIBOS.resources
 C:\Sistema Ventas\SGCV-CO\SGCV_CO V1.0\obj\x86\Release\SGCV_CO_V1._0.APERTURA_CIERRE_DE_CAJA.resources
 C:\Sistema Ventas\SGCV-CO\SGCV_CO V1.0\obj\x86\Release\SGCV_CO_V1._0.DETALLES_DE_CAJA.resources
@@ -106,4 +104,6 @@ C:\Sistema Ventas\SGCV-CO\SGCV_CO V1.0\obj\x86\Release\SGCV_CO_V1._0.RE_IMPRESIO
 C:\Sistema Ventas\SGCV-CO\SGCV_CO V1.0\obj\x86\Release\SGCV_CO_V1._0.VER_DOCUMENTOS_ANULADOS.resources
 C:\Sistema Ventas\SGCV-CO\SGCV_CO V1.0\obj\x86\Release\SGCV_CO_V1._0.VISUALIZAR_FACTURACIONES.resources
 C:\Sistema Ventas\SGCV-CO\SGCV_CO V1.0\obj\x86\Release\SGCV_CO V1.0.vbproj.GenerateResource.Cache
-C:\Sistema Ventas\SGCV-CO\SGCV_CO V1.0\obj\x86\Release\SGCV_CO V1.0.vbprojResolveAssemblyReference.cache
+C:\Sistema Ventas\SGCV-CO\SGCV_CO V1.0\obj\x86\Release\SGCV_CO V1.0.exe
+C:\Sistema Ventas\SGCV-CO\SGCV_CO V1.0\obj\x86\Release\SGCV_CO V1.0.xml
+C:\Sistema Ventas\SGCV-CO\SGCV_CO V1.0\obj\x86\Release\SGCV_CO V1.0.pdb

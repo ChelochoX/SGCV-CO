@@ -63,13 +63,13 @@ Public Class REPORTE_RENDICION_CAJA
     Private Sub DateTimePicker1_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles DateTimePicker1.Leave
         Dim fecha1 As Date
         fecha1 = Me.DateTimePicker1.Value.Date.AddDays(0)
-        FECHA_INICIAL = fecha1
+        FECHA_INICIAL = fecha1.ToString("yyy-MM-dd")
     End Sub
 
     Private Sub DateTimePicker2_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles DateTimePicker2.Leave
         Dim fecha1 As Date
         fecha1 = Me.DateTimePicker2.Value.Date.AddDays(0)
-        FECHA_FINAL = fecha1
+        FECHA_FINAL = fecha1.ToString("yyy-MM-dd")
     End Sub
 
     Private Sub btnPDF_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnPDF.Click
@@ -147,7 +147,8 @@ Public Class REPORTE_RENDICION_CAJA
         valor = Trim(Me.ltsDetallesBusqueda.Text)
 
         Dim instance As New Printing.PrinterSettings
-        instance.PrinterName = "HP DeskJet 2130 series"
+        'instance.PrinterName = "HP DeskJet 2130 series"
+        instance.PrinterName = "Microsoft Print to PDF"
         Dim impresosaPredt As String = instance.PrinterName
 
         Try
