@@ -36,7 +36,11 @@ Partial Class REPORTE_RENDICION_CAJA
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.CrystalReportViewer1 = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.rb2130Series = New System.Windows.Forms.RadioButton()
+        Me.rbPDF = New System.Windows.Forms.RadioButton()
         Me.GroupBox1.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
         'btnSalir
@@ -53,9 +57,9 @@ Partial Class REPORTE_RENDICION_CAJA
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.GroupBox2)
         Me.GroupBox1.Controls.Add(Me.btnPDF)
         Me.GroupBox1.Controls.Add(Me.btnExcel)
-        Me.GroupBox1.Controls.Add(Me.btnImprimir)
         Me.GroupBox1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.GroupBox1.Location = New System.Drawing.Point(226, 131)
@@ -68,9 +72,9 @@ Partial Class REPORTE_RENDICION_CAJA
         'btnPDF
         '
         Me.btnPDF.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.btnPDF.Location = New System.Drawing.Point(37, 131)
+        Me.btnPDF.Location = New System.Drawing.Point(37, 156)
         Me.btnPDF.Name = "btnPDF"
-        Me.btnPDF.Size = New System.Drawing.Size(75, 46)
+        Me.btnPDF.Size = New System.Drawing.Size(75, 21)
         Me.btnPDF.TabIndex = 5
         Me.btnPDF.Text = "PDF"
         Me.btnPDF.UseVisualStyleBackColor = False
@@ -78,9 +82,9 @@ Partial Class REPORTE_RENDICION_CAJA
         'btnExcel
         '
         Me.btnExcel.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.btnExcel.Location = New System.Drawing.Point(37, 79)
+        Me.btnExcel.Location = New System.Drawing.Point(37, 130)
         Me.btnExcel.Name = "btnExcel"
-        Me.btnExcel.Size = New System.Drawing.Size(75, 46)
+        Me.btnExcel.Size = New System.Drawing.Size(75, 20)
         Me.btnExcel.TabIndex = 4
         Me.btnExcel.Text = "Excel"
         Me.btnExcel.UseVisualStyleBackColor = False
@@ -88,9 +92,9 @@ Partial Class REPORTE_RENDICION_CAJA
         'btnImprimir
         '
         Me.btnImprimir.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.btnImprimir.Location = New System.Drawing.Point(37, 27)
+        Me.btnImprimir.Location = New System.Drawing.Point(31, 13)
         Me.btnImprimir.Name = "btnImprimir"
-        Me.btnImprimir.Size = New System.Drawing.Size(75, 46)
+        Me.btnImprimir.Size = New System.Drawing.Size(75, 23)
         Me.btnImprimir.TabIndex = 3
         Me.btnImprimir.Text = "Imprimir"
         Me.btnImprimir.UseVisualStyleBackColor = False
@@ -191,6 +195,39 @@ Partial Class REPORTE_RENDICION_CAJA
         Me.CrystalReportViewer1.Size = New System.Drawing.Size(150, 150)
         Me.CrystalReportViewer1.TabIndex = 3010
         '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.rbPDF)
+        Me.GroupBox2.Controls.Add(Me.rb2130Series)
+        Me.GroupBox2.Controls.Add(Me.btnImprimir)
+        Me.GroupBox2.Location = New System.Drawing.Point(6, 23)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(132, 101)
+        Me.GroupBox2.TabIndex = 6
+        Me.GroupBox2.TabStop = False
+        '
+        'rb2130Series
+        '
+        Me.rb2130Series.AutoSize = True
+        Me.rb2130Series.Location = New System.Drawing.Point(19, 42)
+        Me.rb2130Series.Name = "rb2130Series"
+        Me.rb2130Series.Size = New System.Drawing.Size(82, 19)
+        Me.rb2130Series.TabIndex = 4
+        Me.rb2130Series.TabStop = True
+        Me.rb2130Series.Text = "2130Series"
+        Me.rb2130Series.UseVisualStyleBackColor = True
+        '
+        'rbPDF
+        '
+        Me.rbPDF.AutoSize = True
+        Me.rbPDF.Location = New System.Drawing.Point(19, 67)
+        Me.rbPDF.Name = "rbPDF"
+        Me.rbPDF.Size = New System.Drawing.Size(47, 19)
+        Me.rbPDF.TabIndex = 3012
+        Me.rbPDF.TabStop = True
+        Me.rbPDF.Text = "PDF"
+        Me.rbPDF.UseVisualStyleBackColor = True
+        '
         'REPORTE_RENDICION_CAJA
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -213,6 +250,8 @@ Partial Class REPORTE_RENDICION_CAJA
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "REPORTE RENDICION CAJA"
         Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -230,4 +269,7 @@ Partial Class REPORTE_RENDICION_CAJA
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents CrystalReportViewer1 As CrystalDecisions.Windows.Forms.CrystalReportViewer
+    Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
+    Friend WithEvents rbPDF As System.Windows.Forms.RadioButton
+    Friend WithEvents rb2130Series As System.Windows.Forms.RadioButton
 End Class

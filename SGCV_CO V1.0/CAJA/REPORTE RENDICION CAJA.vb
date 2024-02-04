@@ -26,6 +26,8 @@ Public Class REPORTE_RENDICION_CAJA
         Me.btnExcel.Enabled = False
         Me.btnPDF.Enabled = False
 
+        Me.rb2130Series.Checked = True
+
         iconexion.DatabaseName = bbdd
         iconexion.UserID = usuario_
         iconexion.Password = contrasena_
@@ -144,11 +146,19 @@ Public Class REPORTE_RENDICION_CAJA
 
     Private Sub btnImprimir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnImprimir.Click
 
+        
+
         valor = Trim(Me.ltsDetallesBusqueda.Text)
 
         Dim instance As New Printing.PrinterSettings
-        'instance.PrinterName = "HP DeskJet 2130 series"
-        instance.PrinterName = "Microsoft Print to PDF"
+        'Elejimos la impresora
+        If rb2130Series.Checked = True Then
+            instance.PrinterName = "HP DeskJet 2130 series"
+        Else
+            If rbPDF.Checked = True Then
+                instance.PrinterName = "Microsoft Print to PDF"
+            End If
+        End If
         Dim impresosaPredt As String = instance.PrinterName
 
         Try
