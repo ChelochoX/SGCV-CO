@@ -146,8 +146,6 @@ Public Class REPORTE_RENDICION_CAJA
 
     Private Sub btnImprimir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnImprimir.Click
 
-        
-
         valor = Trim(Me.ltsDetallesBusqueda.Text)
 
         Dim instance As New Printing.PrinterSettings
