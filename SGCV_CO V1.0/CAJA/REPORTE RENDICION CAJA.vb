@@ -153,7 +153,7 @@ Public Class REPORTE_RENDICION_CAJA
         Dim instance As New Printing.PrinterSettings
         'Elejimos la impresora
         If rb2130Series.Checked = True Then
-            instance.PrinterName = "HP DeskJet 2130 series"
+            instance.PrinterName = "HP DJ 2130 series"
         Else
             If rbPDF.Checked = True Then
                 instance.PrinterName = "Microsoft Print to PDF"

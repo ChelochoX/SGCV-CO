@@ -1,9 +1,9 @@
 ﻿Module CONEXION
     Public Sub conectar()
         usuario_ = "sa"
-        contrasena_ = "Cesar1983"
-        servidor = "LAPTOP-RAHBKGCL" 'servidor de LJ COMERCIAL
-        'servidor = "DESKTOP-EPTCAVH\SQL08R2"
+        contrasena_ = "Cesar?1983"
+        'servidor = "LJCOMERCIAL" 'servidor de LJ COMERCIAL
+        servidor = "CESAR-LEZCANO"
         bbdd = "LJ COMERCIAL"
         conexionbd = "server ='" & servidor & "';database ='" & bbdd & "' ; user id ='" & usuario_ & "'; password ='" & contrasena_ & "'"
         SQLconexion.ConnectionString = conexionbd

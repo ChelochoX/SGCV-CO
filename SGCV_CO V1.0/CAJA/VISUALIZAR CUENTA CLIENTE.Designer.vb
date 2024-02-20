@@ -932,7 +932,7 @@ Partial Class VISUALIZAR_CUENTA_CLIENTE
         Me.Name = "VISUALIZAR_CUENTA_CLIENTE"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "VISUALIZAR CUENTA CLIENTE   ** SGCV + CO (E) V1.1.0          CONSULTAS Y PRECIOS " & _
-    "AL 0994 60 60 48  / 0982 12 12 69     *** TU VENDEDOR SOFT ***"
+            "AL 0994 60 60 48  / 0982 12 12 69     *** TU VENDEDOR SOFT ***"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox2.ResumeLayout(False)
@@ -980,7 +980,6 @@ Partial Class VISUALIZAR_CUENTA_CLIENTE
     Friend WithEvents DataGridTextBoxColumn12 As System.Windows.Forms.DataGridTextBoxColumn
     Friend WithEvents txtCuentaActual As System.Windows.Forms.TextBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents CrystalReportViewer1 As CrystalDecisions.Windows.Forms.CrystalReportViewer
     Friend WithEvents txtCedula_Cliente As System.Windows.Forms.TextBox
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents DataGridTableStyle2 As System.Windows.Forms.DataGridTableStyle
@@ -1015,4 +1014,5 @@ Partial Class VISUALIZAR_CUENTA_CLIENTE
     Friend WithEvents DataGridTextBoxColumn15 As System.Windows.Forms.DataGridTextBoxColumn
     Friend WithEvents txtDeudaTotalGral As System.Windows.Forms.TextBox
     Friend WithEvents Label9 As System.Windows.Forms.Label
+    Private WithEvents CrystalReportViewer1 As CrystalDecisions.Windows.Forms.CrystalReportViewer
 End Class

@@ -52,3 +52,58 @@ C:\Users\chelo\OneDrive\Escritorio\SGCV_CO V1.0\SGCV_CO V1.0\obj\x86\Release\SGC
 C:\Users\chelo\OneDrive\Escritorio\SGCV_CO V1.0\SGCV_CO V1.0\obj\x86\Release\SGCV_CO V1.0.exe
 C:\Users\chelo\OneDrive\Escritorio\SGCV_CO V1.0\SGCV_CO V1.0\obj\x86\Release\SGCV_CO V1.0.xml
 C:\Users\chelo\OneDrive\Escritorio\SGCV_CO V1.0\SGCV_CO V1.0\obj\x86\Release\SGCV_CO V1.0.pdb
+C:\Chelo\Proyectos Personales\SGCV-CO\SGCV_CO V1.0\bin\Release\SGCV_CO V1.0.exe.config
+C:\Chelo\Proyectos Personales\SGCV-CO\SGCV_CO V1.0\bin\Release\SGCV_CO V1.0.exe
+C:\Chelo\Proyectos Personales\SGCV-CO\SGCV_CO V1.0\bin\Release\SGCV_CO V1.0.pdb
+C:\Chelo\Proyectos Personales\SGCV-CO\SGCV_CO V1.0\bin\Release\SGCV_CO V1.0.xml
+C:\Chelo\Proyectos Personales\SGCV-CO\SGCV_CO V1.0\obj\x86\Release\SGCV_CO_V1._0.ANULAR_RECIBOS.resources
+C:\Chelo\Proyectos Personales\SGCV-CO\SGCV_CO V1.0\obj\x86\Release\SGCV_CO_V1._0.APERTURA_CIERRE_DE_CAJA.resources
+C:\Chelo\Proyectos Personales\SGCV-CO\SGCV_CO V1.0\obj\x86\Release\SGCV_CO_V1._0.DETALLES_DE_CAJA.resources
+C:\Chelo\Proyectos Personales\SGCV-CO\SGCV_CO V1.0\obj\x86\Release\SGCV_CO_V1._0.GESTIONAR_COBRO.resources
+C:\Chelo\Proyectos Personales\SGCV-CO\SGCV_CO V1.0\obj\x86\Release\SGCV_CO_V1._0.MOVIMIENTO_EN_CAJA.resources
+C:\Chelo\Proyectos Personales\SGCV-CO\SGCV_CO V1.0\obj\x86\Release\SGCV_CO_V1._0.RE_IMPRESION_DE_RECIBOS_DE_DINERO.resources
+C:\Chelo\Proyectos Personales\SGCV-CO\SGCV_CO V1.0\obj\x86\Release\SGCV_CO_V1._0.REPORTE_DE_RECIBO_DE_DINERO.resources
+C:\Chelo\Proyectos Personales\SGCV-CO\SGCV_CO V1.0\obj\x86\Release\SGCV_CO_V1._0.REPORTE_RENDICION_CAJA.resources
+C:\Chelo\Proyectos Personales\SGCV-CO\SGCV_CO V1.0\obj\x86\Release\SGCV_CO_V1._0.VER_DOCUMENTO_FACTURACION.resources
+C:\Chelo\Proyectos Personales\SGCV-CO\SGCV_CO V1.0\obj\x86\Release\SGCV_CO_V1._0.VISUALIZAR_CUENTA_CLIENTE.resources
+C:\Chelo\Proyectos Personales\SGCV-CO\SGCV_CO V1.0\obj\x86\Release\SGCV_CO_V1._0.DATOS_GARANTE.resources
+C:\Chelo\Proyectos Personales\SGCV-CO\SGCV_CO V1.0\obj\x86\Release\SGCV_CO_V1._0.REGISTRO_CLIENTE.resources
+C:\Chelo\Proyectos Personales\SGCV-CO\SGCV_CO V1.0\obj\x86\Release\SGCV_CO_V1._0.REPORTE_CLIENTES.resources
+C:\Chelo\Proyectos Personales\SGCV-CO\SGCV_CO V1.0\obj\x86\Release\SGCV_CO_V1._0.REPORTE_SEGUIMIENTO_DE_COBRANZA.resources
+C:\Chelo\Proyectos Personales\SGCV-CO\SGCV_CO V1.0\obj\x86\Release\SGCV_CO_V1._0.Reporte_Atrasos_Cobranzas.resources
+C:\Chelo\Proyectos Personales\SGCV-CO\SGCV_CO V1.0\obj\x86\Release\SGCV_CO_V1._0.SEGUIMIENTO_COBRANZA.resources
+C:\Chelo\Proyectos Personales\SGCV-CO\SGCV_CO V1.0\obj\x86\Release\SGCV_CO_V1._0.COMPRAS_DE_PROVEEDOR.resources
+C:\Chelo\Proyectos Personales\SGCV-CO\SGCV_CO V1.0\obj\x86\Release\SGCV_CO_V1._0.RECEPCIO_COMPRAS.resources
+C:\Chelo\Proyectos Personales\SGCV-CO\SGCV_CO V1.0\obj\x86\Release\SGCV_CO_V1._0.GESTIONAR_TRASLADO_DE_PRODUCTOS.resources
+C:\Chelo\Proyectos Personales\SGCV-CO\SGCV_CO V1.0\obj\x86\Release\SGCV_CO_V1._0.VER_PRODUCTOS_EN_STOCK.resources
+C:\Chelo\Proyectos Personales\SGCV-CO\SGCV_CO V1.0\obj\x86\Release\SGCV_CO_V1._0.VISUALIZAR_STOCK_EN_DEPOSITO.resources
+C:\Chelo\Proyectos Personales\SGCV-CO\SGCV_CO V1.0\obj\x86\Release\SGCV_CO_V1._0.ESTADISTICAS_CUENTAS_POR_COBRAR.resources
+C:\Chelo\Proyectos Personales\SGCV-CO\SGCV_CO V1.0\obj\x86\Release\SGCV_CO_V1._0.REPORTE_COBRANZAS_POR_VENDEDOR_VS_FECHA.resources
+C:\Chelo\Proyectos Personales\SGCV-CO\SGCV_CO V1.0\obj\x86\Release\SGCV_CO_V1._0.REPORTE_VENTAS_POR_VENDEDOR_VS_FECHA.resources
+C:\Chelo\Proyectos Personales\SGCV-CO\SGCV_CO V1.0\obj\x86\Release\SGCV_CO_V1._0.ROTACION_DE_MERCADERIAS.resources
+C:\Chelo\Proyectos Personales\SGCV-CO\SGCV_CO V1.0\obj\x86\Release\SGCV_CO_V1._0.soporte.resources
+C:\Chelo\Proyectos Personales\SGCV-CO\SGCV_CO V1.0\obj\x86\Release\SGCV_CO_V1._0.UTILIDAD_COMPRA_VS_VENTA.resources
+C:\Chelo\Proyectos Personales\SGCV-CO\SGCV_CO V1.0\obj\x86\Release\SGCV_CO_V1._0.Logeo_de_Usuario.resources
+C:\Chelo\Proyectos Personales\SGCV-CO\SGCV_CO V1.0\obj\x86\Release\SGCV_CO_V1._0.MENU_PRINCIPAL.resources
+C:\Chelo\Proyectos Personales\SGCV-CO\SGCV_CO V1.0\obj\x86\Release\SGCV_CO_V1._0.Resources.resources
+C:\Chelo\Proyectos Personales\SGCV-CO\SGCV_CO V1.0\obj\x86\Release\SGCV_CO_V1._0.ASIGNAR_IMAGEN_A_LOS_PRODUCTOS.resources
+C:\Chelo\Proyectos Personales\SGCV-CO\SGCV_CO V1.0\obj\x86\Release\SGCV_CO_V1._0.GESTIONAR_PRECIO_PRODUCTOS.resources
+C:\Chelo\Proyectos Personales\SGCV-CO\SGCV_CO V1.0\obj\x86\Release\SGCV_CO_V1._0.REGISTRO_PRODUCTOS.resources
+C:\Chelo\Proyectos Personales\SGCV-CO\SGCV_CO V1.0\obj\x86\Release\SGCV_CO_V1._0.REGISTRO_PROVEEDOR.resources
+C:\Chelo\Proyectos Personales\SGCV-CO\SGCV_CO V1.0\obj\x86\Release\SGCV_CO_V1._0.AGREGAR_USUARIOS.resources
+C:\Chelo\Proyectos Personales\SGCV-CO\SGCV_CO V1.0\obj\x86\Release\SGCV_CO_V1._0.EMPRESA.resources
+C:\Chelo\Proyectos Personales\SGCV-CO\SGCV_CO V1.0\obj\x86\Release\SGCV_CO_V1._0.FACTURACIONES_SON_DOCUMENTOS.resources
+C:\Chelo\Proyectos Personales\SGCV-CO\SGCV_CO V1.0\obj\x86\Release\SGCV_CO_V1._0.GESTIONAR_INTERES_PARA_CREDITO.resources
+C:\Chelo\Proyectos Personales\SGCV-CO\SGCV_CO V1.0\obj\x86\Release\SGCV_CO_V1._0.REPORTE_DE_CUENTA_CLIENTE_ANULADOS.resources
+C:\Chelo\Proyectos Personales\SGCV-CO\SGCV_CO V1.0\obj\x86\Release\SGCV_CO_V1._0.ROLES_DE_USUARIO.resources
+C:\Chelo\Proyectos Personales\SGCV-CO\SGCV_CO V1.0\obj\x86\Release\SGCV_CO_V1._0.TIMBRADO_DOCUMENTOS.resources
+C:\Chelo\Proyectos Personales\SGCV-CO\SGCV_CO V1.0\obj\x86\Release\SGCV_CO_V1._0.ANULAR_FACTURACION.resources
+C:\Chelo\Proyectos Personales\SGCV-CO\SGCV_CO V1.0\obj\x86\Release\SGCV_CO_V1._0.FACTURACION.resources
+C:\Chelo\Proyectos Personales\SGCV-CO\SGCV_CO V1.0\obj\x86\Release\SGCV_CO_V1._0.RE_IMPRESION_DE_FACTURACIONES.resources
+C:\Chelo\Proyectos Personales\SGCV-CO\SGCV_CO V1.0\obj\x86\Release\SGCV_CO_V1._0.VER_DOCUMENTOS_ANULADOS.resources
+C:\Chelo\Proyectos Personales\SGCV-CO\SGCV_CO V1.0\obj\x86\Release\SGCV_CO_V1._0.VISUALIZAR_FACTURACIONES.resources
+C:\Chelo\Proyectos Personales\SGCV-CO\SGCV_CO V1.0\obj\x86\Release\SGCV_CO V1.0.vbproj.GenerateResource.Cache
+C:\Chelo\Proyectos Personales\SGCV-CO\SGCV_CO V1.0\obj\x86\Release\SGCV_CO V1.0.exe
+C:\Chelo\Proyectos Personales\SGCV-CO\SGCV_CO V1.0\obj\x86\Release\SGCV_CO V1.0.xml
+C:\Chelo\Proyectos Personales\SGCV-CO\SGCV_CO V1.0\obj\x86\Release\SGCV_CO V1.0.pdb
+C:\Chelo\Proyectos Personales\SGCV-CO\SGCV_CO V1.0\obj\x86\Release\SGCV_CO V1.0.vbprojResolveAssemblyReference.cache

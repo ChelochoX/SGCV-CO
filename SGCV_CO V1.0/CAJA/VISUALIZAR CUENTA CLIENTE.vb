@@ -432,7 +432,7 @@ Public Class VISUALIZAR_CUENTA_CLIENTE
     Private Sub btnImprimir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnImprimir.Click
 
         Dim instance As New Printing.PrinterSettings
-        instance.PrinterName = "HP DeskJet 2130 series"
+        instance.PrinterName = "HP DJ 2130 series"
         Dim impresosaPredt As String = instance.PrinterName
 
         If Me.rbPendientes.Checked = True Then
