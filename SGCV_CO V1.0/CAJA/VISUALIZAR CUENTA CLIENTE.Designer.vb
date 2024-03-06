@@ -89,6 +89,12 @@ Partial Class VISUALIZAR_CUENTA_CLIENTE
         Me.DataGridTextBoxColumn26 = New System.Windows.Forms.DataGridTextBoxColumn()
         Me.txtDeudaTotalGral = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
+        Me.cbVendedor = New System.Windows.Forms.ComboBox()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -287,10 +293,10 @@ Partial Class VISUALIZAR_CUENTA_CLIENTE
         Me.txtObservacion.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtObservacion.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtObservacion.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.txtObservacion.Location = New System.Drawing.Point(765, 141)
+        Me.txtObservacion.Location = New System.Drawing.Point(734, 141)
         Me.txtObservacion.Multiline = True
         Me.txtObservacion.Name = "txtObservacion"
-        Me.txtObservacion.Size = New System.Drawing.Size(413, 48)
+        Me.txtObservacion.Size = New System.Drawing.Size(308, 48)
         Me.txtObservacion.TabIndex = 1297
         '
         'Label7
@@ -298,7 +304,7 @@ Partial Class VISUALIZAR_CUENTA_CLIENTE
         Me.Label7.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.Label7.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.Label7.Location = New System.Drawing.Point(765, 124)
+        Me.Label7.Location = New System.Drawing.Point(734, 124)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(239, 19)
         Me.Label7.TabIndex = 1301
@@ -310,9 +316,9 @@ Partial Class VISUALIZAR_CUENTA_CLIENTE
         Me.Label6.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.Label6.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.Label6.Location = New System.Drawing.Point(948, 82)
+        Me.Label6.Location = New System.Drawing.Point(917, 82)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(164, 19)
+        Me.Label6.Size = New System.Drawing.Size(133, 19)
         Me.Label6.TabIndex = 1300
         Me.Label6.Text = "Monto Compromiso"
         Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -322,7 +328,7 @@ Partial Class VISUALIZAR_CUENTA_CLIENTE
         Me.Label5.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.Label5.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.Label5.Location = New System.Drawing.Point(762, 83)
+        Me.Label5.Location = New System.Drawing.Point(731, 83)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(180, 19)
         Me.Label5.TabIndex = 1299
@@ -334,7 +340,7 @@ Partial Class VISUALIZAR_CUENTA_CLIENTE
         Me.Label12.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.Label12.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label12.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.Label12.Location = New System.Drawing.Point(768, 38)
+        Me.Label12.Location = New System.Drawing.Point(737, 38)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(72, 19)
         Me.Label12.TabIndex = 1298
@@ -345,9 +351,9 @@ Partial Class VISUALIZAR_CUENTA_CLIENTE
         '
         Me.txtCobrador.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtCobrador.ForeColor = System.Drawing.Color.Green
-        Me.txtCobrador.Location = New System.Drawing.Point(768, 57)
+        Me.txtCobrador.Location = New System.Drawing.Point(737, 57)
         Me.txtCobrador.Name = "txtCobrador"
-        Me.txtCobrador.Size = New System.Drawing.Size(344, 23)
+        Me.txtCobrador.Size = New System.Drawing.Size(305, 23)
         Me.txtCobrador.TabIndex = 1303
         Me.txtCobrador.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -355,9 +361,9 @@ Partial Class VISUALIZAR_CUENTA_CLIENTE
         '
         Me.txtFecha_Seguimiento.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtFecha_Seguimiento.ForeColor = System.Drawing.Color.Green
-        Me.txtFecha_Seguimiento.Location = New System.Drawing.Point(765, 102)
+        Me.txtFecha_Seguimiento.Location = New System.Drawing.Point(734, 102)
         Me.txtFecha_Seguimiento.Name = "txtFecha_Seguimiento"
-        Me.txtFecha_Seguimiento.Size = New System.Drawing.Size(177, 23)
+        Me.txtFecha_Seguimiento.Size = New System.Drawing.Size(161, 23)
         Me.txtFecha_Seguimiento.TabIndex = 1304
         Me.txtFecha_Seguimiento.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -365,9 +371,9 @@ Partial Class VISUALIZAR_CUENTA_CLIENTE
         '
         Me.txtMontoCompromiso.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtMontoCompromiso.ForeColor = System.Drawing.Color.Green
-        Me.txtMontoCompromiso.Location = New System.Drawing.Point(948, 102)
+        Me.txtMontoCompromiso.Location = New System.Drawing.Point(917, 102)
         Me.txtMontoCompromiso.Name = "txtMontoCompromiso"
-        Me.txtMontoCompromiso.Size = New System.Drawing.Size(164, 23)
+        Me.txtMontoCompromiso.Size = New System.Drawing.Size(125, 23)
         Me.txtMontoCompromiso.TabIndex = 1305
         Me.txtMontoCompromiso.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -380,7 +386,6 @@ Partial Class VISUALIZAR_CUENTA_CLIENTE
         Me.dg_CuentaCliente.CaptionBackColor = System.Drawing.Color.Silver
         Me.dg_CuentaCliente.CaptionFont = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.dg_CuentaCliente.CaptionForeColor = System.Drawing.Color.Black
-        Me.dg_CuentaCliente.DataMember = ""
         Me.dg_CuentaCliente.FlatMode = True
         Me.dg_CuentaCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.dg_CuentaCliente.ForeColor = System.Drawing.Color.DarkSlateGray
@@ -414,7 +419,6 @@ Partial Class VISUALIZAR_CUENTA_CLIENTE
         'DataGridTextBoxColumn2
         '
         Me.DataGridTextBoxColumn2.Alignment = System.Windows.Forms.HorizontalAlignment.Center
-        Me.DataGridTextBoxColumn2.Format = ""
         Me.DataGridTextBoxColumn2.FormatInfo = Nothing
         Me.DataGridTextBoxColumn2.HeaderText = "TIPO_DOCUMENTO"
         Me.DataGridTextBoxColumn2.MappingName = "TIPO_DOCUMENTO"
@@ -423,7 +427,6 @@ Partial Class VISUALIZAR_CUENTA_CLIENTE
         'DataGridTextBoxColumn3
         '
         Me.DataGridTextBoxColumn3.Alignment = System.Windows.Forms.HorizontalAlignment.Center
-        Me.DataGridTextBoxColumn3.Format = ""
         Me.DataGridTextBoxColumn3.FormatInfo = Nothing
         Me.DataGridTextBoxColumn3.HeaderText = "DOCUMENTO"
         Me.DataGridTextBoxColumn3.MappingName = "DOCUMENTO_FACTURACION"
@@ -432,7 +435,6 @@ Partial Class VISUALIZAR_CUENTA_CLIENTE
         'DataGridTextBoxColumn4
         '
         Me.DataGridTextBoxColumn4.Alignment = System.Windows.Forms.HorizontalAlignment.Center
-        Me.DataGridTextBoxColumn4.Format = ""
         Me.DataGridTextBoxColumn4.FormatInfo = Nothing
         Me.DataGridTextBoxColumn4.HeaderText = "FECHA FACTURACION"
         Me.DataGridTextBoxColumn4.MappingName = "FECHA_FACTURACION"
@@ -441,7 +443,6 @@ Partial Class VISUALIZAR_CUENTA_CLIENTE
         'DataGridTextBoxColumn5
         '
         Me.DataGridTextBoxColumn5.Alignment = System.Windows.Forms.HorizontalAlignment.Center
-        Me.DataGridTextBoxColumn5.Format = ""
         Me.DataGridTextBoxColumn5.FormatInfo = Nothing
         Me.DataGridTextBoxColumn5.HeaderText = "CUOTA N°"
         Me.DataGridTextBoxColumn5.MappingName = "CUOTA"
@@ -450,7 +451,6 @@ Partial Class VISUALIZAR_CUENTA_CLIENTE
         'DataGridTextBoxColumn6
         '
         Me.DataGridTextBoxColumn6.Alignment = System.Windows.Forms.HorizontalAlignment.Center
-        Me.DataGridTextBoxColumn6.Format = ""
         Me.DataGridTextBoxColumn6.FormatInfo = Nothing
         Me.DataGridTextBoxColumn6.HeaderText = "A VENCER EN "
         Me.DataGridTextBoxColumn6.MappingName = "DIAS_A_VENCER"
@@ -468,7 +468,6 @@ Partial Class VISUALIZAR_CUENTA_CLIENTE
         'DataGridTextBoxColumn8
         '
         Me.DataGridTextBoxColumn8.Alignment = System.Windows.Forms.HorizontalAlignment.Center
-        Me.DataGridTextBoxColumn8.Format = ""
         Me.DataGridTextBoxColumn8.FormatInfo = Nothing
         Me.DataGridTextBoxColumn8.HeaderText = "VENCIMIENTO"
         Me.DataGridTextBoxColumn8.MappingName = "FECHA_VENCIMIENTO"
@@ -477,7 +476,6 @@ Partial Class VISUALIZAR_CUENTA_CLIENTE
         'DataGridTextBoxColumn9
         '
         Me.DataGridTextBoxColumn9.Alignment = System.Windows.Forms.HorizontalAlignment.Center
-        Me.DataGridTextBoxColumn9.Format = ""
         Me.DataGridTextBoxColumn9.FormatInfo = Nothing
         Me.DataGridTextBoxColumn9.HeaderText = "ESTADO CUOTA"
         Me.DataGridTextBoxColumn9.MappingName = "ESTADO_CUOTA"
@@ -486,7 +484,6 @@ Partial Class VISUALIZAR_CUENTA_CLIENTE
         'DataGridTextBoxColumn13
         '
         Me.DataGridTextBoxColumn13.Alignment = System.Windows.Forms.HorizontalAlignment.Center
-        Me.DataGridTextBoxColumn13.Format = ""
         Me.DataGridTextBoxColumn13.FormatInfo = Nothing
         Me.DataGridTextBoxColumn13.HeaderText = "FECHA PAGO"
         Me.DataGridTextBoxColumn13.MappingName = "FECHA_PAGO"
@@ -510,7 +507,6 @@ Partial Class VISUALIZAR_CUENTA_CLIENTE
         Me.dgDetallesCobranza.CaptionBackColor = System.Drawing.Color.DarkSlateBlue
         Me.dgDetallesCobranza.CaptionFont = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dgDetallesCobranza.CaptionForeColor = System.Drawing.Color.Lavender
-        Me.dgDetallesCobranza.DataMember = ""
         Me.dgDetallesCobranza.FlatMode = True
         Me.dgDetallesCobranza.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dgDetallesCobranza.ForeColor = System.Drawing.Color.Black
@@ -527,7 +523,7 @@ Partial Class VISUALIZAR_CUENTA_CLIENTE
         Me.dgDetallesCobranza.RowHeadersVisible = False
         Me.dgDetallesCobranza.SelectionBackColor = System.Drawing.Color.Wheat
         Me.dgDetallesCobranza.SelectionForeColor = System.Drawing.Color.DarkSlateBlue
-        Me.dgDetallesCobranza.Size = New System.Drawing.Size(181, 145)
+        Me.dgDetallesCobranza.Size = New System.Drawing.Size(156, 145)
         Me.dgDetallesCobranza.TabIndex = 1307
         Me.dgDetallesCobranza.TableStyles.AddRange(New System.Windows.Forms.DataGridTableStyle() {Me.DataGridTableStyle1})
         '
@@ -541,7 +537,6 @@ Partial Class VISUALIZAR_CUENTA_CLIENTE
         'DataGridTextBoxColumn1
         '
         Me.DataGridTextBoxColumn1.Alignment = System.Windows.Forms.HorizontalAlignment.Center
-        Me.DataGridTextBoxColumn1.Format = ""
         Me.DataGridTextBoxColumn1.FormatInfo = Nothing
         Me.DataGridTextBoxColumn1.HeaderText = "FECHA SEGUIMIENTO"
         Me.DataGridTextBoxColumn1.MappingName = "FECHA_SEGUIMIENTO"
@@ -549,7 +544,6 @@ Partial Class VISUALIZAR_CUENTA_CLIENTE
         '
         'DataGridTextBoxColumn10
         '
-        Me.DataGridTextBoxColumn10.Format = ""
         Me.DataGridTextBoxColumn10.FormatInfo = Nothing
         Me.DataGridTextBoxColumn10.MappingName = "COBRADOR"
         Me.DataGridTextBoxColumn10.Width = 0
@@ -563,7 +557,6 @@ Partial Class VISUALIZAR_CUENTA_CLIENTE
         '
         'DataGridTextBoxColumn12
         '
-        Me.DataGridTextBoxColumn12.Format = ""
         Me.DataGridTextBoxColumn12.FormatInfo = Nothing
         Me.DataGridTextBoxColumn12.MappingName = "OBSERVACION"
         Me.DataGridTextBoxColumn12.Width = 0
@@ -597,7 +590,6 @@ Partial Class VISUALIZAR_CUENTA_CLIENTE
         '
         Me.CrystalReportViewer1.ActiveViewIndex = -1
         Me.CrystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.CrystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default
         Me.CrystalReportViewer1.Location = New System.Drawing.Point(473, 306)
         Me.CrystalReportViewer1.Name = "CrystalReportViewer1"
         Me.CrystalReportViewer1.Size = New System.Drawing.Size(329, 173)
@@ -636,7 +628,6 @@ Partial Class VISUALIZAR_CUENTA_CLIENTE
         Me.dg_Historial_PagoCC.CaptionBackColor = System.Drawing.Color.Silver
         Me.dg_Historial_PagoCC.CaptionFont = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.dg_Historial_PagoCC.CaptionForeColor = System.Drawing.Color.Black
-        Me.dg_Historial_PagoCC.DataMember = ""
         Me.dg_Historial_PagoCC.FlatMode = True
         Me.dg_Historial_PagoCC.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.dg_Historial_PagoCC.ForeColor = System.Drawing.Color.DarkSlateGray
@@ -671,7 +662,6 @@ Partial Class VISUALIZAR_CUENTA_CLIENTE
         'DataGridTextBoxColumn16
         '
         Me.DataGridTextBoxColumn16.Alignment = System.Windows.Forms.HorizontalAlignment.Center
-        Me.DataGridTextBoxColumn16.Format = ""
         Me.DataGridTextBoxColumn16.FormatInfo = Nothing
         Me.DataGridTextBoxColumn16.HeaderText = "TIPO DOCUMENTO"
         Me.DataGridTextBoxColumn16.MappingName = "TIPO_DOCUMENT0"
@@ -680,7 +670,6 @@ Partial Class VISUALIZAR_CUENTA_CLIENTE
         'DataGridTextBoxColumn17
         '
         Me.DataGridTextBoxColumn17.Alignment = System.Windows.Forms.HorizontalAlignment.Center
-        Me.DataGridTextBoxColumn17.Format = ""
         Me.DataGridTextBoxColumn17.FormatInfo = Nothing
         Me.DataGridTextBoxColumn17.HeaderText = "DOCUMENTO"
         Me.DataGridTextBoxColumn17.MappingName = "DOCUMENTO_FACTURACION"
@@ -689,7 +678,6 @@ Partial Class VISUALIZAR_CUENTA_CLIENTE
         'DataGridTextBoxColumn18
         '
         Me.DataGridTextBoxColumn18.Alignment = System.Windows.Forms.HorizontalAlignment.Center
-        Me.DataGridTextBoxColumn18.Format = ""
         Me.DataGridTextBoxColumn18.FormatInfo = Nothing
         Me.DataGridTextBoxColumn18.HeaderText = "FECHA FACTURACION"
         Me.DataGridTextBoxColumn18.MappingName = "FECHA_FACTURACION"
@@ -698,7 +686,6 @@ Partial Class VISUALIZAR_CUENTA_CLIENTE
         'DataGridTextBoxColumn19
         '
         Me.DataGridTextBoxColumn19.Alignment = System.Windows.Forms.HorizontalAlignment.Center
-        Me.DataGridTextBoxColumn19.Format = ""
         Me.DataGridTextBoxColumn19.FormatInfo = Nothing
         Me.DataGridTextBoxColumn19.HeaderText = "CUOTA N°"
         Me.DataGridTextBoxColumn19.MappingName = "CUOTA"
@@ -725,7 +712,6 @@ Partial Class VISUALIZAR_CUENTA_CLIENTE
         'DataGridTextBoxColumn22
         '
         Me.DataGridTextBoxColumn22.Alignment = System.Windows.Forms.HorizontalAlignment.Center
-        Me.DataGridTextBoxColumn22.Format = ""
         Me.DataGridTextBoxColumn22.FormatInfo = Nothing
         Me.DataGridTextBoxColumn22.HeaderText = "VENCIMIENTO"
         Me.DataGridTextBoxColumn22.MappingName = "FECHA_VENCIMIENTO"
@@ -734,7 +720,6 @@ Partial Class VISUALIZAR_CUENTA_CLIENTE
         'DataGridTextBoxColumn23
         '
         Me.DataGridTextBoxColumn23.Alignment = System.Windows.Forms.HorizontalAlignment.Center
-        Me.DataGridTextBoxColumn23.Format = ""
         Me.DataGridTextBoxColumn23.FormatInfo = Nothing
         Me.DataGridTextBoxColumn23.HeaderText = "ESTADO CUOTA"
         Me.DataGridTextBoxColumn23.MappingName = "ESTADO_CUOTA"
@@ -743,7 +728,6 @@ Partial Class VISUALIZAR_CUENTA_CLIENTE
         'DataGridTextBoxColumn24
         '
         Me.DataGridTextBoxColumn24.Alignment = System.Windows.Forms.HorizontalAlignment.Center
-        Me.DataGridTextBoxColumn24.Format = ""
         Me.DataGridTextBoxColumn24.FormatInfo = Nothing
         Me.DataGridTextBoxColumn24.HeaderText = "FECHA PAGO"
         Me.DataGridTextBoxColumn24.MappingName = "FECHA_PAGO"
@@ -779,7 +763,6 @@ Partial Class VISUALIZAR_CUENTA_CLIENTE
         Me.dgFacturasNo.CaptionBackColor = System.Drawing.Color.SaddleBrown
         Me.dgFacturasNo.CaptionFont = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dgFacturasNo.CaptionForeColor = System.Drawing.Color.OldLace
-        Me.dgFacturasNo.DataMember = ""
         Me.dgFacturasNo.FlatMode = True
         Me.dgFacturasNo.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dgFacturasNo.ForeColor = System.Drawing.Color.DarkSlateGray
@@ -813,7 +796,6 @@ Partial Class VISUALIZAR_CUENTA_CLIENTE
         '
         'DataGridTextBoxColumn15
         '
-        Me.DataGridTextBoxColumn15.Format = ""
         Me.DataGridTextBoxColumn15.FormatInfo = Nothing
         Me.DataGridTextBoxColumn15.HeaderText = "FACTURA N°"
         Me.DataGridTextBoxColumn15.MappingName = "DOCUMENTO_FACTURACION"
@@ -828,7 +810,6 @@ Partial Class VISUALIZAR_CUENTA_CLIENTE
         Me.dgFacturasPagadas.CaptionBackColor = System.Drawing.Color.SaddleBrown
         Me.dgFacturasPagadas.CaptionFont = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dgFacturasPagadas.CaptionForeColor = System.Drawing.Color.OldLace
-        Me.dgFacturasPagadas.DataMember = ""
         Me.dgFacturasPagadas.FlatMode = True
         Me.dgFacturasPagadas.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dgFacturasPagadas.ForeColor = System.Drawing.Color.DarkSlateGray
@@ -862,7 +843,6 @@ Partial Class VISUALIZAR_CUENTA_CLIENTE
         '
         'DataGridTextBoxColumn26
         '
-        Me.DataGridTextBoxColumn26.Format = ""
         Me.DataGridTextBoxColumn26.FormatInfo = Nothing
         Me.DataGridTextBoxColumn26.HeaderText = "FACTURA N°"
         Me.DataGridTextBoxColumn26.MappingName = "DOCUMENTO_FACTURACION"
@@ -893,6 +873,73 @@ Partial Class VISUALIZAR_CUENTA_CLIENTE
         Me.Label9.Text = "Deuda Total General"
         Me.Label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'cbVendedor
+        '
+        Me.cbVendedor.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbVendedor.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.cbVendedor.FormattingEnabled = True
+        Me.cbVendedor.Location = New System.Drawing.Point(1059, 133)
+        Me.cbVendedor.Name = "cbVendedor"
+        Me.cbVendedor.Size = New System.Drawing.Size(205, 25)
+        Me.cbVendedor.TabIndex = 50012
+        '
+        'Label10
+        '
+        Me.Label10.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Label10.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.Label10.Location = New System.Drawing.Point(1056, 113)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(157, 19)
+        Me.Label10.TabIndex = 50011
+        Me.Label10.Text = "Vendedor Nuevo"
+        '
+        'Label11
+        '
+        Me.Label11.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Label11.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Label11.Location = New System.Drawing.Point(1056, 43)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(205, 19)
+        Me.Label11.TabIndex = 50013
+        Me.Label11.Text = "Modificar Vendedor"
+        Me.Label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.Button1.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.Button1.Location = New System.Drawing.Point(1059, 162)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(205, 27)
+        Me.Button1.TabIndex = 50014
+        Me.Button1.Text = "Modificar Vendedor"
+        Me.Button1.UseVisualStyleBackColor = False
+        '
+        'Label13
+        '
+        Me.Label13.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Label13.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.Label13.Location = New System.Drawing.Point(1056, 66)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(133, 19)
+        Me.Label13.TabIndex = 50015
+        Me.Label13.Text = "Vendedor Actual"
+        Me.Label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Font = New System.Drawing.Font("Calibri", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.TextBox1.Location = New System.Drawing.Point(1059, 88)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(202, 21)
+        Me.TextBox1.TabIndex = 50016
+        Me.TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
         'VISUALIZAR_CUENTA_CLIENTE
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -901,6 +948,12 @@ Partial Class VISUALIZAR_CUENTA_CLIENTE
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1285, 650)
         Me.ControlBox = False
+        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.Label13)
+        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.Label11)
+        Me.Controls.Add(Me.cbVendedor)
+        Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.txtDeudaTotalGral)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.GroupBox3)
@@ -1015,4 +1068,10 @@ Partial Class VISUALIZAR_CUENTA_CLIENTE
     Friend WithEvents txtDeudaTotalGral As System.Windows.Forms.TextBox
     Friend WithEvents Label9 As System.Windows.Forms.Label
     Private WithEvents CrystalReportViewer1 As CrystalDecisions.Windows.Forms.CrystalReportViewer
+    Friend WithEvents cbVendedor As System.Windows.Forms.ComboBox
+    Friend WithEvents Label10 As System.Windows.Forms.Label
+    Friend WithEvents Label11 As System.Windows.Forms.Label
+    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents Label13 As System.Windows.Forms.Label
+    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
 End Class

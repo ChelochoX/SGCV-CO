@@ -106,4 +106,3 @@ C:\Chelo\Proyectos Personales\SGCV-CO\SGCV_CO V1.0\obj\x86\Release\SGCV_CO V1.0.
 C:\Chelo\Proyectos Personales\SGCV-CO\SGCV_CO V1.0\obj\x86\Release\SGCV_CO V1.0.exe
 C:\Chelo\Proyectos Personales\SGCV-CO\SGCV_CO V1.0\obj\x86\Release\SGCV_CO V1.0.xml
 C:\Chelo\Proyectos Personales\SGCV-CO\SGCV_CO V1.0\obj\x86\Release\SGCV_CO V1.0.pdb
-C:\Chelo\Proyectos Personales\SGCV-CO\SGCV_CO V1.0\obj\x86\Release\SGCV_CO V1.0.vbprojResolveAssemblyReference.cache

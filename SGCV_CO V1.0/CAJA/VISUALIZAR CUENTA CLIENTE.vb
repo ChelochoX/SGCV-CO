@@ -8,15 +8,15 @@ Imports System.Diagnostics
 Public Class VISUALIZAR_CUENTA_CLIENTE
 
     Dim DaCliente As New SqlClient.SqlDataAdapter
-    Dim codigo_pimpre As Integer
+    Dim codigo_pimpre, codigo_vendedor As Integer
     Dim NUM_CUOTA, COD_CUENTA, MONTO As Integer
     Dim AUX_FECHAVENC As Date
     Dim CLIENTE_ As String
-    Dim codigo_cliente As Integer
-    Dim Num_CabeceraCuenta As String
+    Dim codigo_cliente, CodigoFactura As Integer
+    Dim Num_CabeceraCuenta, vendedor, vendedor_actual, nuevo_vendedor As String
 
-    Dim DaCuentasPagadas, DaDatosCabCuenta, DaDetCuenta_Cliente, DaSegCobranza, DaInteres, DaHistorial_PagoCC, DaCabCuenta_Cliente As New SqlClient.SqlDataAdapter
-    Dim DsCuentasPagadas, DsDatosCabCuenta, DsDetCuenta_Cliente, DsSegCobranza, DsInteres, DsHistorial_PagoCC, DsCabCuenta_Cliente As New Data.DataSet
+    Dim DaCuentasPagadas, DaDatosCabCuenta, DaDetCuenta_Cliente, DaSegCobranza, DaInteres, DaHistorial_PagoCC, DaCabCuenta_Cliente, DaVendedor As New SqlClient.SqlDataAdapter
+    Dim DsCuentasPagadas, DsDatosCabCuenta, DsDetCuenta_Cliente, DsSegCobranza, DsInteres, DsHistorial_PagoCC, DsCabCuenta_Cliente, DsVendedor As New Data.DataSet
 
     Function codigo_prod_(ByVal a As String) As String
         Try
@@ -556,6 +556,23 @@ Public Class VISUALIZAR_CUENTA_CLIENTE
             SQLconexion.Close()
         End Try
 
+        Try
+            conectar()
+            SQLconexion.Open()
+            Dim sel As String
+            sel = "SELECT * FROM CONFIG_USUARIO"
+            cmm = New SqlClient.SqlCommand(sel, SQLconexion)
+            'crear adapter
+            DaVendedor = New SqlClient.SqlDataAdapter(cmm)
+            'crear dataset
+            DaVendedor.Fill(Me.DsVendedor, "CONFIG_USUARIO")
+            SQLconexion.Close()
+
+        Catch ex As Exception
+            MsgBox(ex.Message())
+            SQLconexion.Close()
+        End Try
+
     End Sub
 
     Sub SetDBLogonForReport(ByVal myConnectionInfo As ConnectionInfo, ByVal myReportDocument As ReportDocument)
@@ -657,6 +674,15 @@ Public Class VISUALIZAR_CUENTA_CLIENTE
         Me.dgFacturasNo.Show()
         Me.dgFacturasPagadas.Hide()
         identificador_desdeCuentaCliente = 0
+
+        'Vendedor Actual
+        Me.TextBox1.Text = usuario_AUX
+
+        'Me.cbVendedor.DataSource = Me.DsVendedor.Tables("CONFIG_USUARIO")
+        'Me.cbVendedor.DisplayMember = "USUARIO"
+
+        Me.cbVendedor.DataSource = New List(Of String)()
+        nuevo_vendedor = ""
 
     End Sub
 
@@ -763,7 +789,6 @@ Public Class VISUALIZAR_CUENTA_CLIENTE
 
     Private Sub dgFacturasNo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles dgFacturasNo.Click
 
-        Dim Num_CabeceraCuenta As String
         Num_CabeceraCuenta = Trim(Me.dgFacturasNo.Item(Me.dgFacturasNo.CurrentRowIndex, 0).ToString)
         Num_CabeceraCuenta_ = Num_CabeceraCuenta
         Label3.Text = "Deuda Actual Factura N°  " & Num_CabeceraCuenta
@@ -966,5 +991,67 @@ Public Class VISUALIZAR_CUENTA_CLIENTE
         identificador_desdeCuentaCliente = 0
        
     End Sub
+   
+    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
 
+        vendedor_actual = TextBox1.Text.Trim()
+        nuevo_vendedor = vendedor
+
+        If vendedor = "" Then
+            MessageBox.Show("Debe Seleccionar al nuevo vendedor para realizar la modificacion", "SGCV_CO VERSION EXTENDIDA", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Me.TextBox1.Focus()
+        End If
+
+        If (vendedor_actual = nuevo_vendedor) Then
+            MessageBox.Show("Nuevo Vendedor no debe ser igual al Vendedor Actual", "SGCV_CO VERSION EXTENDIDA", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Me.TextBox1.Focus()
+        Else
+            'FACTURA DE COMPRA
+            Try
+                conectar()
+                Dim sel As String = "UPDATE VF_CABECERA_FACTURA SET OPERADOR = @NuevoVendedor WHERE NUMERO_FACTURA = @NumCabeceraCuenta"
+                cmm = New SqlClient.SqlCommand(sel, SQLconexion)
+                cmm.Parameters.AddWithValue("@NuevoVendedor", nuevo_vendedor)
+                cmm.Parameters.AddWithValue("@NumCabeceraCuenta", Num_CabeceraCuenta.Trim())
+
+                SQLconexion.Open()
+                Dim t As Integer = cmm.ExecuteNonQuery()
+                SQLconexion.Close()
+
+            Catch ex As Exception
+                MsgBox(ex.Message())
+                SQLconexion.Close()
+            End Try
+
+            'TABLA DE ESTADISTICAS
+            Try
+                conectar()
+                Dim sel As String = "UPDATE INF_VENTA_POR_VENDEDOR SET COD_VENDEDOR = @codigo_vendedor, VENDEDOR = @NuevoVendedor WHERE DOCUMENTO = @NumCabeceraCuenta"
+                cmm = New SqlClient.SqlCommand(sel, SQLconexion)
+                cmm.Parameters.AddWithValue("@codigo_vendedor", codigo_vendedor)
+                cmm.Parameters.AddWithValue("@NuevoVendedor", nuevo_vendedor)
+                cmm.Parameters.AddWithValue("@NumCabeceraCuenta", Num_CabeceraCuenta.Trim())
+
+                SQLconexion.Open()
+                Dim t As Integer = cmm.ExecuteNonQuery()
+                SQLconexion.Close()
+
+            Catch ex As Exception
+                MsgBox(ex.Message())
+                SQLconexion.Close()
+            End Try
+
+        End If
+       
+    End Sub
+
+    Private Sub cbVendedor_DropDown(ByVal sender As Object, ByVal e As System.EventArgs) Handles cbVendedor.DropDown
+        Me.cbVendedor.DataSource = Me.DsVendedor.Tables("CONFIG_USUARIO")
+        Me.cbVendedor.DisplayMember = "USUARIO"
+    End Sub
+
+    Private Sub cbVendedor_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cbVendedor.SelectedIndexChanged
+        vendedor = Trim(Me.DsVendedor.Tables("CONFIG_USUARIO").Rows(Me.cbVendedor.SelectedIndex).Item(6).ToString)
+        codigo_vendedor = CInt(Me.DsVendedor.Tables("CONFIG_USUARIO").Rows(Me.cbVendedor.SelectedIndex).Item(0).ToString)
+    End Sub
 End Class
