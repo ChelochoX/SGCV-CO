@@ -53,6 +53,17 @@ Namespace My
                 Return defaultInstance
             End Get
         End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=CESAREXCELSIS\SQLEXP2008R2;Initial Catalog=ljcomercial;User ID=clezca"& _ 
+            "no")>  _
+        Public ReadOnly Property ljcomercialConnectionString() As String
+            Get
+                Return CType(Me("ljcomercialConnectionString"),String)
+            End Get
+        End Property
     End Class
 End Namespace
 
