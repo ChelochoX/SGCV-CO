@@ -70,15 +70,6 @@ Public Class Reporte_Atrasos_Cobranzas
         End Try
     End Function
 
-    Sub SetDBLogonForReport(ByVal myConnectionInfo As ConnectionInfo, ByVal myReportDocument As ReportDocument)
-        Dim myTables As Tables = myReportDocument.Database.Tables
-        For Each myTable As CrystalDecisions.CrystalReports.Engine.Table In myTables
-            Dim myTableLogonInfo As TableLogOnInfo = myTable.LogOnInfo
-            myTableLogonInfo.ConnectionInfo = myConnectionInfo
-            myTable.ApplyLogOnInfo(myTableLogonInfo)
-        Next
-    End Sub
-
     Private Sub btnGenerarDash_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnGenerarDash.Click
 
         ' ''INICIALIZAMOS LOS VALORES
@@ -405,6 +396,7 @@ Public Class Reporte_Atrasos_Cobranzas
 
                 Dim info As New DSH_LISTADO_ATRASOS_HASTA_30
                 info.SetDataSource(ds)
+                info.SetDatabaseLogon(iconexion.UserID, iconexion.Password, iconexion.ServerName, iconexion.DatabaseName)
                 If Not DesignMode Then
                     info.SetParameterValue("@VENDEDOR", vendedor)
                 End If
@@ -438,6 +430,7 @@ Public Class Reporte_Atrasos_Cobranzas
 
                 Dim info As New DSH_LISTADO_ATRASOS_HASTA_60
                 info.SetDataSource(ds)
+                info.SetDatabaseLogon(iconexion.UserID, iconexion.Password, iconexion.ServerName, iconexion.DatabaseName)
                 If Not DesignMode Then
                     info.SetParameterValue("@VENDEDOR", vendedor)
                 End If
@@ -470,6 +463,7 @@ Public Class Reporte_Atrasos_Cobranzas
 
                 Dim info As New DSH_LISTADO_ATRASOS_HASTA_90
                 info.SetDataSource(ds)
+                info.SetDatabaseLogon(iconexion.UserID, iconexion.Password, iconexion.ServerName, iconexion.DatabaseName)
                 If Not DesignMode Then
                     info.SetParameterValue("@VENDEDOR", vendedor)
                 End If
@@ -503,6 +497,7 @@ Public Class Reporte_Atrasos_Cobranzas
 
                 Dim info As New DSH_LISTADOSATRASOS_MAYOR_A_90
                 info.SetDataSource(ds)
+                info.SetDatabaseLogon(iconexion.UserID, iconexion.Password, iconexion.ServerName, iconexion.DatabaseName)
                 If Not DesignMode Then
                     info.SetParameterValue("@VENDEDOR", vendedor)
                 End If
@@ -532,8 +527,8 @@ Public Class Reporte_Atrasos_Cobranzas
             Dim info As New DSH_LISTADO_MONTO_PARA_COBRAR_HOY
             info.SetDataSource(ds)
             SetDBLogonForReport(iconexion, info)
-            'Me.CrystalReportViewer1.ReportSource = info
-            'Me.CrystalReportViewer1.Zoom(65)
+            Me.CrystalReportViewer1.ReportSource = info
+            Me.CrystalReportViewer1.Zoom(65)
 
         Catch ex As Exception
             MessageBox.Show(ex.ToString)
@@ -556,8 +551,8 @@ Public Class Reporte_Atrasos_Cobranzas
             Dim info As New DSH_LISTADO_MONTO_PARA_COBRAR_ESTA_SEMANA
             info.SetDataSource(ds)
             SetDBLogonForReport(iconexion, info)
-            'Me.CrystalReportViewer1.ReportSource = info
-            'Me.CrystalReportViewer1.Zoom(65)
+            Me.CrystalReportViewer1.ReportSource = info
+            Me.CrystalReportViewer1.Zoom(65)
 
         Catch ex As Exception
             MessageBox.Show(ex.ToString)
@@ -579,8 +574,8 @@ Public Class Reporte_Atrasos_Cobranzas
             Dim info As New DSH_LISTADO_MONTO_PARA_COBRAR_EN_EL_MES
             info.SetDataSource(ds)
             SetDBLogonForReport(iconexion, info)
-            'Me.CrystalReportViewer1.ReportSource = info
-            'Me.CrystalReportViewer1.Zoom(65)
+            Me.CrystalReportViewer1.ReportSource = info
+            Me.CrystalReportViewer1.Zoom(65)
 
         Catch ex As Exception
             MessageBox.Show(ex.ToString)
@@ -607,8 +602,8 @@ Public Class Reporte_Atrasos_Cobranzas
             info.SetParameterValue("@fechaprimero", fechaprimero)
             info.SetParameterValue("@fechaultimo", fechaultimo)
             SetDBLogonForReport(iconexion, info)
-            'Me.CrystalReportViewer1.ReportSource = info
-            'Me.CrystalReportViewer1.Zoom(65)
+            Me.CrystalReportViewer1.ReportSource = info
+            Me.CrystalReportViewer1.Zoom(65)
 
         Catch ex As Exception
             MessageBox.Show(ex.ToString)
@@ -725,10 +720,19 @@ Public Class Reporte_Atrasos_Cobranzas
 
     End Function
 
+    Sub SetDBLogonForReport(ByVal myConnectionInfo As ConnectionInfo, ByVal myReportDocument As ReportDocument)
+        Dim myTables As Tables = myReportDocument.Database.Tables
+        For Each myTable As CrystalDecisions.CrystalReports.Engine.Table In myTables
+            Dim myTableLogonInfo As TableLogOnInfo = myTable.LogOnInfo
+            myTableLogonInfo.ConnectionInfo = myConnectionInfo
+            myTable.ApplyLogOnInfo(myTableLogonInfo)
+        Next
+    End Sub
+
     Private Sub Reporte_Atrasos_Cobranzas_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
+
         Cargar_Datos()
 
-        ''inicializaciones a la impresion
         iconexion.DatabaseName = bbdd
         iconexion.UserID = usuario_
         iconexion.Password = contrasena_

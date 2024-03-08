@@ -218,13 +218,9 @@ C:\Chelo\Proyectos Personales\SGCV-CO\SGCV_CO V1.0\obj\x86\Debug\SGCV_CO_V1._0.V
 C:\Chelo\Proyectos Personales\SGCV-CO\SGCV_CO V1.0\obj\x86\Debug\SGCV_CO_V1._0.VISUALIZAR_FACTURACIONES.resources
 C:\Chelo\Proyectos Personales\SGCV-CO\SGCV_CO V1.0\obj\x86\Debug\SGCV_CO V1.0.vbproj.GenerateResource.Cache
 C:\Chelo\SGCV-CO\SGCV_CO V1.0\bin\Debug\SGCV_CO V1.0.exe.config
-C:\Chelo\SGCV-CO\SGCV_CO V1.0\obj\x86\Debug\SGCV_CO V1.0.exe
-C:\Chelo\SGCV-CO\SGCV_CO V1.0\obj\x86\Debug\SGCV_CO V1.0.xml
-C:\Chelo\SGCV-CO\SGCV_CO V1.0\obj\x86\Debug\SGCV_CO V1.0.pdb
 C:\Chelo\SGCV-CO\SGCV_CO V1.0\bin\Debug\SGCV_CO V1.0.exe
 C:\Chelo\SGCV-CO\SGCV_CO V1.0\bin\Debug\SGCV_CO V1.0.pdb
 C:\Chelo\SGCV-CO\SGCV_CO V1.0\bin\Debug\SGCV_CO V1.0.xml
-C:\Chelo\SGCV-CO\SGCV_CO V1.0\obj\x86\Debug\SGCV_CO V1.0.vbprojResolveAssemblyReference.cache
 C:\Chelo\SGCV-CO\SGCV_CO V1.0\obj\x86\Debug\SGCV_CO_V1._0.ANULAR_RECIBOS.resources
 C:\Chelo\SGCV-CO\SGCV_CO V1.0\obj\x86\Debug\SGCV_CO_V1._0.APERTURA_CIERRE_DE_CAJA.resources
 C:\Chelo\SGCV-CO\SGCV_CO V1.0\obj\x86\Debug\SGCV_CO_V1._0.DETALLES_DE_CAJA.resources
@@ -272,3 +268,7 @@ C:\Chelo\SGCV-CO\SGCV_CO V1.0\obj\x86\Debug\SGCV_CO_V1._0.RE_IMPRESION_DE_FACTUR
 C:\Chelo\SGCV-CO\SGCV_CO V1.0\obj\x86\Debug\SGCV_CO_V1._0.VER_DOCUMENTOS_ANULADOS.resources
 C:\Chelo\SGCV-CO\SGCV_CO V1.0\obj\x86\Debug\SGCV_CO_V1._0.VISUALIZAR_FACTURACIONES.resources
 C:\Chelo\SGCV-CO\SGCV_CO V1.0\obj\x86\Debug\SGCV_CO V1.0.vbproj.GenerateResource.Cache
+C:\Chelo\SGCV-CO\SGCV_CO V1.0\obj\x86\Debug\SGCV_CO V1.0.exe
+C:\Chelo\SGCV-CO\SGCV_CO V1.0\obj\x86\Debug\SGCV_CO V1.0.xml
+C:\Chelo\SGCV-CO\SGCV_CO V1.0\obj\x86\Debug\SGCV_CO V1.0.pdb
+C:\Chelo\SGCV-CO\SGCV_CO V1.0\obj\x86\Debug\SGCV_CO V1.0.vbprojResolveAssemblyReference.cache
