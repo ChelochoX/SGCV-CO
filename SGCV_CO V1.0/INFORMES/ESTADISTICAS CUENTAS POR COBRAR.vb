@@ -359,7 +359,7 @@ Public Class ESTADISTICAS_CUENTAS_POR_COBRAR
     Private Sub btnGenerar_Calculo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnGenerar_Calculo.Click
 
         'PRIMERO HACE CALCULO GENRAL DE CUOTAS PAGADAS Y PENDIENTES *** 
-        Dim PAGADO, pendiente As String
+        Dim PAGADO, pendiente, nrofactura As String
         Dim dias_cuota, ContadorProgreso, comparador As Integer
         Dim paraRedondeo, redondeo, aux1, aux2 As Integer
         pendiente = "PENDIENTE"
@@ -388,6 +388,7 @@ Public Class ESTADISTICAS_CUENTAS_POR_COBRAR
             NUM_CUOTA = Me.DsDetCuenta_Cliente.Tables("VF_DETALLE_CUENTACLIENTE").Rows(Me.BindingContext(Me.DsDetCuenta_Cliente, "VF_DETALLE_CUENTACLIENTE").Position).Item("CUOTA")
             COD_CUENTA = Me.DsDetCuenta_Cliente.Tables("VF_DETALLE_CUENTACLIENTE").Rows(Me.BindingContext(Me.DsDetCuenta_Cliente, "VF_DETALLE_CUENTACLIENTE").Position).Item("COD_CABECERA_CUENTACLI")
             MONTO = Me.DsDetCuenta_Cliente.Tables("VF_DETALLE_CUENTACLIENTE").Rows(Me.BindingContext(Me.DsDetCuenta_Cliente, "VF_DETALLE_CUENTACLIENTE").Position).Item("MONTO_CUOTA")
+            nrofactura = Me.DsDetCuenta_Cliente.Tables("VF_DETALLE_CUENTACLIENTE").Rows(Me.BindingContext(Me.DsDetCuenta_Cliente, "VF_DETALLE_CUENTACLIENTE").Position).Item("DOCUMENTO_FACTURACION")
             dias_cuota = DateDiff(DateInterval.Day, Today, AUX_FECHAVENC)
 
             'SI LA CUOTA NO FUE ABONADA SE MODIFICA LOS DIAS DE VENCIMIENTO***
@@ -444,10 +445,12 @@ Public Class ESTADISTICAS_CUENTAS_POR_COBRAR
         Dim cod_cliente, suma_acobrar, rec_cliente, importe_recibo, suma_cobrado, total_acobrar As Integer
         Dim fecha_Vencimiento, fecha_pago, fecha_deCobro, fecha_dePago As Date
         Dim l, cliente, cuota_numero, bandera_deCobro, bandera_cobrado As Integer
-        Dim datos_personales, numero_recibo, estado_cuota, cedula, telefono, cuota, cuota_deCobro As String
+        Dim datos_personales, numero_recibo, estado_cuota, cedula, telefono, cuota, cuota_deCobro, vendedor As String
 
         bandera_deCobro = 0
         bandera_cobrado = 0
+
+        vendedor = "Dato"
 
         ContadorProgreso = Me.BindingContext(Me.DsCliente, "TP_CLIENTE").Count - 1
         comparador = 1
@@ -533,7 +536,9 @@ Public Class ESTADISTICAS_CUENTAS_POR_COBRAR
                         .Append(telefono & "','")
                         .Append(cuota_deCobro & "','")
                         .Append(fecha_deCobro & "','")
-                        .Append(fecha_dePago & "')")
+                        .Append(fecha_dePago & "','")
+                        .Append(vendedor & "','")
+                        .Append(nrofactura & "')")
 
                     End With
                     cmm = New SqlClient.SqlCommand(sqlbuilder.ToString, SQLconexion)
