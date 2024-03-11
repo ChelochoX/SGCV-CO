@@ -251,6 +251,9 @@ Public Class ESTADISTICAS_CUENTAS_POR_COBRAR
         Me.cbVendedor.DataSource = New List(Of String)()
         vendedor = ""
 
+        Me.cbVendedor.Enabled = False
+        Me.btnReporte.Enabled = False
+
     End Sub
 
     Private Sub DateTimePicker1_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles DateTimePicker1.Leave
@@ -591,6 +594,25 @@ Public Class ESTADISTICAS_CUENTAS_POR_COBRAR
         Me.DateTimePicker2.Enabled = True
         Me.btnGenerar_Calculo.Enabled = True
 
+        Me.cbVendedor.Enabled = True
+        Me.btnReporte.Enabled = True
+
+    End Sub
+
+    Private Sub btnSalir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSalir.Click
+        Me.Close()
+    End Sub
+
+    Private Sub cbVendedor_DropDown(sender As Object, e As System.EventArgs) Handles cbVendedor.DropDown
+        Me.cbVendedor.DataSource = Me.DsVendedor.Tables("CONFIG_USUARIO")
+        Me.cbVendedor.DisplayMember = "USUARIO"
+    End Sub
+
+    Private Sub cbVendedor_SelectedIndexChanged(sender As System.Object, e As System.EventArgs) Handles cbVendedor.SelectedIndexChanged
+        vendedor = Trim(Me.DsVendedor.Tables("CONFIG_USUARIO").Rows(Me.cbVendedor.SelectedIndex).Item(6).ToString)
+    End Sub
+
+    Private Sub btnReporte_Click(sender As System.Object, e As System.EventArgs) Handles btnReporte.Click
         Try
             conectar()
             Dim dt As New DataTable
@@ -617,19 +639,5 @@ Public Class ESTADISTICAS_CUENTAS_POR_COBRAR
             MessageBox.Show(ex.ToString)
             SQLconexion.Close()
         End Try
-
-    End Sub
-
-    Private Sub btnSalir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSalir.Click
-        Me.Close()
-    End Sub
-
-    Private Sub cbVendedor_DropDown(sender As Object, e As System.EventArgs) Handles cbVendedor.DropDown
-        Me.cbVendedor.DataSource = Me.DsVendedor.Tables("CONFIG_USUARIO")
-        Me.cbVendedor.DisplayMember = "USUARIO"
-    End Sub
-
-    Private Sub cbVendedor_SelectedIndexChanged(sender As System.Object, e As System.EventArgs) Handles cbVendedor.SelectedIndexChanged
-        vendedor = Trim(Me.DsVendedor.Tables("CONFIG_USUARIO").Rows(Me.cbVendedor.SelectedIndex).Item(6).ToString)
     End Sub
 End Class

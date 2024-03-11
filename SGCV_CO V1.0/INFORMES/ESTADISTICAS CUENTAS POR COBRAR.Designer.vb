@@ -37,6 +37,7 @@ Partial Class ESTADISTICAS_CUENTAS_POR_COBRAR
         Me.lbporcentaje = New System.Windows.Forms.Label()
         Me.cbVendedor = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.btnReporte = New System.Windows.Forms.Button()
         Me.GroupBox4.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
@@ -90,7 +91,7 @@ Partial Class ESTADISTICAS_CUENTAS_POR_COBRAR
         Me.GroupBox4.Controls.Add(Me.btnGenerar_Calculo)
         Me.GroupBox4.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.GroupBox4.Location = New System.Drawing.Point(16, 300)
+        Me.GroupBox4.Location = New System.Drawing.Point(16, 218)
         Me.GroupBox4.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox4.Name = "GroupBox4"
         Me.GroupBox4.Padding = New System.Windows.Forms.Padding(4)
@@ -185,10 +186,10 @@ Partial Class ESTADISTICAS_CUENTAS_POR_COBRAR
         Me.lbprogreso.BackColor = System.Drawing.Color.White
         Me.lbprogreso.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbprogreso.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.lbprogreso.Location = New System.Drawing.Point(16, 494)
+        Me.lbprogreso.Location = New System.Drawing.Point(16, 531)
         Me.lbprogreso.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbprogreso.Name = "lbprogreso"
-        Me.lbprogreso.Size = New System.Drawing.Size(284, 170)
+        Me.lbprogreso.Size = New System.Drawing.Size(284, 133)
         Me.lbprogreso.TabIndex = 1249
         Me.lbprogreso.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
@@ -196,7 +197,7 @@ Partial Class ESTADISTICAS_CUENTAS_POR_COBRAR
         '
         Me.ProgressBar1.BackColor = System.Drawing.Color.White
         Me.ProgressBar1.ForeColor = System.Drawing.Color.Blue
-        Me.ProgressBar1.Location = New System.Drawing.Point(16, 415)
+        Me.ProgressBar1.Location = New System.Drawing.Point(16, 462)
         Me.ProgressBar1.Margin = New System.Windows.Forms.Padding(4)
         Me.ProgressBar1.Name = "ProgressBar1"
         Me.ProgressBar1.Size = New System.Drawing.Size(284, 28)
@@ -207,7 +208,7 @@ Partial Class ESTADISTICAS_CUENTAS_POR_COBRAR
         Me.lbporcentaje.BackColor = System.Drawing.Color.White
         Me.lbporcentaje.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbporcentaje.ForeColor = System.Drawing.Color.Blue
-        Me.lbporcentaje.Location = New System.Drawing.Point(16, 452)
+        Me.lbporcentaje.Location = New System.Drawing.Point(16, 497)
         Me.lbporcentaje.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbporcentaje.Name = "lbporcentaje"
         Me.lbporcentaje.Size = New System.Drawing.Size(284, 22)
@@ -219,7 +220,7 @@ Partial Class ESTADISTICAS_CUENTAS_POR_COBRAR
         Me.cbVendedor.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbVendedor.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.cbVendedor.FormattingEnabled = True
-        Me.cbVendedor.Location = New System.Drawing.Point(20, 253)
+        Me.cbVendedor.Location = New System.Drawing.Point(20, 367)
         Me.cbVendedor.Margin = New System.Windows.Forms.Padding(4)
         Me.cbVendedor.Name = "cbVendedor"
         Me.cbVendedor.Size = New System.Drawing.Size(280, 29)
@@ -230,12 +231,28 @@ Partial Class ESTADISTICAS_CUENTAS_POR_COBRAR
         Me.Label2.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.Label2.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.Label2.Location = New System.Drawing.Point(16, 226)
+        Me.Label2.Location = New System.Drawing.Point(16, 340)
         Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(184, 23)
         Me.Label2.TabIndex = 50015
         Me.Label2.Text = "Seleccionar Vendedor"
+        '
+        'btnReporte
+        '
+        Me.btnReporte.BackColor = System.Drawing.Color.LimeGreen
+        Me.btnReporte.FlatAppearance.BorderSize = 0
+        Me.btnReporte.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lime
+        Me.btnReporte.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.btnReporte.Font = New System.Drawing.Font("Calibri", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnReporte.ForeColor = System.Drawing.Color.Navy
+        Me.btnReporte.Location = New System.Drawing.Point(53, 404)
+        Me.btnReporte.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnReporte.Name = "btnReporte"
+        Me.btnReporte.Size = New System.Drawing.Size(185, 45)
+        Me.btnReporte.TabIndex = 12
+        Me.btnReporte.Text = "GENERAR REPORTE"
+        Me.btnReporte.UseVisualStyleBackColor = False
         '
         'ESTADISTICAS_CUENTAS_POR_COBRAR
         '
@@ -245,6 +262,7 @@ Partial Class ESTADISTICAS_CUENTAS_POR_COBRAR
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1468, 756)
         Me.ControlBox = False
+        Me.Controls.Add(Me.btnReporte)
         Me.Controls.Add(Me.cbVendedor)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.lbporcentaje)
@@ -281,4 +299,5 @@ Partial Class ESTADISTICAS_CUENTAS_POR_COBRAR
     Friend WithEvents lbporcentaje As System.Windows.Forms.Label
     Friend WithEvents cbVendedor As System.Windows.Forms.ComboBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents btnReporte As System.Windows.Forms.Button
 End Class
