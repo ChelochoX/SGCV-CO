@@ -11,10 +11,10 @@ Public Class ESTADISTICAS_CUENTAS_POR_COBRAR
     Dim FECHA_INICIAL, FECHA_FINAL, FECHA_FINAL_ As Date
     Dim DaCliente, DaDetCC, DaCabRecibo As New SqlClient.SqlDataAdapter
     Dim DsCliente, DsDetCC, DsCabRecibo As New Data.DataSet
-    Dim sucursal As String
+    Dim sucursal, vendedor As String
     Dim B As Integer
-    Dim DaDetCuenta_Cliente, DaSegCobranza, DaInteres As New SqlClient.SqlDataAdapter
-    Dim DsDetCuenta_Cliente, DsSegCobranza, DsInteres As New Data.DataSet
+    Dim DaDetCuenta_Cliente, DaSegCobranza, DaInteres, DaVendedor As New SqlClient.SqlDataAdapter
+    Dim DsDetCuenta_Cliente, DsSegCobranza, DsInteres, DsVendedor As New Data.DataSet
     'Dim DaCliente As New SqlClient.SqlDataAdapter
     Dim codigo_pimpre As Integer
     Dim NUM_CUOTA, COD_CUENTA, MONTO As Integer
@@ -73,6 +73,24 @@ Public Class ESTADISTICAS_CUENTAS_POR_COBRAR
             MsgBox(ex.Message())
             SQLconexion.Close()
         End Try
+
+        Try
+            conectar()
+            SQLconexion.Open()
+            Dim sel As String
+            sel = "SELECT * FROM CONFIG_USUARIO"
+            cmm = New SqlClient.SqlCommand(sel, SQLconexion)
+            'crear adapter
+            DaVendedor = New SqlClient.SqlDataAdapter(cmm)
+            'crear dataset
+            DaVendedor.Fill(Me.DsVendedor, "CONFIG_USUARIO")
+            SQLconexion.Close()
+
+        Catch ex As Exception
+            MsgBox(ex.Message())
+            SQLconexion.Close()
+        End Try
+
     End Sub
 
     Function EstadoCaja(ByVal a As String, ByVal b As Date) As String
@@ -216,7 +234,9 @@ Public Class ESTADISTICAS_CUENTAS_POR_COBRAR
     Private Sub ESTADISTICAS_CUENTAS_POR_COBRAR_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
         Cargar_Dataset()
+
         Cargar_Datos()
+
         Dim Estado_Caja As Integer
         Estado_Caja = EstadoCaja("HABILITADO", Today)
         Contador_MovCaja_Apertura = Estado_Caja
@@ -227,6 +247,10 @@ Public Class ESTADISTICAS_CUENTAS_POR_COBRAR
         iconexion.Password = contrasena_
         iconexion.ServerName = servidor
         iconexion.Type = ConnectionInfoType.SQL
+
+        Me.cbVendedor.DataSource = New List(Of String)()
+        vendedor = ""
+
     End Sub
 
     Private Sub DateTimePicker1_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles DateTimePicker1.Leave
@@ -445,12 +469,10 @@ Public Class ESTADISTICAS_CUENTAS_POR_COBRAR
         Dim cod_cliente, suma_acobrar, rec_cliente, importe_recibo, suma_cobrado, total_acobrar As Integer
         Dim fecha_Vencimiento, fecha_pago, fecha_deCobro, fecha_dePago As Date
         Dim l, cliente, cuota_numero, bandera_deCobro, bandera_cobrado As Integer
-        Dim datos_personales, numero_recibo, estado_cuota, cedula, telefono, cuota, cuota_deCobro, vendedor As String
+        Dim datos_personales, numero_recibo, estado_cuota, cedula, telefono, cuota, cuota_deCobro As String
 
         bandera_deCobro = 0
         bandera_cobrado = 0
-
-        vendedor = "Dato"
 
         ContadorProgreso = Me.BindingContext(Me.DsCliente, "TP_CLIENTE").Count - 1
         comparador = 1
@@ -509,10 +531,10 @@ Public Class ESTADISTICAS_CUENTAS_POR_COBRAR
             Totales_interes = TotalesInteres(cliente)
             total_acobrar = Totales_cuota + Totales_interes
             If suma_acobrar = 0 Then
-                fecha_deCobro = Today
+                fecha_deCobro = Today.ToString("dd/MM/yyyy")
             End If
             If suma_cobrado = 0 Then
-                fecha_dePago = Today
+                fecha_dePago = Today.ToString("dd/MM/yyyy")
             End If
 
             If (bandera_deCobro = 1) Or (bandera_cobrado = 1) Then
@@ -526,8 +548,8 @@ Public Class ESTADISTICAS_CUENTAS_POR_COBRAR
                         .Append(" VALUES ('")
                         .Append(contador & "','")
                         .Append(sucursal & "','")
-                        .Append(FECHA_INICIAL & "','")
-                        .Append(FECHA_FINAL_ & "','")
+                        .Append(FECHA_INICIAL.ToString("yyyy/MM/dd") & "','")
+                        .Append(FECHA_FINAL_.ToString("yyyy/MM/dd") & "','")
                         .Append(datos_personales & "','")
                         .Append(suma_acobrar & "','")
                         .Append(suma_cobrado & "','")
@@ -535,10 +557,10 @@ Public Class ESTADISTICAS_CUENTAS_POR_COBRAR
                         .Append(cedula & "','")
                         .Append(telefono & "','")
                         .Append(cuota_deCobro & "','")
-                        .Append(fecha_deCobro & "','")
-                        .Append(fecha_dePago & "','")
-                        .Append(vendedor & "','")
-                        .Append(nrofactura & "')")
+                        .Append(fecha_deCobro.ToString("yyyy/MM/dd") & "','")
+                        .Append(fecha_dePago.ToString("yyyy/MM/dd") & "','")
+                        .Append("" & "','")
+                        .Append("" & "')")
 
                     End With
                     cmm = New SqlClient.SqlCommand(sqlbuilder.ToString, SQLconexion)
@@ -548,7 +570,7 @@ Public Class ESTADISTICAS_CUENTAS_POR_COBRAR
                     SQLconexion.Dispose()
 
                 Catch ex As Exception
-                    MsgBox(ex.Message() & datos_personales)
+                    MsgBox(ex.Message())
                     SQLconexion.Close()
                 End Try
             End If
@@ -574,8 +596,7 @@ Public Class ESTADISTICAS_CUENTAS_POR_COBRAR
             Dim dt As New DataTable
             Dim da As New SqlDataAdapter("ESTADISTICA_DEUDA_PAGO", SQLconexion)
             da.SelectCommand.CommandType = CommandType.StoredProcedure
-            da.SelectCommand.Parameters.AddWithValue("@FECHA_INI", FECHA_INICIAL)
-            da.SelectCommand.Parameters.AddWithValue("@FECHA_FIN", FECHA_FINAL)
+            da.SelectCommand.Parameters.AddWithValue("@vendedor", vendedor)
 
             da.Fill(dt)
 
@@ -583,10 +604,12 @@ Public Class ESTADISTICAS_CUENTAS_POR_COBRAR
             ds.Tables.Add(dt)
 
             Dim info As New ESTADISTICA_DEUDA_PAGO
-
             info.SetDataSource(ds)
-            info.SetParameterValue("@FECHA_INI", FECHA_INICIAL)
-            info.SetParameterValue("@FECHA_FIN", FECHA_FINAL)
+
+            info.SetDatabaseLogon(iconexion.UserID, iconexion.Password, iconexion.ServerName, iconexion.DatabaseName)
+            If Not DesignMode Then
+                info.SetParameterValue("@vendedor", vendedor)
+            End If
             SetDBLogonForReport(iconexion, info)
             Me.CrystalReportViewer1.ReportSource = info
 
@@ -599,5 +622,14 @@ Public Class ESTADISTICAS_CUENTAS_POR_COBRAR
 
     Private Sub btnSalir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSalir.Click
         Me.Close()
+    End Sub
+
+    Private Sub cbVendedor_DropDown(sender As Object, e As System.EventArgs) Handles cbVendedor.DropDown
+        Me.cbVendedor.DataSource = Me.DsVendedor.Tables("CONFIG_USUARIO")
+        Me.cbVendedor.DisplayMember = "USUARIO"
+    End Sub
+
+    Private Sub cbVendedor_SelectedIndexChanged(sender As System.Object, e As System.EventArgs) Handles cbVendedor.SelectedIndexChanged
+        vendedor = Trim(Me.DsVendedor.Tables("CONFIG_USUARIO").Rows(Me.cbVendedor.SelectedIndex).Item(6).ToString)
     End Sub
 End Class
