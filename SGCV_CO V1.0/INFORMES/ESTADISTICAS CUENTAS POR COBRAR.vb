@@ -250,9 +250,8 @@ Public Class ESTADISTICAS_CUENTAS_POR_COBRAR
 
         Me.cbVendedor.DataSource = New List(Of String)()
         vendedor = ""
-
-        Me.cbVendedor.Enabled = False
-        Me.btnReporte.Enabled = False
+        Me.DateTimePicker1.Enabled = False
+        Me.DateTimePicker2.Enabled = False
 
     End Sub
 
@@ -385,217 +384,65 @@ Public Class ESTADISTICAS_CUENTAS_POR_COBRAR
 
     Private Sub btnGenerar_Calculo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnGenerar_Calculo.Click
 
-        'PRIMERO HACE CALCULO GENRAL DE CUOTAS PAGADAS Y PENDIENTES *** 
-        Dim PAGADO, pendiente, nrofactura As String
-        Dim dias_cuota, ContadorProgreso, comparador As Integer
-        Dim paraRedondeo, redondeo, aux1, aux2 As Integer
-        pendiente = "PENDIENTE"
-        comparador = 1
-        Me.DateTimePicker1.Enabled = False
-        Me.DateTimePicker2.Enabled = False
-        Me.btnGenerar_Calculo.Enabled = False
-        '************************************
-        'VERIFICA VALORES PARA INTERES MORATORIO
-        Dim MONTO_INTERES, DIAS_DE_GRACIA As Integer
-        Dim i, j As Integer
-        For j = 0 To Me.BindingContext(Me.DsInteres, "TP_INTERES").Count - 1
-            Me.BindingContext(Me.DsInteres, "TP_INTERES").Position = j
-            If "INTERES MORATORIO" = Me.DsInteres.Tables("TP_INTERES").Rows(Me.BindingContext(Me.DsInteres, "TP_INTERES").Position).Item("CONCEPTO") Then
-                MONTO_INTERES = Me.DsInteres.Tables("TP_INTERES").Rows(Me.BindingContext(Me.DsInteres, "TP_INTERES").Position).Item("MONTO_INTERES")
-                DIAS_DE_GRACIA = Me.DsInteres.Tables("TP_INTERES").Rows(Me.BindingContext(Me.DsInteres, "TP_INTERES").Position).Item("DIAS_DE_GRACIA")
-            End If
-        Next
-        'ACTUALIZA LAS FECHAS DE VENCIMIENTO DE LAS CUOTAS********************************
-        ContadorProgreso = CantidadRegistros()
-        For i = 0 To Me.BindingContext(Me.DsDetCuenta_Cliente, "VF_DETALLE_CUENTACLIENTE").Count - 1
-            Me.BindingContext(Me.DsDetCuenta_Cliente, "VF_DETALLE_CUENTACLIENTE").Position = i
+        If vendedor.ToString.Length = 0 Then
+            MessageBox.Show("Debe seleccionar un vendedor para generar el informe", "SGCV_CO VERSION EXTENDIDA", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Me.cbVendedor.Focus()
+        Else
+            Try
+                conectar()
+                Dim dt As New DataTable
+                Dim da As New SqlDataAdapter("ESTADISTICA_DEUDA_PAGO", SQLconexion)
+                da.SelectCommand.CommandType = CommandType.StoredProcedure
+                da.SelectCommand.Parameters.AddWithValue("@vendedor", vendedor)
+                da.Fill(dt)
 
-            AUX_FECHAVENC = Me.DsDetCuenta_Cliente.Tables("VF_DETALLE_CUENTACLIENTE").Rows(Me.BindingContext(Me.DsDetCuenta_Cliente, "VF_DETALLE_CUENTACLIENTE").Position).Item("FECHA_VENCIMIENTO")
-            PAGADO = Trim(Me.DsDetCuenta_Cliente.Tables("VF_DETALLE_CUENTACLIENTE").Rows(Me.BindingContext(Me.DsDetCuenta_Cliente, "VF_DETALLE_CUENTACLIENTE").Position).Item("ESTADO_CUOTA"))
-            NUM_CUOTA = Me.DsDetCuenta_Cliente.Tables("VF_DETALLE_CUENTACLIENTE").Rows(Me.BindingContext(Me.DsDetCuenta_Cliente, "VF_DETALLE_CUENTACLIENTE").Position).Item("CUOTA")
-            COD_CUENTA = Me.DsDetCuenta_Cliente.Tables("VF_DETALLE_CUENTACLIENTE").Rows(Me.BindingContext(Me.DsDetCuenta_Cliente, "VF_DETALLE_CUENTACLIENTE").Position).Item("COD_CABECERA_CUENTACLI")
-            MONTO = Me.DsDetCuenta_Cliente.Tables("VF_DETALLE_CUENTACLIENTE").Rows(Me.BindingContext(Me.DsDetCuenta_Cliente, "VF_DETALLE_CUENTACLIENTE").Position).Item("MONTO_CUOTA")
-            nrofactura = Me.DsDetCuenta_Cliente.Tables("VF_DETALLE_CUENTACLIENTE").Rows(Me.BindingContext(Me.DsDetCuenta_Cliente, "VF_DETALLE_CUENTACLIENTE").Position).Item("DOCUMENTO_FACTURACION")
-            dias_cuota = DateDiff(DateInterval.Day, Today, AUX_FECHAVENC)
-
-            'SI LA CUOTA NO FUE ABONADA SE MODIFICA LOS DIAS DE VENCIMIENTO***
-            If PAGADO = pendiente Then
-                actualizar_diasVencimiento(dias_cuota, codigo_cliente, NUM_CUOTA, COD_CUENTA)
-
-                'CALCULAR INTERES MORATORIO EN CASO DE ATRASO
-                If dias_cuota < 0 Then
-                    Dim AUX_DIAS_CUOTA As Integer
-                    Dim CALCULO_AUXILIAR, CALCULO_AUXILIAR1 As Double
-                    Dim para_InteresMora As Integer
-
-                    AUX_DIAS_CUOTA = dias_cuota * -1
-                    If AUX_DIAS_CUOTA > DIAS_DE_GRACIA Then
-                        CALCULO_AUXILIAR1 = MONTO_INTERES / 100
-                        CALCULO_AUXILIAR = (MONTO * CALCULO_AUXILIAR1) / 30
-                        para_InteresMora = CInt(CALCULO_AUXILIAR) * AUX_DIAS_CUOTA
-                        actualizar_diasMoraVencimiento(para_InteresMora, codigo_cliente, NUM_CUOTA, COD_CUENTA)
-                    Else
-                        If DIAS_DE_GRACIA <= 5 Then
-                            actualizar_diasMoraVencimiento(0, codigo_cliente, NUM_CUOTA, COD_CUENTA)
-                        End If
-                    End If
-                Else
-                    actualizar_diasMoraVencimiento(0, codigo_cliente, NUM_CUOTA, COD_CUENTA)
-                End If
-
-            End If
-
-            aux1 = i + 1
-            aux2 = aux1 * 100
-            paraRedondeo = aux2 / ContadorProgreso
-            redondeo = Math.Round(paraRedondeo)
-            If redondeo = comparador Then
-                comparador = comparador + 1
-                ProgressBar1.Value = redondeo
-                lbprogreso.Text = "SE ESTAN ACTUALIZANDO LOS MONTOS DE LAS CUENTAS!! AGUARDE UN MOMENTO..."
-                lbprogreso.Update()
-                lbporcentaje.Text = "CARGANDO " & redondeo & "%"
-                lbporcentaje.Update()
-                If redondeo = 100 Then
-                    ProgressBar1.Value = redondeo
-                    lbprogreso.Text = "ACTUALIZADO CORRECTAMENTE. AGUARDE UN MOMENTO..."
+                ' Verificar si se devolvieron filas
+                If dt.Rows.Count > 0 Then
+                    Dim totalFilas As Integer = 1000
+                    ProgressBar1.Maximum = totalFilas
+                    For i As Integer = 0 To totalFilas - 1
+                        Dim progresoActual As Integer = i + 1
+                        ProgressBar1.Value = progresoActual
+                        Dim porcentaje As Integer = CInt((progresoActual / totalFilas) * 100)
+                        lbporcentaje.Text = "CARGANDO " & porcentaje & "%"
+                        lbporcentaje.Update()
+                        lbprogreso.Text = "SE ESTA GENERANDO EL REPORTE DE COBROS Y PAGOS!! AGUARDE UN MOMENTO..."
+                        lbprogreso.Update()
+                        System.Threading.Thread.Sleep(5)
+                    Next
+                    ProgressBar1.Value = ProgressBar1.Maximum
+                    lbprogreso.Text = "GENERADO CORRECTAMENTE"
                     lbprogreso.Update()
-                    lbporcentaje.Text = redondeo & "%"
-                    lbporcentaje.Update()
-                End If
-            End If
-        Next
+                    Me.btnGenerar_Calculo.Enabled = True
+                    Me.cbVendedor.Enabled = True
 
-        'ELIMNAR ANTES DATOS DE TABLA INFORME****
-        ELIMAR_DATOS_INF()
+                    Dim ds As New Data.DataSet
+                    ds.Tables.Add(dt)
 
-        Dim cod_cliente, suma_acobrar, rec_cliente, importe_recibo, suma_cobrado, total_acobrar As Integer
-        Dim fecha_Vencimiento, fecha_pago, fecha_deCobro, fecha_dePago As Date
-        Dim l, cliente, cuota_numero, bandera_deCobro, bandera_cobrado As Integer
-        Dim datos_personales, numero_recibo, estado_cuota, cedula, telefono, cuota, cuota_deCobro As String
-
-        bandera_deCobro = 0
-        bandera_cobrado = 0
-
-        ContadorProgreso = Me.BindingContext(Me.DsCliente, "TP_CLIENTE").Count - 1
-        comparador = 1
-        For j = 0 To Me.BindingContext(Me.DsCliente, "TP_CLIENTE").Count - 1
-            Me.BindingContext(Me.DsCliente, "TP_CLIENTE").Position = j
-
-            cliente = CInt(Me.DsCliente.Tables("TP_CLIENTE").Rows(Me.BindingContext(Me.DsCliente, "TP_CLIENTE").Position).Item("COD_CLIENTE").ToString)
-            datos_personales = Trim(Me.DsCliente.Tables("TP_CLIENTE").Rows(Me.BindingContext(Me.DsCliente, "TP_CLIENTE").Position).Item("NOM_APE").ToString)
-            cedula = Trim(Me.DsCliente.Tables("TP_CLIENTE").Rows(Me.BindingContext(Me.DsCliente, "TP_CLIENTE").Position).Item("CI").ToString)
-            telefono = Trim(Me.DsCliente.Tables("TP_CLIENTE").Rows(Me.BindingContext(Me.DsCliente, "TP_CLIENTE").Position).Item("TELEFONO").ToString)
-
-            '**********************************************************************************************************************
-            For i = 0 To Me.BindingContext(Me.DsDetCC, "VF_DETALLE_CUENTACLIENTE").Count - 1
-                Me.BindingContext(Me.DsDetCC, "VF_DETALLE_CUENTACLIENTE").Position = i
-
-                cod_cliente = CInt(Me.DsDetCC.Tables("VF_DETALLE_CUENTACLIENTE").Rows(Me.BindingContext(Me.DsDetCC, "VF_DETALLE_CUENTACLIENTE").Position).Item("COD_CLIENTE").ToString)
-
-                If cliente = cod_cliente Then
-                    fecha_Vencimiento = Me.DsDetCC.Tables("VF_DETALLE_CUENTACLIENTE").Rows(Me.BindingContext(Me.DsDetCC, "VF_DETALLE_CUENTACLIENTE").Position).Item("FECHA_VENCIMIENTO")
-                    cuota = Trim(Me.DsDetCC.Tables("VF_DETALLE_CUENTACLIENTE").Rows(Me.BindingContext(Me.DsDetCC, "VF_DETALLE_CUENTACLIENTE").Position).Item("MONTO_CUOTA"))
-                    estado_cuota = Trim(Me.DsDetCC.Tables("VF_DETALLE_CUENTACLIENTE").Rows(Me.BindingContext(Me.DsDetCC, "VF_DETALLE_CUENTACLIENTE").Position).Item("ESTADO_CUOTA").ToString)
-                    cuota_numero = Trim(Me.DsDetCC.Tables("VF_DETALLE_CUENTACLIENTE").Rows(Me.BindingContext(Me.DsDetCC, "VF_DETALLE_CUENTACLIENTE").Position).Item("CUOTA").ToString)
-
-                    If fecha_Vencimiento >= FECHA_INICIAL And fecha_Vencimiento <= FECHA_FINAL And cuota > 0 And estado_cuota = "PENDIENTE" Then
-                        suma_acobrar = suma_acobrar + cuota
-                        fecha_deCobro = fecha_Vencimiento
-                        cuota_deCobro = cuota_numero
-                        bandera_deCobro = 1
+                    Dim info As New ESTADISTICA_DEUDA_PAGO
+                    info.SetDataSource(ds)
+                    'info.SetDatabaseLogon(iconexion.UserID, iconexion.Password, iconexion.ServerName, iconexion.DatabaseName)
+                    If Not DesignMode Then
+                        info.SetParameterValue("@vendedor", vendedor)
                     End If
+                    SetDBLogonForReport(iconexion, info)
+                    Me.CrystalReportViewer1.ReportSource = info
+                Else
+                    ' No se devolvieron filas, algo puede haber salido mal
+                    MessageBox.Show("Ocurrio un error al generar el informe", "SGCV_CO VERSION EXTENDIDA", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    Me.btnGenerar_Calculo.Enabled = True
+
+                    Me.cbVendedor.Enabled = True
                 End If
-            Next
-            '*************************************************************************************************************************
-            For l = 0 To Me.BindingContext(Me.DsCabRecibo, "CP_CABECERA_RECIBO").Count - 1
-                Me.BindingContext(Me.DsCabRecibo, "CP_CABECERA_RECIBO").Position = l
+            Catch ex As Exception
+                MessageBox.Show("Error al ejecutar el procedimiento", "SGCV_CO VERSION EXTENDIDA", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Me.btnGenerar_Calculo.Enabled = True
 
-                rec_cliente = CInt(Me.DsCabRecibo.Tables("CP_CABECERA_RECIBO").Rows(Me.BindingContext(Me.DsCabRecibo, "CP_CABECERA_RECIBO").Position).Item("COD_CLIENTE").ToString)
-
-                If cliente = rec_cliente Then
-
-                    fecha_pago = Me.DsCabRecibo.Tables("CP_CABECERA_RECIBO").Rows(Me.BindingContext(Me.DsCabRecibo, "CP_CABECERA_RECIBO").Position).Item("FECHA")
-                    importe_recibo = CInt(Me.DsCabRecibo.Tables("CP_CABECERA_RECIBO").Rows(Me.BindingContext(Me.DsCabRecibo, "CP_CABECERA_RECIBO").Position).Item("IMPORTE_TOTAL"))
-                    numero_recibo = Trim(Me.DsCabRecibo.Tables("CP_CABECERA_RECIBO").Rows(Me.BindingContext(Me.DsCabRecibo, "CP_CABECERA_RECIBO").Position).Item("NUM_RECIBO").ToString)
-
-                    If fecha_pago >= FECHA_INICIAL And fecha_pago <= FECHA_FINAL Then
-                        If estado_recibo(numero_recibo) = 0 Then
-                            suma_cobrado = suma_cobrado + importe_recibo
-                            fecha_dePago = fecha_pago
-                            bandera_cobrado = 1
-                        End If
-                    End If
-                End If
-            Next
-            '****************************************************************
-            Dim Totales_cuota, Totales_interes As Integer
-            Totales_cuota = TotalesCuotas(cliente)
-            Totales_interes = TotalesInteres(cliente)
-            total_acobrar = Totales_cuota + Totales_interes
-            If suma_acobrar = 0 Then
-                fecha_deCobro = Today.ToString("dd/MM/yyyy")
-            End If
-            If suma_cobrado = 0 Then
-                fecha_dePago = Today.ToString("dd/MM/yyyy")
-            End If
-
-            If (bandera_deCobro = 1) Or (bandera_cobrado = 1) Then
-                Try
-                    Dim contador As Integer
-                    contador = Contador_Estadistica() + 1
-                    SQLconexion.Open()
-                    Dim sqlbuilder As New System.Text.StringBuilder
-                    With sqlbuilder
-                        .Append("INSERT INTO INF_ESTADISTICA_DEUDA_PAGO")
-                        .Append(" VALUES ('")
-                        .Append(contador & "','")
-                        .Append(sucursal & "','")
-                        .Append(FECHA_INICIAL.ToString("yyyy/MM/dd") & "','")
-                        .Append(FECHA_FINAL_.ToString("yyyy/MM/dd") & "','")
-                        .Append(datos_personales & "','")
-                        .Append(suma_acobrar & "','")
-                        .Append(suma_cobrado & "','")
-                        .Append(total_acobrar & "','")
-                        .Append(cedula & "','")
-                        .Append(telefono & "','")
-                        .Append(cuota_deCobro & "','")
-                        .Append(fecha_deCobro.ToString("yyyy/MM/dd") & "','")
-                        .Append(fecha_dePago.ToString("yyyy/MM/dd") & "','")
-                        .Append("" & "','")
-                        .Append("" & "')")
-
-                    End With
-                    cmm = New SqlClient.SqlCommand(sqlbuilder.ToString, SQLconexion)
-                    cmm.ExecuteNonQuery()
-                    SQLconexion.Close()
-                    cmm.Dispose()
-                    SQLconexion.Dispose()
-
-                Catch ex As Exception
-                    MsgBox(ex.Message())
-                    SQLconexion.Close()
-                End Try
-            End If
-
-            bandera_deCobro = 0
-            bandera_cobrado = 0
-            suma_acobrar = 0
-            suma_cobrado = 0
-            total_acobrar = 0
-
-            lbprogreso.Text = "SE ESTA GENERANDO EL REPORTE DE COBROS Y PAGOS!! AGUARDE UN MOMENTO..."
-            lbprogreso.Update()
-  
-        Next
-        lbprogreso.Text = "GENERADO CORRECTAMENTE..."
-        lbprogreso.Update()
-        Me.DateTimePicker1.Enabled = True
-        Me.DateTimePicker2.Enabled = True
-        Me.btnGenerar_Calculo.Enabled = True
-
-        Me.cbVendedor.Enabled = True
-        Me.btnReporte.Enabled = True
+                Me.cbVendedor.Enabled = True
+            Finally
+                SQLconexion.Close()
+            End Try
+        End If
 
     End Sub
 
@@ -612,32 +459,4 @@ Public Class ESTADISTICAS_CUENTAS_POR_COBRAR
         vendedor = Trim(Me.DsVendedor.Tables("CONFIG_USUARIO").Rows(Me.cbVendedor.SelectedIndex).Item(6).ToString)
     End Sub
 
-    Private Sub btnReporte_Click(sender As System.Object, e As System.EventArgs) Handles btnReporte.Click
-        Try
-            conectar()
-            Dim dt As New DataTable
-            Dim da As New SqlDataAdapter("ESTADISTICA_DEUDA_PAGO", SQLconexion)
-            da.SelectCommand.CommandType = CommandType.StoredProcedure
-            da.SelectCommand.Parameters.AddWithValue("@vendedor", vendedor)
-
-            da.Fill(dt)
-
-            Dim ds As New Data.DataSet
-            ds.Tables.Add(dt)
-
-            Dim info As New ESTADISTICA_DEUDA_PAGO
-            info.SetDataSource(ds)
-
-            info.SetDatabaseLogon(iconexion.UserID, iconexion.Password, iconexion.ServerName, iconexion.DatabaseName)
-            If Not DesignMode Then
-                info.SetParameterValue("@vendedor", vendedor)
-            End If
-            SetDBLogonForReport(iconexion, info)
-            Me.CrystalReportViewer1.ReportSource = info
-
-        Catch ex As Exception
-            MessageBox.Show(ex.ToString)
-            SQLconexion.Close()
-        End Try
-    End Sub
 End Class

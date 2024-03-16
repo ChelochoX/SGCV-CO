@@ -242,7 +242,6 @@ Public Class GESTIONAR_COBRO
         iconexion.UserID = usuario_
         iconexion.Password = contrasena_
         iconexion.ServerName = servidor
-
         iconexion.Type = ConnectionInfoType.SQL
 
         OPERADOR = usuario_

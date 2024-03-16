@@ -37,7 +37,6 @@ Partial Class ESTADISTICAS_CUENTAS_POR_COBRAR
         Me.lbporcentaje = New System.Windows.Forms.Label()
         Me.cbVendedor = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.btnReporte = New System.Windows.Forms.Button()
         Me.GroupBox4.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
@@ -238,22 +237,6 @@ Partial Class ESTADISTICAS_CUENTAS_POR_COBRAR
         Me.Label2.TabIndex = 50015
         Me.Label2.Text = "Seleccionar Vendedor"
         '
-        'btnReporte
-        '
-        Me.btnReporte.BackColor = System.Drawing.Color.LimeGreen
-        Me.btnReporte.FlatAppearance.BorderSize = 0
-        Me.btnReporte.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lime
-        Me.btnReporte.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
-        Me.btnReporte.Font = New System.Drawing.Font("Calibri", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnReporte.ForeColor = System.Drawing.Color.Navy
-        Me.btnReporte.Location = New System.Drawing.Point(53, 404)
-        Me.btnReporte.Margin = New System.Windows.Forms.Padding(4)
-        Me.btnReporte.Name = "btnReporte"
-        Me.btnReporte.Size = New System.Drawing.Size(185, 45)
-        Me.btnReporte.TabIndex = 12
-        Me.btnReporte.Text = "GENERAR REPORTE"
-        Me.btnReporte.UseVisualStyleBackColor = False
-        '
         'ESTADISTICAS_CUENTAS_POR_COBRAR
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -262,7 +245,6 @@ Partial Class ESTADISTICAS_CUENTAS_POR_COBRAR
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1468, 756)
         Me.ControlBox = False
-        Me.Controls.Add(Me.btnReporte)
         Me.Controls.Add(Me.cbVendedor)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.lbporcentaje)
@@ -299,5 +281,4 @@ Partial Class ESTADISTICAS_CUENTAS_POR_COBRAR
     Friend WithEvents lbporcentaje As System.Windows.Forms.Label
     Friend WithEvents cbVendedor As System.Windows.Forms.ComboBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents btnReporte As System.Windows.Forms.Button
 End Class
