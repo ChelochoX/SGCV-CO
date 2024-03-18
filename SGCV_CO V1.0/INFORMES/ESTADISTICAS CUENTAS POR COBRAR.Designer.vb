@@ -90,7 +90,7 @@ Partial Class ESTADISTICAS_CUENTAS_POR_COBRAR
         Me.GroupBox4.Controls.Add(Me.btnGenerar_Calculo)
         Me.GroupBox4.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.GroupBox4.Location = New System.Drawing.Point(16, 218)
+        Me.GroupBox4.Location = New System.Drawing.Point(20, 308)
         Me.GroupBox4.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox4.Name = "GroupBox4"
         Me.GroupBox4.Padding = New System.Windows.Forms.Padding(4)
@@ -219,7 +219,7 @@ Partial Class ESTADISTICAS_CUENTAS_POR_COBRAR
         Me.cbVendedor.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbVendedor.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.cbVendedor.FormattingEnabled = True
-        Me.cbVendedor.Location = New System.Drawing.Point(20, 367)
+        Me.cbVendedor.Location = New System.Drawing.Point(20, 255)
         Me.cbVendedor.Margin = New System.Windows.Forms.Padding(4)
         Me.cbVendedor.Name = "cbVendedor"
         Me.cbVendedor.Size = New System.Drawing.Size(280, 29)
@@ -230,7 +230,7 @@ Partial Class ESTADISTICAS_CUENTAS_POR_COBRAR
         Me.Label2.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.Label2.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.Label2.Location = New System.Drawing.Point(16, 340)
+        Me.Label2.Location = New System.Drawing.Point(16, 228)
         Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(184, 23)

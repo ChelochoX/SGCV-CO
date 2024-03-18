@@ -251,8 +251,8 @@ Public Class ESTADISTICAS_CUENTAS_POR_COBRAR
 
         Me.cbVendedor.DataSource = New List(Of String)()
         vendedor = ""
-        Me.DateTimePicker1.Enabled = False
-        Me.DateTimePicker2.Enabled = False
+        'Me.DateTimePicker1.Enabled = False
+        'Me.DateTimePicker2.Enabled = False
 
     End Sub
 
@@ -385,8 +385,6 @@ Public Class ESTADISTICAS_CUENTAS_POR_COBRAR
 
     Private Sub btnGenerar_Calculo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnGenerar_Calculo.Click
 
-        'InitializeComponent()
-
         Dim ruta As String
 
         If vendedor.ToString.Length = 0 Then
@@ -399,6 +397,8 @@ Public Class ESTADISTICAS_CUENTAS_POR_COBRAR
                 Dim da As New SqlDataAdapter("ESTADISTICA_DEUDA_PAGO", SQLconexion)
                 da.SelectCommand.CommandType = CommandType.StoredProcedure
                 da.SelectCommand.Parameters.AddWithValue("@vendedor", vendedor)
+                da.SelectCommand.Parameters.AddWithValue("@fecha_inicial", FECHA_INICIAL)
+                da.SelectCommand.Parameters.AddWithValue("@fecha_fin", FECHA_FINAL)
                 da.Fill(dt)
 
                 ' Verificar si se devolvieron filas
@@ -429,6 +429,8 @@ Public Class ESTADISTICAS_CUENTAS_POR_COBRAR
                     info.SetDataSource(ds)
                     If Not DesignMode Then
                         info.SetParameterValue("@vendedor", vendedor)
+                        info.SetParameterValue("@fecha_inicial", FECHA_INICIAL)
+                        info.SetParameterValue("@fecha_fin", FECHA_FINAL)
                     End If
                     Me.CrystalReportViewer1.ReportSource = info
                 Else
