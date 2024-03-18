@@ -50,4 +50,7 @@ Module VARIABLES_GLOBALES
     Public V_RESUMIDO As Integer
     Public V_DETALLADO As Integer
 
+    'VARIABLE DE AMBIENTE DE DESARROLLO
+    Public ambiente As String
+
 End Module

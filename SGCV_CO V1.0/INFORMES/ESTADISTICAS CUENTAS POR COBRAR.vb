@@ -131,15 +131,6 @@ Public Class ESTADISTICAS_CUENTAS_POR_COBRAR
         End Try
     End Function
 
-    Sub SetDBLogonForReport(ByVal myConnectionInfo As ConnectionInfo, ByVal myReportDocument As ReportDocument)
-        Dim myTables As Tables = myReportDocument.Database.Tables
-        For Each myTable As CrystalDecisions.CrystalReports.Engine.Table In myTables
-            Dim myTableLogonInfo As TableLogOnInfo = myTable.LogOnInfo
-            myTableLogonInfo.ConnectionInfo = myConnectionInfo
-            myTable.ApplyLogOnInfo(myTableLogonInfo)
-        Next
-    End Sub
-
     Sub Cargar_Dataset()
         Try
             conectar()
@@ -230,6 +221,16 @@ Public Class ESTADISTICAS_CUENTAS_POR_COBRAR
             SQLconexion.Close()
         End Try
     End Function
+
+    Sub SetDBLogonForReport(ByVal myConnectionInfo As ConnectionInfo, ByVal myReportDocument As ReportDocument)
+
+        Dim myTables As Tables = myReportDocument.Database.Tables
+        For Each myTable As CrystalDecisions.CrystalReports.Engine.Table In myTables
+            Dim myTableLogonInfo As TableLogOnInfo = myTable.LogOnInfo
+            myTableLogonInfo.ConnectionInfo = myConnectionInfo
+            myTable.ApplyLogOnInfo(myTableLogonInfo)
+        Next
+    End Sub
 
     Private Sub ESTADISTICAS_CUENTAS_POR_COBRAR_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
@@ -384,6 +385,10 @@ Public Class ESTADISTICAS_CUENTAS_POR_COBRAR
 
     Private Sub btnGenerar_Calculo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnGenerar_Calculo.Click
 
+        'InitializeComponent()
+
+        Dim ruta As String
+
         If vendedor.ToString.Length = 0 Then
             MessageBox.Show("Debe seleccionar un vendedor para generar el informe", "SGCV_CO VERSION EXTENDIDA", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Me.cbVendedor.Focus()
@@ -420,24 +425,25 @@ Public Class ESTADISTICAS_CUENTAS_POR_COBRAR
                     ds.Tables.Add(dt)
 
                     Dim info As New ESTADISTICA_DEUDA_PAGO
+                    ManejadorReportes.ConfigurarCredenciales(info)
                     info.SetDataSource(ds)
-                    'info.SetDatabaseLogon(iconexion.UserID, iconexion.Password, iconexion.ServerName, iconexion.DatabaseName)
                     If Not DesignMode Then
                         info.SetParameterValue("@vendedor", vendedor)
                     End If
-                    SetDBLogonForReport(iconexion, info)
                     Me.CrystalReportViewer1.ReportSource = info
                 Else
                     ' No se devolvieron filas, algo puede haber salido mal
                     MessageBox.Show("Ocurrio un error al generar el informe", "SGCV_CO VERSION EXTENDIDA", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    lbprogreso.Text = "Ocurrio un error al generar el informe"
+                    lbprogreso.Update()
                     Me.btnGenerar_Calculo.Enabled = True
-
                     Me.cbVendedor.Enabled = True
                 End If
             Catch ex As Exception
-                MessageBox.Show("Error al ejecutar el procedimiento", "SGCV_CO VERSION EXTENDIDA", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("Ocurrio un error al generar el informe", "SGCV_CO VERSION EXTENDIDA", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                lbprogreso.Text = "Ocurrio un error al generar el informe"
+                lbprogreso.Update()
                 Me.btnGenerar_Calculo.Enabled = True
-
                 Me.cbVendedor.Enabled = True
             Finally
                 SQLconexion.Close()

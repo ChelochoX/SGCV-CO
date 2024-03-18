@@ -350,6 +350,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CONFIGURACION\CONEXION.vb" />
+    <Compile Include="CONFIGURACION\CredencialesParaReporte.vb" />
     <Compile Include="CONFIGURACION\PROCESOS GLOBALES.vb" />
     <Compile Include="CONFIGURACION\PUNTO DE MILES.vb" />
     <Compile Include="CONFIGURACION\VARIABLES GLOBALES.vb" />
