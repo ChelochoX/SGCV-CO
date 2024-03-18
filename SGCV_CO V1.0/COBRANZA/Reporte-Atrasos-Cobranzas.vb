@@ -91,119 +91,67 @@ Public Class Reporte_Atrasos_Cobranzas
         Label10.Update()
         Label11.Update()
         Label19.Update()
+        lbporcentaje.Text = "CARGANDO... "
+        lbporcentaje.Update()
+        lbprogreso.Text = "INICIANDO PROCESO..."
+        lbprogreso.Update()
 
         ' DEHABILITAMOS EL BOTON DE GENERAR
         btnGenerarDash.Enabled = False
+        cbVendedor.Enabled = False
 
-        'PROGRESS BAR
-        Dim redondeo, aux1, aux2, ContadorProgreso, CantidadRegistros_ As Integer
-        Dim paraRedondeo As Decimal
+        'Llamamos al procedimiento
+        Try
+            conectar()
+            Using command As New SqlCommand("ESTADISTICO_COBRANZA_ATRASOS", SQLconexion)
+                command.CommandType = CommandType.StoredProcedure
+                command.CommandTimeout = 120
+                SQLconexion.Open()
+                command.ExecuteNonQuery()
+                SQLconexion.Close()
+                'MessageBox.Show("Procedimiento ejecutado correctamente.", "SGCV_CO VERSION EXTENDIDA", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            End Using
 
-        'PRIMERO ACTUALIZAMOS LAS CUENTAS DE LOS CLIENTES
-        'ACTUALIZA LAS FECHAS DE VENCIMIENTO DE LAS CUOTAS********************************
-        Dim NUM_CUOTA, COD_CUENTA, MONTO As Integer
-        Dim AUX_FECHAVENC As Date
-        'Dim CLIENTE_ As String
-        Dim PAGADO As String
-        Dim dias_cuota As Integer
-        Dim pendiente As String
-        pendiente = "PENDIENTE"
-        Dim codigo_cliente As Integer
+            'Primer mensaje de Progreso
+            Dim totalFilas As Integer = 1000
+            ProgressBar1.Maximum = totalFilas
+            For i As Integer = 0 To totalFilas - 1
+                Dim progresoActual As Integer = i + 1
+                ProgressBar1.Value = progresoActual
+                Dim porcentaje As Integer = CInt((progresoActual / totalFilas) * 100)
+                lbporcentaje.Text = "CARGANDO " & porcentaje & "%"
+                lbporcentaje.Update()
+                lbprogreso.Text = "SE ESTA GENERANDO EL REPORTE DE COBROS Y PAGOS!! AGUARDE UN MOMENTO..."
+                lbprogreso.Update()
+                System.Threading.Thread.Sleep(5)
+            Next
+            ProgressBar1.Value = ProgressBar1.Maximum
+            lbprogreso.Text = "GENERADO CORRECTAMENTE"
+            lbprogreso.Update()
 
-        'PRIMER CONTEO PARA EL PROGRESS BAR
-        CantidadRegistros_ = CantidadRegistros_Detalle()
-
-        Dim A As Integer
-        For A = 0 To Me.BindingContext(Me.DsDetCuenta_Cliente, "VF_DETALLE_CUENTACLIENTE").Count - 1
-            Me.BindingContext(Me.DsDetCuenta_Cliente, "VF_DETALLE_CUENTACLIENTE").Position = A
-            codigo_cliente = Me.DsDetCuenta_Cliente.Tables("VF_DETALLE_CUENTACLIENTE").Rows(Me.BindingContext(Me.DsDetCuenta_Cliente, "VF_DETALLE_CUENTACLIENTE").Position).Item("COD_CLIENTE")
-            AUX_FECHAVENC = Me.DsDetCuenta_Cliente.Tables("VF_DETALLE_CUENTACLIENTE").Rows(Me.BindingContext(Me.DsDetCuenta_Cliente, "VF_DETALLE_CUENTACLIENTE").Position).Item("FECHA_VENCIMIENTO")
-            PAGADO = Trim(Me.DsDetCuenta_Cliente.Tables("VF_DETALLE_CUENTACLIENTE").Rows(Me.BindingContext(Me.DsDetCuenta_Cliente, "VF_DETALLE_CUENTACLIENTE").Position).Item("ESTADO_CUOTA"))
-            NUM_CUOTA = Me.DsDetCuenta_Cliente.Tables("VF_DETALLE_CUENTACLIENTE").Rows(Me.BindingContext(Me.DsDetCuenta_Cliente, "VF_DETALLE_CUENTACLIENTE").Position).Item("CUOTA")
-            COD_CUENTA = Me.DsDetCuenta_Cliente.Tables("VF_DETALLE_CUENTACLIENTE").Rows(Me.BindingContext(Me.DsDetCuenta_Cliente, "VF_DETALLE_CUENTACLIENTE").Position).Item("COD_CABECERA_CUENTACLI")
-            MONTO = Me.DsDetCuenta_Cliente.Tables("VF_DETALLE_CUENTACLIENTE").Rows(Me.BindingContext(Me.DsDetCuenta_Cliente, "VF_DETALLE_CUENTACLIENTE").Position).Item("MONTO_CUOTA")
-            dias_cuota = DateDiff(DateInterval.Day, Today, AUX_FECHAVENC)
-
-            'SI LA CUOTA NO FUE ABONADA SE MODIFICA LOS DIAS DE VENCIMIENTO***
-            If PAGADO = pendiente Then
-                actualizar_diasVencimiento(dias_cuota, codigo_cliente, NUM_CUOTA, COD_CUENTA)
-            End If
-
-            'UTILIZAMOS EL PROGRESS BAR
-            If ContadorProgreso < CantidadRegistros_ Then
-                ContadorProgreso = ContadorProgreso + 1
-                aux1 = A + 1
-                aux2 = aux1 * 100
-                paraRedondeo = aux2 / CantidadRegistros_
-                redondeo = Math.Round(paraRedondeo)
-                If redondeo <> 100 Then
-                    'comparador = comparador + 1
-                    ProgressBar1.Value = redondeo
-                    lbprogreso.Text = "SE ESTAN GENERANDO LOS INFORMES!! AGUARDE UN MOMENTO..."
-                    lbprogreso.Update()
-                    lbporcentaje.Text = "CARGANDO " & redondeo & "%"
-                    lbporcentaje.Update()
-                Else
-                    If redondeo = 100 Then
-                        ProgressBar1.Value = redondeo
-                        lbprogreso.Text = "ACTUALIZANDO LOS DATOS DE LAS CUENTAS DE CLIENTES. AGUARDE UN MOMENTO..."
-                        lbprogreso.Update()
-                        lbporcentaje.Text = redondeo & "%"
-                        lbporcentaje.Update()
-                    End If
-                End If
-            End If
-
-        Next
-        ''************************************************************************
-        'ACTUALIZAR CABECERA DE CUENTA DE CLIENTE****
-
-        'SEGUNDO CONTEO PARA EL PROGRESS BAR
-        CantidadRegistros_ = CantidadRegistros_Cabecera()
-        ProgressBar1.Value = 0
-        lbporcentaje.Text = "0%"
-        lbporcentaje.Update()
-        ContadorProgreso = 0
-        paraRedondeo = 0
-        aux1 = 0
-        aux2 = 0
-
-        Dim Cabecera_CuentaCliente, Sumatoria_porCuenta, y As Integer
-
-        For y = 0 To Me.BindingContext(Me.DsCabCuenta_Cliente, "VF_CABECERA_CUENTACLIENTE").Count - 1
-            Me.BindingContext(Me.DsCabCuenta_Cliente, "VF_CABECERA_CUENTACLIENTE").Position = y
-
-            codigo_cliente = Me.DsCabCuenta_Cliente.Tables("VF_CABECERA_CUENTACLIENTE").Rows(Me.BindingContext(Me.DsCabCuenta_Cliente, "VF_CABECERA_CUENTACLIENTE").Position).Item("COD_CLIENTE")
-            Cabecera_CuentaCliente = CInt(Me.DsCabCuenta_Cliente.Tables("VF_CABECERA_CUENTACLIENTE").Rows(Me.BindingContext(Me.DsCabCuenta_Cliente, "VF_CABECERA_CUENTACLIENTE").Position).Item("COD_CABECERA_CUENTACLI"))
-
-            Sumatoria_porCuenta = Sumatoria_PorCuentaCliente(codigo_cliente, Cabecera_CuentaCliente, "PENDIENTE")
-            Actualizar_Cuenta_Cliente(Sumatoria_porCuenta, codigo_cliente, Cabecera_CuentaCliente)
+            'Segundo mensaje de Progreso
+            totalFilas = 1000
+            ProgressBar1.Maximum = totalFilas
+            For i As Integer = 0 To totalFilas - 1
+                Dim progresoActual As Integer = i + 1
+                ProgressBar1.Value = progresoActual
+                Dim porcentaje As Integer = CInt((progresoActual / totalFilas) * 100)
+                lbporcentaje.Text = "CARGANDO " & porcentaje & "%"
+                lbporcentaje.Update()
+                lbprogreso.Text = "ACTUALIZANDO LOS DATOS DE LAS CUENTAS DE CLIENTES. AGUARDE UN MOMENTO..."
+                lbprogreso.Update()
+                System.Threading.Thread.Sleep(5)
+            Next
+            ProgressBar1.Value = ProgressBar1.Maximum
+            lbprogreso.Text = "ACTUALIZADOS CORRECTAMENTE. GRACIAS POR AGUARDAR!!"
+            lbprogreso.Update()
 
 
-            'UTILIZAMOS EL PROGRESS BAR
-            If ContadorProgreso < CantidadRegistros_ Then
-                ContadorProgreso = ContadorProgreso + 1
-                aux1 = y + 1
-                aux2 = aux1 * 100
-                paraRedondeo = aux2 / CantidadRegistros_
-                redondeo = Math.Round(paraRedondeo)
-                If redondeo <> 100 Then
-                    ProgressBar1.Value = redondeo
-                    lbprogreso.Text = "ACTUALIZANDO LOS DATOS DE LAS CUENTAS DE CLIENTES. AGUARDE UN MOMENTO..."
-                    lbprogreso.Update()
-                    lbporcentaje.Text = "CARGANDO " & redondeo & "%"
-                    lbporcentaje.Update()
-                Else
-                    If redondeo = 100 Then
-                        ProgressBar1.Value = redondeo
-                        lbprogreso.Text = "ACTUALIZADOS CORRECTAMENTE. GRACIAS POR AGUARDAR!!"
-                        lbprogreso.Update()
-                        lbporcentaje.Text = redondeo & "%"
-                        lbporcentaje.Update()
-                    End If
-                End If
-            End If
-        Next
+        Catch ex As Exception
+            MessageBox.Show("Ocurrio un error al procesar los datos para el Reporte.  " + ex.ToString, "SGCV_CO VERSION EXTENDIDA", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            SQLconexion.Close()
+        End Try
+
 
         ' CARGAMOS LOS VALORES PARA MOSTRAR EN EL DASH BOARD
 
@@ -371,9 +319,9 @@ Public Class Reporte_Atrasos_Cobranzas
         Me.btnMontoCobrarenelMes.Enabled = True
         Me.btnMontoCobradoenelMes.Enabled = True
 
-        ' HABILITAMOS EL BOTON DE GENERAR
+        ' HABILITAMOS EL BOTON DE GENERAR y vendedor
         btnGenerarDash.Enabled = True
-
+        cbVendedor.Enabled = True
 
     End Sub
 
@@ -766,6 +714,8 @@ Public Class Reporte_Atrasos_Cobranzas
 
         Me.cbVendedor.DataSource = New List(Of String)()
         vendedor = ""
+        cbVendedor.Enabled = False
+
     End Sub
 
     Private Sub Button1_Click(sender As System.Object, e As System.EventArgs) Handles Button1.Click
