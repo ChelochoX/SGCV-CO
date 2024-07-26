@@ -96,9 +96,9 @@ Public Class Logeo_de_Usuario
         Me.btnSalir.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.btnSalir.Image = CType(resources.GetObject("btnSalir.Image"), System.Drawing.Image)
         Me.btnSalir.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnSalir.Location = New System.Drawing.Point(314, 247)
+        Me.btnSalir.Location = New System.Drawing.Point(377, 285)
         Me.btnSalir.Name = "btnSalir"
-        Me.btnSalir.Size = New System.Drawing.Size(86, 75)
+        Me.btnSalir.Size = New System.Drawing.Size(103, 87)
         Me.btnSalir.TabIndex = 63
         Me.btnSalir.Text = "SALIR"
         Me.btnSalir.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -111,9 +111,9 @@ Public Class Logeo_de_Usuario
         Me.txtUsuario.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtUsuario.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtUsuario.ForeColor = System.Drawing.Color.Blue
-        Me.txtUsuario.Location = New System.Drawing.Point(191, 116)
+        Me.txtUsuario.Location = New System.Drawing.Point(229, 134)
         Me.txtUsuario.Name = "txtUsuario"
-        Me.txtUsuario.Size = New System.Drawing.Size(230, 18)
+        Me.txtUsuario.Size = New System.Drawing.Size(276, 22)
         Me.txtUsuario.TabIndex = 57
         Me.txtUsuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -125,9 +125,9 @@ Public Class Logeo_de_Usuario
         Me.btnIngresar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.btnIngresar.Image = CType(resources.GetObject("btnIngresar.Image"), System.Drawing.Image)
         Me.btnIngresar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnIngresar.Location = New System.Drawing.Point(176, 247)
+        Me.btnIngresar.Location = New System.Drawing.Point(211, 285)
         Me.btnIngresar.Name = "btnIngresar"
-        Me.btnIngresar.Size = New System.Drawing.Size(86, 75)
+        Me.btnIngresar.Size = New System.Drawing.Size(103, 87)
         Me.btnIngresar.TabIndex = 61
         Me.btnIngresar.Text = "INGRESAR"
         Me.btnIngresar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -140,9 +140,9 @@ Public Class Logeo_de_Usuario
         Me.Button1.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
-        Me.Button1.Location = New System.Drawing.Point(124, 105)
+        Me.Button1.Location = New System.Drawing.Point(149, 121)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(61, 43)
+        Me.Button1.Size = New System.Drawing.Size(73, 50)
         Me.Button1.TabIndex = 64
         Me.Button1.UseVisualStyleBackColor = False
         '
@@ -153,9 +153,9 @@ Public Class Logeo_de_Usuario
         Me.Button2.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.Button2.Image = CType(resources.GetObject("Button2.Image"), System.Drawing.Image)
-        Me.Button2.Location = New System.Drawing.Point(124, 167)
+        Me.Button2.Location = New System.Drawing.Point(149, 193)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(61, 43)
+        Me.Button2.Size = New System.Drawing.Size(73, 49)
         Me.Button2.TabIndex = 65
         Me.Button2.UseVisualStyleBackColor = False
         '
@@ -164,9 +164,9 @@ Public Class Logeo_de_Usuario
         Me.Label1.BackColor = System.Drawing.Color.White
         Me.Label1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(191, 92)
+        Me.Label1.Location = New System.Drawing.Point(229, 106)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(230, 21)
+        Me.Label1.Size = New System.Drawing.Size(276, 24)
         Me.Label1.TabIndex = 66
         Me.Label1.Text = "USUARIO"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -176,9 +176,9 @@ Public Class Logeo_de_Usuario
         Me.Label2.BackColor = System.Drawing.Color.White
         Me.Label2.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.Label2.Location = New System.Drawing.Point(191, 154)
+        Me.Label2.Location = New System.Drawing.Point(229, 178)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(230, 21)
+        Me.Label2.Size = New System.Drawing.Size(276, 24)
         Me.Label2.TabIndex = 67
         Me.Label2.Text = "PASSWORD"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -190,18 +190,18 @@ Public Class Logeo_de_Usuario
         Me.txtPassword.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtPassword.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtPassword.ForeColor = System.Drawing.Color.Blue
-        Me.txtPassword.Location = New System.Drawing.Point(191, 181)
+        Me.txtPassword.Location = New System.Drawing.Point(229, 209)
         Me.txtPassword.Name = "txtPassword"
-        Me.txtPassword.Size = New System.Drawing.Size(230, 18)
+        Me.txtPassword.Size = New System.Drawing.Size(276, 22)
         Me.txtPassword.TabIndex = 58
         Me.txtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.txtPassword.UseSystemPasswordChar = True
         '
         'Logeo_de_Usuario
         '
-        Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
+        Me.AutoScaleBaseSize = New System.Drawing.Size(6, 15)
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(571, 366)
+        Me.ClientSize = New System.Drawing.Size(650, 424)
         Me.ControlBox = False
         Me.Controls.Add(Me.txtPassword)
         Me.Controls.Add(Me.Label2)
@@ -268,7 +268,7 @@ Public Class Logeo_de_Usuario
                         .Append(" VALUES ('")
                         .Append(contador & "','")
                         .Append(usuario & "','")
-                        .Append(Today & "','")
+                        .Append(DateTime.Today.ToString("yyyy-MM-dd") & "','")
                         .Append("ABIERTO" & "')")
 
                     End With

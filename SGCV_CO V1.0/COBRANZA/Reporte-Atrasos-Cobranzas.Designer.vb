@@ -66,6 +66,9 @@ Partial Class Reporte_Atrasos_Cobranzas
         Me.Label1 = New System.Windows.Forms.Label()
         Me.CrystalReportViewer1 = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
         Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.Button5 = New System.Windows.Forms.Button()
         Me.GroupBox6.SuspendLayout()
         Me.GroupBox10.SuspendLayout()
         Me.GroupBox8.SuspendLayout()
@@ -336,6 +339,7 @@ Partial Class Reporte_Atrasos_Cobranzas
         'GroupBox3
         '
         Me.GroupBox3.BackColor = System.Drawing.Color.Red
+        Me.GroupBox3.Controls.Add(Me.Button4)
         Me.GroupBox3.Controls.Add(Me.btnListadoMenor90)
         Me.GroupBox3.Controls.Add(Me.Label17)
         Me.GroupBox3.Controls.Add(Me.Label4)
@@ -353,12 +357,12 @@ Partial Class Reporte_Atrasos_Cobranzas
         '
         Me.btnListadoMenor90.BackColor = System.Drawing.Color.White
         Me.btnListadoMenor90.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnListadoMenor90.Location = New System.Drawing.Point(0, 101)
+        Me.btnListadoMenor90.Location = New System.Drawing.Point(128, 101)
         Me.btnListadoMenor90.Margin = New System.Windows.Forms.Padding(4)
         Me.btnListadoMenor90.Name = "btnListadoMenor90"
-        Me.btnListadoMenor90.Size = New System.Drawing.Size(212, 28)
+        Me.btnListadoMenor90.Size = New System.Drawing.Size(63, 28)
         Me.btnListadoMenor90.TabIndex = 7
-        Me.btnListadoMenor90.Text = "IMPRIMIR LISTADO"
+        Me.btnListadoMenor90.Text = "C / V"
         Me.btnListadoMenor90.UseVisualStyleBackColor = False
         '
         'Label17
@@ -390,6 +394,7 @@ Partial Class Reporte_Atrasos_Cobranzas
         'GroupBox2
         '
         Me.GroupBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.GroupBox2.Controls.Add(Me.Button3)
         Me.GroupBox2.Controls.Add(Me.btnListado60)
         Me.GroupBox2.Controls.Add(Me.Label16)
         Me.GroupBox2.Controls.Add(Me.Label3)
@@ -407,12 +412,12 @@ Partial Class Reporte_Atrasos_Cobranzas
         '
         Me.btnListado60.BackColor = System.Drawing.Color.White
         Me.btnListado60.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnListado60.Location = New System.Drawing.Point(0, 101)
+        Me.btnListado60.Location = New System.Drawing.Point(133, 101)
         Me.btnListado60.Margin = New System.Windows.Forms.Padding(4)
         Me.btnListado60.Name = "btnListado60"
-        Me.btnListado60.Size = New System.Drawing.Size(212, 28)
+        Me.btnListado60.Size = New System.Drawing.Size(62, 28)
         Me.btnListado60.TabIndex = 7
-        Me.btnListado60.Text = "IMPRIMIR LISTADO"
+        Me.btnListado60.Text = "C / V"
         Me.btnListado60.UseVisualStyleBackColor = False
         '
         'Label16
@@ -467,7 +472,7 @@ Partial Class Reporte_Atrasos_Cobranzas
         Me.btnListado30.Name = "btnListado30"
         Me.btnListado30.Size = New System.Drawing.Size(74, 28)
         Me.btnListado30.TabIndex = 5
-        Me.btnListado30.Text = "C/V"
+        Me.btnListado30.Text = "C / V"
         Me.btnListado30.UseVisualStyleBackColor = False
         '
         'Label15
@@ -499,6 +504,7 @@ Partial Class Reporte_Atrasos_Cobranzas
         'GroupBox4
         '
         Me.GroupBox4.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.GroupBox4.Controls.Add(Me.Button5)
         Me.GroupBox4.Controls.Add(Me.btnListadoMayor90)
         Me.GroupBox4.Controls.Add(Me.Label18)
         Me.GroupBox4.Controls.Add(Me.Label5)
@@ -516,12 +522,12 @@ Partial Class Reporte_Atrasos_Cobranzas
         '
         Me.btnListadoMayor90.BackColor = System.Drawing.Color.White
         Me.btnListadoMayor90.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnListadoMayor90.Location = New System.Drawing.Point(0, 101)
+        Me.btnListadoMayor90.Location = New System.Drawing.Point(133, 101)
         Me.btnListadoMayor90.Margin = New System.Windows.Forms.Padding(4)
         Me.btnListadoMayor90.Name = "btnListadoMayor90"
-        Me.btnListadoMayor90.Size = New System.Drawing.Size(212, 28)
+        Me.btnListadoMayor90.Size = New System.Drawing.Size(62, 28)
         Me.btnListadoMayor90.TabIndex = 7
-        Me.btnListadoMayor90.Text = "IMPRIMIR LISTADO"
+        Me.btnListadoMayor90.Text = "C / V"
         Me.btnListadoMayor90.UseVisualStyleBackColor = False
         '
         'Label18
@@ -642,8 +648,44 @@ Partial Class Reporte_Atrasos_Cobranzas
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(74, 28)
         Me.Button2.TabIndex = 6
-        Me.Button2.Text = "S/V"
+        Me.Button2.Text = "S / V"
         Me.Button2.UseVisualStyleBackColor = False
+        '
+        'Button3
+        '
+        Me.Button3.BackColor = System.Drawing.Color.White
+        Me.Button3.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button3.Location = New System.Drawing.Point(20, 101)
+        Me.Button3.Margin = New System.Windows.Forms.Padding(4)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(62, 28)
+        Me.Button3.TabIndex = 8
+        Me.Button3.Text = "S / V"
+        Me.Button3.UseVisualStyleBackColor = False
+        '
+        'Button4
+        '
+        Me.Button4.BackColor = System.Drawing.Color.White
+        Me.Button4.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button4.Location = New System.Drawing.Point(21, 101)
+        Me.Button4.Margin = New System.Windows.Forms.Padding(4)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(63, 28)
+        Me.Button4.TabIndex = 8
+        Me.Button4.Text = "S / V"
+        Me.Button4.UseVisualStyleBackColor = False
+        '
+        'Button5
+        '
+        Me.Button5.BackColor = System.Drawing.Color.White
+        Me.Button5.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button5.Location = New System.Drawing.Point(23, 101)
+        Me.Button5.Margin = New System.Windows.Forms.Padding(4)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(62, 28)
+        Me.Button5.TabIndex = 8
+        Me.Button5.Text = "S / V"
+        Me.Button5.UseVisualStyleBackColor = False
         '
         'Reporte_Atrasos_Cobranzas
         '
@@ -728,4 +770,7 @@ Partial Class Reporte_Atrasos_Cobranzas
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents CrystalReportViewer1 As CrystalDecisions.Windows.Forms.CrystalReportViewer
     Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents Button3 As System.Windows.Forms.Button
+    Friend WithEvents Button4 As System.Windows.Forms.Button
+    Friend WithEvents Button5 As System.Windows.Forms.Button
 End Class

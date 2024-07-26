@@ -363,18 +363,22 @@ Public Class Reporte_Atrasos_Cobranzas
         End If
     End Sub
 
-    Private Sub btnListado60_Click(sender As System.Object, e As System.EventArgs) Handles btnListado60.Click
+    Private Sub btnListado60_Click(sender As System.Object, e As System.EventArgs, Optional vendedorObligatorio As Boolean = True) Handles btnListado60.Click
 
-        If vendedor = "" Then
+        If vendedorObligatorio AndAlso String.IsNullOrEmpty(vendedor) Then
             MessageBox.Show("Debe Seleccionar un Vendedor para realizar la Busqueda", "SGCV_CO VERSION EXTENDIDA", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Me.cbVendedor.Focus()
         Else
-        Try
+            Try
                 conectar()
                 Dim dt As New DataTable
                 Dim da As New SqlDataAdapter("DASH_LISTADOSATRASOS_HASTA_60", SQLconexion)
                 da.SelectCommand.CommandType = CommandType.StoredProcedure
-                da.SelectCommand.Parameters.AddWithValue("@VENDEDOR", vendedor)
+                If vendedorObligatorio Then
+                    da.SelectCommand.Parameters.AddWithValue("@VENDEDOR", vendedor)
+                Else
+                    da.SelectCommand.Parameters.AddWithValue("@VENDEDOR", DBNull.Value)
+                End If
                 da.Fill(dt)
 
                 Dim ds As New Data.DataSet
@@ -384,40 +388,7 @@ Public Class Reporte_Atrasos_Cobranzas
                 info.SetDataSource(ds)
                 info.SetDatabaseLogon(iconexion.UserID, iconexion.Password, iconexion.ServerName, iconexion.DatabaseName)
                 If Not DesignMode Then
-                    info.SetParameterValue("@VENDEDOR", vendedor)
-                End If
-                SetDBLogonForReport(iconexion, info)
-                Me.CrystalReportViewer1.ReportSource = info
-                Me.CrystalReportViewer1.Zoom(65)
-
-        Catch ex As Exception
-            MessageBox.Show(ex.ToString)
-            SQLconexion.Close()
-            End Try
-        End If
-    End Sub
-
-    Private Sub btnListadoMenor90_Click(sender As System.Object, e As System.EventArgs) Handles btnListadoMenor90.Click
-        If vendedor = "" Then
-            MessageBox.Show("Debe Seleccionar un Vendedor para realizar la Busqueda", "SGCV_CO VERSION EXTENDIDA", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            Me.cbVendedor.Focus()
-        Else
-            Try
-                conectar()
-                Dim dt As New DataTable
-                Dim da As New SqlDataAdapter("DASH_LISTADOSATRASOS_HASTA_90", SQLconexion)
-                da.SelectCommand.CommandType = CommandType.StoredProcedure
-                da.SelectCommand.Parameters.AddWithValue("@VENDEDOR", vendedor)
-                da.Fill(dt)
-
-                Dim ds As New Data.DataSet
-                ds.Tables.Add(dt)
-
-                Dim info As New DSH_LISTADO_ATRASOS_HASTA_90
-                info.SetDataSource(ds)
-                info.SetDatabaseLogon(iconexion.UserID, iconexion.Password, iconexion.ServerName, iconexion.DatabaseName)
-                If Not DesignMode Then
-                    info.SetParameterValue("@VENDEDOR", vendedor)
+                    info.SetParameterValue("@VENDEDOR", If(vendedorObligatorio, vendedor, DBNull.Value))
                 End If
                 SetDBLogonForReport(iconexion, info)
                 Me.CrystalReportViewer1.ReportSource = info
@@ -430,9 +401,45 @@ Public Class Reporte_Atrasos_Cobranzas
         End If
     End Sub
 
-    Private Sub btnListadoMayor90_Click(sender As System.Object, e As System.EventArgs) Handles btnListadoMayor90.Click
+    Private Sub btnListadoMenor90_Click(sender As System.Object, e As System.EventArgs, Optional vendedorObligatorio As Boolean = True) Handles btnListadoMenor90.Click
+        If vendedorObligatorio AndAlso String.IsNullOrEmpty(vendedor) Then
+            MessageBox.Show("Debe Seleccionar un Vendedor para realizar la Busqueda", "SGCV_CO VERSION EXTENDIDA", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Me.cbVendedor.Focus()
+        Else
+            Try
+                conectar()
+                Dim dt As New DataTable
+                Dim da As New SqlDataAdapter("DASH_LISTADOSATRASOS_HASTA_90", SQLconexion)
+                da.SelectCommand.CommandType = CommandType.StoredProcedure
+                If vendedorObligatorio Then
+                    da.SelectCommand.Parameters.AddWithValue("@VENDEDOR", vendedor)
+                Else
+                    da.SelectCommand.Parameters.AddWithValue("@VENDEDOR", DBNull.Value)
+                End If
+                da.Fill(dt)
 
-        If vendedor = "" Then
+                Dim ds As New Data.DataSet
+                ds.Tables.Add(dt)
+
+                Dim info As New DSH_LISTADO_ATRASOS_HASTA_90
+                info.SetDataSource(ds)
+                info.SetDatabaseLogon(iconexion.UserID, iconexion.Password, iconexion.ServerName, iconexion.DatabaseName)
+                If Not DesignMode Then
+                    info.SetParameterValue("@VENDEDOR", If(vendedorObligatorio, vendedor, DBNull.Value))
+                End If
+                SetDBLogonForReport(iconexion, info)
+                Me.CrystalReportViewer1.ReportSource = info
+                Me.CrystalReportViewer1.Zoom(65)
+
+            Catch ex As Exception
+                MessageBox.Show(ex.ToString)
+                SQLconexion.Close()
+            End Try
+        End If
+    End Sub
+
+    Private Sub btnListadoMayor90_Click(sender As System.Object, e As System.EventArgs, Optional vendedorObligatorio As Boolean = True) Handles btnListadoMayor90.Click
+        If vendedorObligatorio AndAlso String.IsNullOrEmpty(vendedor) Then
             MessageBox.Show("Debe Seleccionar un Vendedor para realizar la Busqueda", "SGCV_CO VERSION EXTENDIDA", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Me.cbVendedor.Focus()
         Else
@@ -441,7 +448,11 @@ Public Class Reporte_Atrasos_Cobranzas
                 Dim dt As New DataTable
                 Dim da As New SqlDataAdapter("DASH_LISTADOSATRASOS_MAYOR_A_90", SQLconexion)
                 da.SelectCommand.CommandType = CommandType.StoredProcedure
-                da.SelectCommand.Parameters.AddWithValue("@VENDEDOR", vendedor)
+                If vendedorObligatorio Then
+                    da.SelectCommand.Parameters.AddWithValue("@VENDEDOR", vendedor)
+                Else
+                    da.SelectCommand.Parameters.AddWithValue("@VENDEDOR", DBNull.Value)
+                End If
                 da.Fill(dt)
 
                 Dim ds As New Data.DataSet
@@ -451,7 +462,7 @@ Public Class Reporte_Atrasos_Cobranzas
                 info.SetDataSource(ds)
                 info.SetDatabaseLogon(iconexion.UserID, iconexion.Password, iconexion.ServerName, iconexion.DatabaseName)
                 If Not DesignMode Then
-                    info.SetParameterValue("@VENDEDOR", vendedor)
+                    info.SetParameterValue("@VENDEDOR", If(vendedorObligatorio, vendedor, DBNull.Value))
                 End If
                 SetDBLogonForReport(iconexion, info)
                 Me.CrystalReportViewer1.ReportSource = info
@@ -738,5 +749,17 @@ Public Class Reporte_Atrasos_Cobranzas
 
     Private Sub Button2_Click(sender As System.Object, e As System.EventArgs) Handles Button2.Click
         btnListado30_Click(sender, e, vendedorObligatorio:=False)
+    End Sub
+
+    Private Sub Button3_Click(sender As System.Object, e As System.EventArgs) Handles Button3.Click
+        btnListado60_Click(sender, e, vendedorObligatorio:=False)
+    End Sub
+
+    Private Sub Button4_Click(sender As System.Object, e As System.EventArgs) Handles Button4.Click
+        btnListadoMenor90_Click(sender, e, vendedorObligatorio:=False)
+    End Sub
+
+    Private Sub Button5_Click(sender As System.Object, e As System.EventArgs) Handles Button5.Click
+        btnListadoMayor90_Click(sender, e, vendedorObligatorio:=False)
     End Sub
 End Class
