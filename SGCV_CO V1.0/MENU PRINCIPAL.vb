@@ -161,8 +161,10 @@ Public Class MENU_PRINCIPAL
         Try
             conectar()
             Dim sel As String
-            sel = "SELECT COUNT(*) FROM CP_CABECERA_CAJA WHERE ESTADO = '" & a & "' AND FECHA_APERTURA = '" & b & "'"
+            sel = "SELECT COUNT(*) FROM CP_CABECERA_CAJA WHERE ESTADO = @estado AND CONVERT(VARCHAR, FECHA_APERTURA, 23) = @fecha_apertura"
             cmm = New SqlClient.SqlCommand(sel, SQLconexion)
+            cmm.Parameters.AddWithValue("@estado", a)
+            cmm.Parameters.AddWithValue("@fecha_apertura", b.ToString("yyyy-MM-dd"))
             SQLconexion.Open()
             Dim t As Integer = CInt(cmm.ExecuteScalar())
             cmm.Dispose()
@@ -173,8 +175,8 @@ Public Class MENU_PRINCIPAL
             MsgBox(ex.Message())
             SQLconexion.Close()
         End Try
-
     End Function
+
 
     Private Sub FACTURACIONToolStripMenuItem1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles FACTURACION.Click
         If estado_caja("HABILITADO", Today) = 0 Then
@@ -928,12 +930,15 @@ Public Class MENU_PRINCIPAL
                 Try
                     conectar()
                     Dim sel As String
-                    sel = "UPDATE CONFIG_INICIO_SESION SET ESTADO = '" & "CERRADO" & "'" & _
-                    "WHERE USUARIO = '" & usuario_AUX & "' AND " & _
-                    "FECHA_INICIO = '" & Today & "'"
+                    sel = "UPDATE CONFIG_INICIO_SESION SET ESTADO = @estado " & _
+                          "WHERE USUARIO = @usuario AND FECHA_INICIO = @fecha_inicio"
                     cmm = New SqlClient.SqlCommand(sel, SQLconexion)
+                    cmm.Parameters.AddWithValue("@estado", "CERRADO")
+                    cmm.Parameters.AddWithValue("@usuario", usuario_AUX)
+                    cmm.Parameters.AddWithValue("@fecha_inicio", DateTime.Today.ToString("yyyy-MM-dd"))
+
                     SQLconexion.Open()
-                    Dim t As Integer = CInt(cmm.ExecuteScalar())
+                    cmm.ExecuteNonQuery()
                     cmm.Dispose()
                     SQLconexion.Close()
 
@@ -943,6 +948,7 @@ Public Class MENU_PRINCIPAL
                 End Try
 
                 Application.Exit()
+
             End If
         End If
 
