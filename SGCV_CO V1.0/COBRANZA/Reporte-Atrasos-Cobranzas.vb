@@ -318,6 +318,7 @@ Public Class Reporte_Atrasos_Cobranzas
         Me.btnParaCobrarEstaSemana.Enabled = True
         Me.btnMontoCobrarenelMes.Enabled = True
         Me.btnMontoCobradoenelMes.Enabled = True
+        Me.Button2.Enabled = True
 
         ' HABILITAMOS EL BOTON DE GENERAR y vendedor
         btnGenerarDash.Enabled = True
@@ -325,9 +326,8 @@ Public Class Reporte_Atrasos_Cobranzas
 
     End Sub
 
-    Private Sub btnListado30_Click(sender As System.Object, e As System.EventArgs) Handles btnListado30.Click
-
-        If vendedor = "" Then
+    Private Sub btnListado30_Click(sender As System.Object, e As System.EventArgs, Optional vendedorObligatorio As Boolean = True) Handles btnListado30.Click
+        If vendedorObligatorio AndAlso String.IsNullOrEmpty(vendedor) Then
             MessageBox.Show("Debe Seleccionar un Vendedor para realizar la Busqueda", "SGCV_CO VERSION EXTENDIDA", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Me.cbVendedor.Focus()
         Else
@@ -336,7 +336,11 @@ Public Class Reporte_Atrasos_Cobranzas
                 Dim dt As New DataTable
                 Dim da As New SqlDataAdapter("DASH_LISTADOSATRASOS_HASTA_30", SQLconexion)
                 da.SelectCommand.CommandType = CommandType.StoredProcedure
-                da.SelectCommand.Parameters.AddWithValue("@VENDEDOR", vendedor)
+                If vendedorObligatorio Then
+                    da.SelectCommand.Parameters.AddWithValue("@VENDEDOR", vendedor)
+                Else
+                    da.SelectCommand.Parameters.AddWithValue("@VENDEDOR", DBNull.Value)
+                End If
                 da.Fill(dt)
 
                 Dim ds As New Data.DataSet
@@ -346,7 +350,7 @@ Public Class Reporte_Atrasos_Cobranzas
                 info.SetDataSource(ds)
                 info.SetDatabaseLogon(iconexion.UserID, iconexion.Password, iconexion.ServerName, iconexion.DatabaseName)
                 If Not DesignMode Then
-                    info.SetParameterValue("@VENDEDOR", vendedor)
+                    info.SetParameterValue("@VENDEDOR", If(vendedorObligatorio, vendedor, DBNull.Value))
                 End If
                 SetDBLogonForReport(iconexion, info)
                 Me.CrystalReportViewer1.ReportSource = info
@@ -711,6 +715,7 @@ Public Class Reporte_Atrasos_Cobranzas
         Me.btnParaCobrarEstaSemana.Enabled = False
         Me.btnMontoCobrarenelMes.Enabled = False
         Me.btnMontoCobradoenelMes.Enabled = False
+        Me.Button2.Enabled = False
 
         Me.cbVendedor.DataSource = New List(Of String)()
         vendedor = ""
@@ -729,5 +734,9 @@ Public Class Reporte_Atrasos_Cobranzas
 
     Private Sub cbVendedor_SelectedIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles cbVendedor.SelectedIndexChanged
         vendedor = Trim(Me.DsVendedor.Tables("CONFIG_USUARIO").Rows(Me.cbVendedor.SelectedIndex).Item(6).ToString)
+    End Sub
+
+    Private Sub Button2_Click(sender As System.Object, e As System.EventArgs) Handles Button2.Click
+        btnListado30_Click(sender, e, vendedorObligatorio:=False)
     End Sub
 End Class

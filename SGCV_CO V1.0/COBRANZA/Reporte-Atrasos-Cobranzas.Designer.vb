@@ -65,6 +65,7 @@ Partial Class Reporte_Atrasos_Cobranzas
         Me.cbVendedor = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.CrystalReportViewer1 = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.GroupBox6.SuspendLayout()
         Me.GroupBox10.SuspendLayout()
         Me.GroupBox8.SuspendLayout()
@@ -81,7 +82,7 @@ Partial Class Reporte_Atrasos_Cobranzas
         Me.btnGenerarDash.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnGenerarDash.ForeColor = System.Drawing.Color.MediumBlue
         Me.btnGenerarDash.Location = New System.Drawing.Point(16, 417)
-        Me.btnGenerarDash.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnGenerarDash.Margin = New System.Windows.Forms.Padding(4)
         Me.btnGenerarDash.Name = "btnGenerarDash"
         Me.btnGenerarDash.Size = New System.Drawing.Size(163, 44)
         Me.btnGenerarDash.TabIndex = 22
@@ -97,9 +98,9 @@ Partial Class Reporte_Atrasos_Cobranzas
         Me.GroupBox6.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox6.ForeColor = System.Drawing.Color.Black
         Me.GroupBox6.Location = New System.Drawing.Point(679, 251)
-        Me.GroupBox6.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox6.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox6.Name = "GroupBox6"
-        Me.GroupBox6.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox6.Padding = New System.Windows.Forms.Padding(4)
         Me.GroupBox6.Size = New System.Drawing.Size(212, 148)
         Me.GroupBox6.TabIndex = 21
         Me.GroupBox6.TabStop = False
@@ -123,7 +124,7 @@ Partial Class Reporte_Atrasos_Cobranzas
         Me.btnMontoCobradoenelMes.BackColor = System.Drawing.Color.White
         Me.btnMontoCobradoenelMes.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnMontoCobradoenelMes.Location = New System.Drawing.Point(0, 101)
-        Me.btnMontoCobradoenelMes.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnMontoCobradoenelMes.Margin = New System.Windows.Forms.Padding(4)
         Me.btnMontoCobradoenelMes.Name = "btnMontoCobradoenelMes"
         Me.btnMontoCobradoenelMes.Size = New System.Drawing.Size(212, 28)
         Me.btnMontoCobradoenelMes.TabIndex = 9
@@ -151,9 +152,9 @@ Partial Class Reporte_Atrasos_Cobranzas
         Me.GroupBox10.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox10.ForeColor = System.Drawing.Color.Black
         Me.GroupBox10.Location = New System.Drawing.Point(239, 251)
-        Me.GroupBox10.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox10.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox10.Name = "GroupBox10"
-        Me.GroupBox10.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox10.Padding = New System.Windows.Forms.Padding(4)
         Me.GroupBox10.Size = New System.Drawing.Size(212, 148)
         Me.GroupBox10.TabIndex = 20
         Me.GroupBox10.TabStop = False
@@ -163,7 +164,7 @@ Partial Class Reporte_Atrasos_Cobranzas
         Me.btnParaCobrarEstaSemana.BackColor = System.Drawing.Color.White
         Me.btnParaCobrarEstaSemana.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnParaCobrarEstaSemana.Location = New System.Drawing.Point(1, 101)
-        Me.btnParaCobrarEstaSemana.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnParaCobrarEstaSemana.Margin = New System.Windows.Forms.Padding(4)
         Me.btnParaCobrarEstaSemana.Name = "btnParaCobrarEstaSemana"
         Me.btnParaCobrarEstaSemana.Size = New System.Drawing.Size(212, 28)
         Me.btnParaCobrarEstaSemana.TabIndex = 9
@@ -205,9 +206,9 @@ Partial Class Reporte_Atrasos_Cobranzas
         Me.GroupBox8.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox8.ForeColor = System.Drawing.Color.Black
         Me.GroupBox8.Location = New System.Drawing.Point(459, 251)
-        Me.GroupBox8.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox8.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox8.Name = "GroupBox8"
-        Me.GroupBox8.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox8.Padding = New System.Windows.Forms.Padding(4)
         Me.GroupBox8.Size = New System.Drawing.Size(212, 148)
         Me.GroupBox8.TabIndex = 18
         Me.GroupBox8.TabStop = False
@@ -217,7 +218,7 @@ Partial Class Reporte_Atrasos_Cobranzas
         Me.btnMontoCobrarenelMes.BackColor = System.Drawing.Color.White
         Me.btnMontoCobrarenelMes.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnMontoCobrarenelMes.Location = New System.Drawing.Point(0, 101)
-        Me.btnMontoCobrarenelMes.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnMontoCobrarenelMes.Margin = New System.Windows.Forms.Padding(4)
         Me.btnMontoCobrarenelMes.Name = "btnMontoCobrarenelMes"
         Me.btnMontoCobrarenelMes.Size = New System.Drawing.Size(212, 28)
         Me.btnMontoCobrarenelMes.TabIndex = 9
@@ -273,9 +274,9 @@ Partial Class Reporte_Atrasos_Cobranzas
         Me.GroupBox5.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox5.ForeColor = System.Drawing.Color.Black
         Me.GroupBox5.Location = New System.Drawing.Point(16, 251)
-        Me.GroupBox5.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox5.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox5.Padding = New System.Windows.Forms.Padding(4)
         Me.GroupBox5.Size = New System.Drawing.Size(212, 148)
         Me.GroupBox5.TabIndex = 17
         Me.GroupBox5.TabStop = False
@@ -285,7 +286,7 @@ Partial Class Reporte_Atrasos_Cobranzas
         Me.btnParaCobrarHoy.BackColor = System.Drawing.Color.White
         Me.btnParaCobrarHoy.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnParaCobrarHoy.Location = New System.Drawing.Point(0, 101)
-        Me.btnParaCobrarHoy.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnParaCobrarHoy.Margin = New System.Windows.Forms.Padding(4)
         Me.btnParaCobrarHoy.Name = "btnParaCobrarHoy"
         Me.btnParaCobrarHoy.Size = New System.Drawing.Size(212, 28)
         Me.btnParaCobrarHoy.TabIndex = 7
@@ -341,9 +342,9 @@ Partial Class Reporte_Atrasos_Cobranzas
         Me.GroupBox3.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox3.ForeColor = System.Drawing.Color.Black
         Me.GroupBox3.Location = New System.Drawing.Point(456, 50)
-        Me.GroupBox3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox3.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox3.Padding = New System.Windows.Forms.Padding(4)
         Me.GroupBox3.Size = New System.Drawing.Size(212, 144)
         Me.GroupBox3.TabIndex = 13
         Me.GroupBox3.TabStop = False
@@ -353,7 +354,7 @@ Partial Class Reporte_Atrasos_Cobranzas
         Me.btnListadoMenor90.BackColor = System.Drawing.Color.White
         Me.btnListadoMenor90.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnListadoMenor90.Location = New System.Drawing.Point(0, 101)
-        Me.btnListadoMenor90.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnListadoMenor90.Margin = New System.Windows.Forms.Padding(4)
         Me.btnListadoMenor90.Name = "btnListadoMenor90"
         Me.btnListadoMenor90.Size = New System.Drawing.Size(212, 28)
         Me.btnListadoMenor90.TabIndex = 7
@@ -395,9 +396,9 @@ Partial Class Reporte_Atrasos_Cobranzas
         Me.GroupBox2.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.ForeColor = System.Drawing.Color.Black
         Me.GroupBox2.Location = New System.Drawing.Point(236, 50)
-        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(4)
         Me.GroupBox2.Size = New System.Drawing.Size(212, 144)
         Me.GroupBox2.TabIndex = 15
         Me.GroupBox2.TabStop = False
@@ -407,7 +408,7 @@ Partial Class Reporte_Atrasos_Cobranzas
         Me.btnListado60.BackColor = System.Drawing.Color.White
         Me.btnListado60.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnListado60.Location = New System.Drawing.Point(0, 101)
-        Me.btnListado60.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnListado60.Margin = New System.Windows.Forms.Padding(4)
         Me.btnListado60.Name = "btnListado60"
         Me.btnListado60.Size = New System.Drawing.Size(212, 28)
         Me.btnListado60.TabIndex = 7
@@ -443,15 +444,16 @@ Partial Class Reporte_Atrasos_Cobranzas
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.GroupBox1.Controls.Add(Me.Button2)
         Me.GroupBox1.Controls.Add(Me.btnListado30)
         Me.GroupBox1.Controls.Add(Me.Label15)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.ForeColor = System.Drawing.Color.Black
         Me.GroupBox1.Location = New System.Drawing.Point(16, 50)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Size = New System.Drawing.Size(212, 144)
         Me.GroupBox1.TabIndex = 12
         Me.GroupBox1.TabStop = False
@@ -460,12 +462,12 @@ Partial Class Reporte_Atrasos_Cobranzas
         '
         Me.btnListado30.BackColor = System.Drawing.Color.White
         Me.btnListado30.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnListado30.Location = New System.Drawing.Point(0, 101)
-        Me.btnListado30.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnListado30.Location = New System.Drawing.Point(122, 101)
+        Me.btnListado30.Margin = New System.Windows.Forms.Padding(4)
         Me.btnListado30.Name = "btnListado30"
-        Me.btnListado30.Size = New System.Drawing.Size(212, 28)
+        Me.btnListado30.Size = New System.Drawing.Size(74, 28)
         Me.btnListado30.TabIndex = 5
-        Me.btnListado30.Text = "IMPRIMIR LISTADO"
+        Me.btnListado30.Text = "C/V"
         Me.btnListado30.UseVisualStyleBackColor = False
         '
         'Label15
@@ -503,9 +505,9 @@ Partial Class Reporte_Atrasos_Cobranzas
         Me.GroupBox4.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox4.ForeColor = System.Drawing.Color.Black
         Me.GroupBox4.Location = New System.Drawing.Point(676, 50)
-        Me.GroupBox4.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox4.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox4.Padding = New System.Windows.Forms.Padding(4)
         Me.GroupBox4.Size = New System.Drawing.Size(212, 144)
         Me.GroupBox4.TabIndex = 16
         Me.GroupBox4.TabStop = False
@@ -515,7 +517,7 @@ Partial Class Reporte_Atrasos_Cobranzas
         Me.btnListadoMayor90.BackColor = System.Drawing.Color.White
         Me.btnListadoMayor90.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnListadoMayor90.Location = New System.Drawing.Point(0, 101)
-        Me.btnListadoMayor90.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnListadoMayor90.Margin = New System.Windows.Forms.Padding(4)
         Me.btnListadoMayor90.Name = "btnListadoMayor90"
         Me.btnListadoMayor90.Size = New System.Drawing.Size(212, 28)
         Me.btnListadoMayor90.TabIndex = 7
@@ -553,7 +555,7 @@ Partial Class Reporte_Atrasos_Cobranzas
         Me.ProgressBar1.BackColor = System.Drawing.Color.White
         Me.ProgressBar1.ForeColor = System.Drawing.Color.Blue
         Me.ProgressBar1.Location = New System.Drawing.Point(23, 516)
-        Me.ProgressBar1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.ProgressBar1.Margin = New System.Windows.Forms.Padding(4)
         Me.ProgressBar1.Name = "ProgressBar1"
         Me.ProgressBar1.Size = New System.Drawing.Size(865, 28)
         Me.ProgressBar1.TabIndex = 1259
@@ -565,7 +567,7 @@ Partial Class Reporte_Atrasos_Cobranzas
         Me.Button1.ForeColor = System.Drawing.Color.MediumBlue
         Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
         Me.Button1.Location = New System.Drawing.Point(752, 417)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(4)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(61, 44)
         Me.Button1.TabIndex = 1260
@@ -601,7 +603,7 @@ Partial Class Reporte_Atrasos_Cobranzas
         Me.cbVendedor.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.cbVendedor.FormattingEnabled = True
         Me.cbVendedor.Location = New System.Drawing.Point(203, 479)
-        Me.cbVendedor.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cbVendedor.Margin = New System.Windows.Forms.Padding(4)
         Me.cbVendedor.Name = "cbVendedor"
         Me.cbVendedor.Size = New System.Drawing.Size(337, 29)
         Me.cbVendedor.TabIndex = 50014
@@ -624,19 +626,31 @@ Partial Class Reporte_Atrasos_Cobranzas
         Me.CrystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.CrystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default
         Me.CrystalReportViewer1.Location = New System.Drawing.Point(896, 15)
-        Me.CrystalReportViewer1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.CrystalReportViewer1.Margin = New System.Windows.Forms.Padding(4)
         Me.CrystalReportViewer1.Name = "CrystalReportViewer1"
-        Me.CrystalReportViewer1.Size = New System.Drawing.Size(493, 597)
+        Me.CrystalReportViewer1.Size = New System.Drawing.Size(785, 597)
         Me.CrystalReportViewer1.TabIndex = 50016
         Me.CrystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None
         Me.CrystalReportViewer1.ToolPanelWidth = 267
+        '
+        'Button2
+        '
+        Me.Button2.BackColor = System.Drawing.Color.White
+        Me.Button2.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.Location = New System.Drawing.Point(17, 101)
+        Me.Button2.Margin = New System.Windows.Forms.Padding(4)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(74, 28)
+        Me.Button2.TabIndex = 6
+        Me.Button2.Text = "S/V"
+        Me.Button2.UseVisualStyleBackColor = False
         '
         'Reporte_Atrasos_Cobranzas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1408, 623)
+        Me.ClientSize = New System.Drawing.Size(1711, 623)
         Me.ControlBox = False
         Me.Controls.Add(Me.CrystalReportViewer1)
         Me.Controls.Add(Me.cbVendedor)
@@ -656,7 +670,7 @@ Partial Class Reporte_Atrasos_Cobranzas
         Me.Controls.Add(Me.GroupBox8)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.GroupBox5)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Reporte_Atrasos_Cobranzas"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "REPORTE PARA COBRANZAS Y ATRASOS DE CUENTAS"
@@ -713,4 +727,5 @@ Partial Class Reporte_Atrasos_Cobranzas
     Friend WithEvents cbVendedor As System.Windows.Forms.ComboBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents CrystalReportViewer1 As CrystalDecisions.Windows.Forms.CrystalReportViewer
+    Friend WithEvents Button2 As System.Windows.Forms.Button
 End Class
