@@ -475,104 +475,178 @@ Public Class Reporte_Atrasos_Cobranzas
         End If
     End Sub
 
-    Private Sub btnParaCobrarHoy_Click(sender As System.Object, e As System.EventArgs) Handles btnParaCobrarHoy.Click
+    Private Sub btnParaCobrarHoy_Click(sender As System.Object, e As System.EventArgs, Optional vendedorObligatorio As Boolean = False) Handles btnParaCobrarHoy.Click
+        If vendedorObligatorio AndAlso String.IsNullOrEmpty(vendedor) Then
+            MessageBox.Show("Debe Seleccionar un Vendedor para realizar la Búsqueda", "SGCV_CO VERSION EXTENDIDA", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Me.cbVendedor.Focus()
+        Else
+            Try
+                conectar()
+                Dim dt As New DataTable
+                Dim da As New SqlDataAdapter("DASH_MONTO_A_COBRAR_HOY", SQLconexion)
+                da.SelectCommand.CommandType = CommandType.StoredProcedure
 
-        Try
-            conectar()
-            Dim dt As New DataTable
-            Dim da As New SqlDataAdapter("DASH_MONTO_A_COBRAR_HOY", SQLconexion)
-            da.SelectCommand.CommandType = CommandType.StoredProcedure
-            da.Fill(dt)
+                ' Añadir parámetro vendedor o DBNull según corresponda
+                If vendedorObligatorio Then
+                    da.SelectCommand.Parameters.AddWithValue("@VENDEDOR", vendedor)
+                Else
+                    da.SelectCommand.Parameters.AddWithValue("@VENDEDOR", DBNull.Value)
+                End If
 
-            Dim ds As New Data.DataSet
-            ds.Tables.Add(dt)
+                da.Fill(dt)
 
-            Dim info As New DSH_LISTADO_MONTO_PARA_COBRAR_HOY
-            info.SetDataSource(ds)
-            SetDBLogonForReport(iconexion, info)
-            Me.CrystalReportViewer1.ReportSource = info
-            Me.CrystalReportViewer1.Zoom(65)
+                Dim ds As New Data.DataSet
+                ds.Tables.Add(dt)
 
-        Catch ex As Exception
-            MessageBox.Show(ex.ToString)
-            SQLconexion.Close()
-        End Try
+                Dim info As New DSH_LISTADO_MONTO_PARA_COBRAR_HOY
+                info.SetDataSource(ds)
+                info.SetDatabaseLogon(iconexion.UserID, iconexion.Password, iconexion.ServerName, iconexion.DatabaseName)
+                If Not DesignMode Then
+                    info.SetParameterValue("@VENDEDOR", If(vendedorObligatorio, vendedor, DBNull.Value))
+                End If
+                SetDBLogonForReport(iconexion, info)
+                Me.CrystalReportViewer1.ReportSource = info
+                Me.CrystalReportViewer1.Zoom(65)
+
+            Catch ex As Exception
+                MessageBox.Show(ex.ToString)
+                SQLconexion.Close()
+            End Try
+        End If
     End Sub
 
-    Private Sub btnParaCobrarEstaSemana_Click(sender As System.Object, e As System.EventArgs) Handles btnParaCobrarEstaSemana.Click
 
-        Try
-            conectar()
-            Dim dt As New DataTable
-            Dim da As New SqlDataAdapter("DASH_LISTADO_MONTO_PARA_COBRAR_ESTA_SEMANA", SQLconexion)
-            da.SelectCommand.CommandType = CommandType.StoredProcedure
-            da.Fill(dt)
+    Private Sub btnParaCobrarEstaSemana_Click(sender As System.Object, e As System.EventArgs, Optional vendedorObligatorio As Boolean = False) Handles btnParaCobrarEstaSemana.Click
+        If vendedorObligatorio AndAlso String.IsNullOrEmpty(vendedor) Then
+            MessageBox.Show("Debe Seleccionar un Vendedor para realizar la Búsqueda", "SGCV_CO VERSION EXTENDIDA", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Me.cbVendedor.Focus()
+        Else
+            Try
+                conectar()
+                Dim dt As New DataTable
+                Dim da As New SqlDataAdapter("DASH_LISTADO_MONTO_PARA_COBRAR_ESTA_SEMANA", SQLconexion)
+                da.SelectCommand.CommandType = CommandType.StoredProcedure
 
-            Dim ds As New Data.DataSet
-            ds.Tables.Add(dt)
+                ' Añadir parámetro vendedor o DBNull según corresponda
+                If vendedorObligatorio Then
+                    da.SelectCommand.Parameters.AddWithValue("@VENDEDOR", vendedor)
+                Else
+                    da.SelectCommand.Parameters.AddWithValue("@VENDEDOR", DBNull.Value)
+                End If
 
-            Dim info As New DSH_LISTADO_MONTO_PARA_COBRAR_ESTA_SEMANA
-            info.SetDataSource(ds)
-            SetDBLogonForReport(iconexion, info)
-            Me.CrystalReportViewer1.ReportSource = info
-            Me.CrystalReportViewer1.Zoom(65)
+                da.Fill(dt)
 
-        Catch ex As Exception
-            MessageBox.Show(ex.ToString)
-            SQLconexion.Close()
-        End Try
+                Dim ds As New Data.DataSet
+                ds.Tables.Add(dt)
+
+                Dim info As New DSH_LISTADO_MONTO_PARA_COBRAR_ESTA_SEMANA
+                info.SetDataSource(ds)
+                info.SetDatabaseLogon(iconexion.UserID, iconexion.Password, iconexion.ServerName, iconexion.DatabaseName)
+                If Not DesignMode Then
+                    info.SetParameterValue("@VENDEDOR", If(vendedorObligatorio, vendedor, DBNull.Value))
+                End If
+                SetDBLogonForReport(iconexion, info)
+                Me.CrystalReportViewer1.ReportSource = info
+                Me.CrystalReportViewer1.Zoom(65)
+
+            Catch ex As Exception
+                MessageBox.Show(ex.ToString)
+                SQLconexion.Close()
+            End Try
+        End If
     End Sub
 
-    Private Sub btnMontoCobrarenelMes_Click(sender As System.Object, e As System.EventArgs) Handles btnMontoCobrarenelMes.Click
-        Try
-            conectar()
-            Dim dt As New DataTable
-            Dim da As New SqlDataAdapter("DASH_LISTADO_MONTO_PARA_COBRAR_ESTE_MES", SQLconexion)
-            da.SelectCommand.CommandType = CommandType.StoredProcedure
-            da.Fill(dt)
 
-            Dim ds As New Data.DataSet
-            ds.Tables.Add(dt)
+    Private Sub btnMontoCobrarenelMes_Click(sender As System.Object, e As System.EventArgs, Optional vendedorObligatorio As Boolean = False) Handles btnMontoCobrarenelMes.Click
+        If vendedorObligatorio AndAlso String.IsNullOrEmpty(vendedor) Then
+            MessageBox.Show("Debe Seleccionar un Vendedor para realizar la Búsqueda", "SGCV_CO VERSION EXTENDIDA", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Me.cbVendedor.Focus()
+        Else
+            Try
+                conectar()
+                Dim dt As New DataTable
+                Dim da As New SqlDataAdapter("DASH_LISTADO_MONTO_PARA_COBRAR_ESTE_MES", SQLconexion)
+                da.SelectCommand.CommandType = CommandType.StoredProcedure
 
-            Dim info As New DSH_LISTADO_MONTO_PARA_COBRAR_EN_EL_MES
-            info.SetDataSource(ds)
-            SetDBLogonForReport(iconexion, info)
-            Me.CrystalReportViewer1.ReportSource = info
-            Me.CrystalReportViewer1.Zoom(65)
+                ' Añadir parámetro vendedor o DBNull según corresponda
+                If vendedorObligatorio Then
+                    da.SelectCommand.Parameters.AddWithValue("@VENDEDOR", vendedor)
+                Else
+                    da.SelectCommand.Parameters.AddWithValue("@VENDEDOR", DBNull.Value)
+                End If
 
-        Catch ex As Exception
-            MessageBox.Show(ex.ToString)
-            SQLconexion.Close()
-        End Try
+                da.Fill(dt)
 
+                Dim ds As New Data.DataSet
+                ds.Tables.Add(dt)
+
+                Dim info As New DSH_LISTADO_MONTO_PARA_COBRAR_EN_EL_MES
+                info.SetDataSource(ds)
+                info.SetDatabaseLogon(iconexion.UserID, iconexion.Password, iconexion.ServerName, iconexion.DatabaseName)
+                If Not DesignMode Then
+                    info.SetParameterValue("@VENDEDOR", If(vendedorObligatorio, vendedor, DBNull.Value))
+                End If
+                SetDBLogonForReport(iconexion, info)
+                Me.CrystalReportViewer1.ReportSource = info
+                Me.CrystalReportViewer1.Zoom(65)
+
+            Catch ex As Exception
+                MessageBox.Show(ex.ToString)
+                SQLconexion.Close()
+            End Try
+        End If
     End Sub
 
-    Private Sub btnMontoCobradoenelMes_Click(sender As System.Object, e As System.EventArgs) Handles btnMontoCobradoenelMes.Click
-        Try
-            conectar()
-            Dim dt As New DataTable
-            Dim da As New SqlDataAdapter("DASH_LISTADO_MONTO_COBRADO_EN_EL_MES", SQLconexion)
-            da.SelectCommand.CommandType = CommandType.StoredProcedure
-            da.SelectCommand.Parameters.AddWithValue("@fechaprimero", fechaprimero)
-            da.SelectCommand.Parameters.AddWithValue("@fechaultimo", fechaultimo)
-            da.Fill(dt)
 
-            Dim ds As New Data.DataSet
-            ds.Tables.Add(dt)
+    Private Sub btnMontoCobradoenelMes_Click(sender As System.Object, e As System.EventArgs, Optional vendedorObligatorio As Boolean = False) Handles btnMontoCobradoenelMes.Click
+        ' Validar si se requiere el vendedor y si no se ha proporcionado
+        If vendedorObligatorio AndAlso String.IsNullOrEmpty(vendedor) Then
+            MessageBox.Show("Debe Seleccionar un Vendedor para realizar la Búsqueda", "SGCV_CO VERSION EXTENDIDA", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Me.cbVendedor.Focus()
+        Else
+            Try
+                conectar()
+                Dim dt As New DataTable
+                Dim da As New SqlDataAdapter("DASH_LISTADO_MONTO_COBRADO_EN_EL_MES", SQLconexion)
+                da.SelectCommand.CommandType = CommandType.StoredProcedure
 
-            Dim info As New DSH_LISTADO_MONTO_COBRADO_EN_EL_MES
-            info.SetDataSource(ds)
-            info.SetParameterValue("@fechaprimero", fechaprimero)
-            info.SetParameterValue("@fechaultimo", fechaultimo)
-            SetDBLogonForReport(iconexion, info)
-            Me.CrystalReportViewer1.ReportSource = info
-            Me.CrystalReportViewer1.Zoom(65)
+                ' Añadir los parámetros de fecha
+                da.SelectCommand.Parameters.AddWithValue("@fechaprimero", fechaprimero)
+                da.SelectCommand.Parameters.AddWithValue("@fechaultimo", fechaultimo)
 
-        Catch ex As Exception
-            MessageBox.Show(ex.ToString)
-            SQLconexion.Close()
-        End Try
+                ' Añadir parámetro vendedor o DBNull según corresponda
+                If vendedorObligatorio AndAlso Not String.IsNullOrEmpty(vendedor) Then
+                    da.SelectCommand.Parameters.AddWithValue("@vendedor", vendedor)
+                Else
+                    da.SelectCommand.Parameters.AddWithValue("@vendedor", DBNull.Value)
+                End If
+
+                da.Fill(dt)
+
+                Dim ds As New Data.DataSet
+                ds.Tables.Add(dt)
+
+                Dim info As New DSH_LISTADO_MONTO_COBRADO_EN_EL_MES
+                info.SetDataSource(ds)
+                info.SetParameterValue("@fechaprimero", fechaprimero)
+                info.SetParameterValue("@fechaultimo", fechaultimo)
+                ' Añadir el parámetro de vendedor al informe si es obligatorio
+                If vendedorObligatorio Then
+                    info.SetParameterValue("@vendedor", vendedor)
+                Else
+                    info.SetParameterValue("@vendedor", DBNull.Value)
+                End If
+                SetDBLogonForReport(iconexion, info)
+                Me.CrystalReportViewer1.ReportSource = info
+                Me.CrystalReportViewer1.Zoom(65)
+
+            Catch ex As Exception
+                MessageBox.Show(ex.ToString)
+                SQLconexion.Close()
+            End Try
+        End If
     End Sub
+
 
     Sub Cargar_Datos()
         Try
@@ -761,5 +835,21 @@ Public Class Reporte_Atrasos_Cobranzas
 
     Private Sub Button5_Click(sender As System.Object, e As System.EventArgs) Handles Button5.Click
         btnListadoMayor90_Click(sender, e, vendedorObligatorio:=False)
+    End Sub
+
+    Private Sub Button6_Click(sender As System.Object, e As System.EventArgs) Handles Button6.Click
+        btnParaCobrarHoy_Click(sender, e, vendedorObligatorio:=True)
+    End Sub
+
+    Private Sub Button7_Click(sender As System.Object, e As System.EventArgs) Handles Button7.Click
+        btnParaCobrarEstaSemana_Click(sender, e, vendedorObligatorio:=True)
+    End Sub
+
+    Private Sub Button8_Click(sender As System.Object, e As System.EventArgs) Handles Button8.Click
+        btnMontoCobrarenelMes_Click(sender, e, vendedorObligatorio:=True)
+    End Sub
+
+    Private Sub Button9_Click(sender As System.Object, e As System.EventArgs) Handles Button9.Click
+        btnMontoCobradoenelMes_Click(sender, e, vendedorObligatorio:=True)
     End Sub
 End Class
