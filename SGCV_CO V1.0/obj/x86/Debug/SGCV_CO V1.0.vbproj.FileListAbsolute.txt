@@ -382,3 +382,4 @@ C:\Chelo\SGCV-CO\SGCV_CO V1.0\obj\x86\Debug\SGCV_CO V1.0.exe
 C:\Chelo\SGCV-CO\SGCV_CO V1.0\obj\x86\Debug\SGCV_CO V1.0.xml
 C:\Chelo\SGCV-CO\SGCV_CO V1.0\obj\x86\Debug\SGCV_CO V1.0.pdb
 C:\Chelo\SGCV-CO\SGCV_CO V1.0\obj\x86\Debug\SGCV_CO V1.0.vbprojResolveAssemblyReference.cache
+C:\Chelo\SGCV-CO\SGCV_CO V1.0\obj\x86\Debug\SGCV_CO_V1._0.EstadoClientes.resources

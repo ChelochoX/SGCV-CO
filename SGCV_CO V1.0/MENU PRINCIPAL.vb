@@ -906,13 +906,11 @@ Public Class MENU_PRINCIPAL
 
     End Sub
     Private Sub UTILIDADCOSTOVsVENTAToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles UTILIDAD_COSTOVsVENTA.Click
-        Dim FRM_UTILIDAD_COMPRAVSVENTA As New UTILIDAD_COMPRA_VS_VENTA
-        FRM_UTILIDAD_COMPRAVSVENTA.Show()
+      
     End Sub
 
-    Private Sub ESTADISTICASDECUENTASPORCOBRARToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ESTADISTICAS_DE_CUENTAS_POR_COBRAR.Click
-        Dim FRM_ESTADISTICA_DEUDA_PAGO As New ESTADISTICAS_CUENTAS_POR_COBRAR
-        FRM_ESTADISTICA_DEUDA_PAGO.Show()
+    Private Sub ESTADISTICASDECUENTASPORCOBRARToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+
 
     End Sub
 
@@ -1041,14 +1039,12 @@ Public Class MENU_PRINCIPAL
         'FORM_PRESUPUESTO.Show()
     End Sub
 
-    Private Sub REPORTEVENTASPORVENDEDORVSFECHAToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles REPORTEVENTASPORVENDEDORVSFECHAToolStripMenuItem.Click
-        Dim FORM_REPORTE_VENDEDOR_VS_FECHA As New REPORTE_VENTAS_POR_VENDEDOR_VS_FECHA
-        FORM_REPORTE_VENDEDOR_VS_FECHA.Show()
+    Private Sub REPORTEVENTASPORVENDEDORVSFECHAToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+
     End Sub
 
-    Private Sub REPORTECOBRANZASPORVENDEDORVSFECHAToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles REPORTECOBRANZASPORVENDEDORVSFECHAToolStripMenuItem.Click
-        Dim FORM_REPORTE_COBRANZAS_VS_FECHA As New REPORTE_COBRANZAS_POR_VENDEDOR_VS_FECHA
-        FORM_REPORTE_COBRANZAS_VS_FECHA.Show()
+    Private Sub REPORTECOBRANZASPORVENDEDORVSFECHAToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+
     End Sub
 
     'Private Sub TareaSegundoPlano_DoWork(ByVal sender As Object, ByVal e As System.ComponentModel.DoWorkEventArgs) Handles TareaSegundoPlano.DoWork
@@ -1308,5 +1304,29 @@ Public Class MENU_PRINCIPAL
         Dim FRM_ESTADO_COBRANZAS_ATRASOS As New Reporte_Atrasos_Cobranzas
         FRM_ESTADO_COBRANZAS_ATRASOS.Show()
     End Sub
-   
+
+    Private Sub UtilidadCostoVsVentaToolStripMenuItem_Click_1(sender As System.Object, e As System.EventArgs) Handles UtilidadCostoVsVentaToolStripMenuItem.Click
+        Dim FRM_UTILIDAD_COMPRAVSVENTA As New UTILIDAD_COMPRA_VS_VENTA
+        FRM_UTILIDAD_COMPRAVSVENTA.Show()
+    End Sub
+
+    Private Sub EstadisticasDeCuentasPorCobrarToolStripMenuItem_Click_1(sender As System.Object, e As System.EventArgs) Handles ESTADISTICAS_DE_CUENTAS_POR_COBRAR.Click
+        Dim FRM_ESTADISTICA_DEUDA_PAGO As New ESTADISTICAS_CUENTAS_POR_COBRAR
+        FRM_ESTADISTICA_DEUDA_PAGO.Show()
+    End Sub
+
+    Private Sub CobranzaPorVendedorVsFEchaToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles CobranzaPorVendedorVsFEchaToolStripMenuItem.Click
+        Dim FORM_REPORTE_COBRANZAS_VS_FECHA As New REPORTE_COBRANZAS_POR_VENDEDOR_VS_FECHA
+        FORM_REPORTE_COBRANZAS_VS_FECHA.Show()
+    End Sub
+
+    Private Sub VentasPorVendedorVsFechaToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles VentasPorVendedorVsFechaToolStripMenuItem.Click
+        Dim FORM_REPORTE_VENDEDOR_VS_FECHA As New REPORTE_VENTAS_POR_VENDEDOR_VS_FECHA
+        FORM_REPORTE_VENDEDOR_VS_FECHA.Show()
+    End Sub
+
+    Private Sub CLIENTESToolStripMenuItem1_Click(sender As System.Object, e As System.EventArgs) Handles CLIENTESToolStripMenuItem1.Click
+        Dim form_ReporteListadoTotalCuentaClientes As New EstadoClientes
+        form_ReporteListadoTotalCuentaClientes.Show()
+    End Sub
 End Class

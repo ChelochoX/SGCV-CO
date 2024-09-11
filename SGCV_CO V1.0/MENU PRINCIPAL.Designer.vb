@@ -23,7 +23,6 @@ Partial Class MENU_PRINCIPAL
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MENU_PRINCIPAL))
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.CLIENTESToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.REGISTRO_CLIENTES = New System.Windows.Forms.ToolStripMenuItem()
@@ -63,11 +62,12 @@ Partial Class MENU_PRINCIPAL
         Me.REPORTE_CLIENTES_CON_ATRASO = New System.Windows.Forms.ToolStripMenuItem()
         Me.INFORMEToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.UTILIDAD_COSTOVsVENTA = New System.Windows.Forms.ToolStripMenuItem()
+        Me.UtilidadCostoVsVentaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ESTADISTICAS_DE_CUENTAS_POR_COBRAR = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CobranzaPorVendedorVsFEchaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.VentasPorVendedorVsFechaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ROTACION_DE_MERCADERIAS = New System.Windows.Forms.ToolStripMenuItem()
-        Me.REPORTEVENTASPORVENDEDORVSFECHAToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.REPORTECOBRANZASPORVENDEDORVSFECHAToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EMPRESAToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CLIENTESToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ROLESToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AGREGAR_USUARIO = New System.Windows.Forms.ToolStripMenuItem()
         Me.HABILITAR_DESHABILITAR_ROLES_USUARIO = New System.Windows.Forms.ToolStripMenuItem()
@@ -90,11 +90,11 @@ Partial Class MENU_PRINCIPAL
         Me.MenuStrip1.Dock = System.Windows.Forms.DockStyle.Left
         Me.MenuStrip1.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.MenuStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CLIENTESToolStripMenuItem, Me.PRODUCTOSToolStripMenuItem, Me.PROVEEDORToolStripMenuItem, Me.DEPOSITOToolStripMenuItem, Me.COMPRASToolStripMenuItem, Me.FACTURACIONToolStripMenuItem, Me.CAJAToolStripMenuItem, Me.COBRANZAToolStripMenuItem, Me.INFORMEToolStripMenuItem, Me.EMPRESAToolStripMenuItem, Me.ROLESToolStripMenuItem, Me.CONTACTOToolStripMenuItem, Me.CERRARToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CLIENTESToolStripMenuItem, Me.PRODUCTOSToolStripMenuItem, Me.PROVEEDORToolStripMenuItem, Me.DEPOSITOToolStripMenuItem, Me.COMPRASToolStripMenuItem, Me.FACTURACIONToolStripMenuItem, Me.CAJAToolStripMenuItem, Me.COBRANZAToolStripMenuItem, Me.INFORMEToolStripMenuItem, Me.ROLESToolStripMenuItem, Me.CONTACTOToolStripMenuItem, Me.CERRARToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(8, 3, 0, 3)
-        Me.MenuStrip1.Size = New System.Drawing.Size(166, 733)
+        Me.MenuStrip1.Size = New System.Drawing.Size(196, 733)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -106,7 +106,7 @@ Partial Class MENU_PRINCIPAL
         Me.CLIENTESToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.CLIENTESToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.CLIENTESToolStripMenuItem.Name = "CLIENTESToolStripMenuItem"
-        Me.CLIENTESToolStripMenuItem.Size = New System.Drawing.Size(149, 52)
+        Me.CLIENTESToolStripMenuItem.Size = New System.Drawing.Size(179, 52)
         Me.CLIENTESToolStripMenuItem.Text = "CLIENTES"
         '
         'REGISTRO_CLIENTES
@@ -115,7 +115,7 @@ Partial Class MENU_PRINCIPAL
         Me.REGISTRO_CLIENTES.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.REGISTRO_CLIENTES.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.REGISTRO_CLIENTES.Name = "REGISTRO_CLIENTES"
-        Me.REGISTRO_CLIENTES.Size = New System.Drawing.Size(207, 54)
+        Me.REGISTRO_CLIENTES.Size = New System.Drawing.Size(241, 54)
         Me.REGISTRO_CLIENTES.Text = "REGISTRO CLIENTES"
         '
         'REPORTE_CLIENTES
@@ -124,7 +124,7 @@ Partial Class MENU_PRINCIPAL
         Me.REPORTE_CLIENTES.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.REPORTE_CLIENTES.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.REPORTE_CLIENTES.Name = "REPORTE_CLIENTES"
-        Me.REPORTE_CLIENTES.Size = New System.Drawing.Size(207, 54)
+        Me.REPORTE_CLIENTES.Size = New System.Drawing.Size(241, 54)
         Me.REPORTE_CLIENTES.Text = "REPORTE  CLIENTES"
         '
         'PRODUCTOSToolStripMenuItem
@@ -135,7 +135,7 @@ Partial Class MENU_PRINCIPAL
         Me.PRODUCTOSToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.PRODUCTOSToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.PRODUCTOSToolStripMenuItem.Name = "PRODUCTOSToolStripMenuItem"
-        Me.PRODUCTOSToolStripMenuItem.Size = New System.Drawing.Size(149, 52)
+        Me.PRODUCTOSToolStripMenuItem.Size = New System.Drawing.Size(179, 52)
         Me.PRODUCTOSToolStripMenuItem.Text = "PRODUCTO"
         '
         'REGISTRO_DE_PRODUCTOS
@@ -144,7 +144,7 @@ Partial Class MENU_PRINCIPAL
         Me.REGISTRO_DE_PRODUCTOS.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.REGISTRO_DE_PRODUCTOS.ImageTransparentColor = System.Drawing.Color.White
         Me.REGISTRO_DE_PRODUCTOS.Name = "REGISTRO_DE_PRODUCTOS"
-        Me.REGISTRO_DE_PRODUCTOS.Size = New System.Drawing.Size(316, 54)
+        Me.REGISTRO_DE_PRODUCTOS.Size = New System.Drawing.Size(385, 54)
         Me.REGISTRO_DE_PRODUCTOS.Text = "REGISTRO DE PRODUCTOS"
         '
         'MODIFICAR_PRECIOS
@@ -153,7 +153,7 @@ Partial Class MENU_PRINCIPAL
         Me.MODIFICAR_PRECIOS.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.MODIFICAR_PRECIOS.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.MODIFICAR_PRECIOS.Name = "MODIFICAR_PRECIOS"
-        Me.MODIFICAR_PRECIOS.Size = New System.Drawing.Size(316, 54)
+        Me.MODIFICAR_PRECIOS.Size = New System.Drawing.Size(385, 54)
         Me.MODIFICAR_PRECIOS.Text = "MODIFICAR PRECIOS"
         '
         'APLICAR_IMAGEN_A_PRODUCTO
@@ -162,7 +162,7 @@ Partial Class MENU_PRINCIPAL
         Me.APLICAR_IMAGEN_A_PRODUCTO.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.APLICAR_IMAGEN_A_PRODUCTO.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.APLICAR_IMAGEN_A_PRODUCTO.Name = "APLICAR_IMAGEN_A_PRODUCTO"
-        Me.APLICAR_IMAGEN_A_PRODUCTO.Size = New System.Drawing.Size(316, 54)
+        Me.APLICAR_IMAGEN_A_PRODUCTO.Size = New System.Drawing.Size(385, 54)
         Me.APLICAR_IMAGEN_A_PRODUCTO.Text = "APLICAR IMAGEN A PRODUCTO"
         '
         'PANEL_DE_PRECIOS_PROMO_PRODUCTOS
@@ -170,7 +170,7 @@ Partial Class MENU_PRINCIPAL
         Me.PANEL_DE_PRECIOS_PROMO_PRODUCTOS.Image = Global.SGCV_CO_V1._0.My.Resources.Resources.icons8_estimar_48
         Me.PANEL_DE_PRECIOS_PROMO_PRODUCTOS.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.PANEL_DE_PRECIOS_PROMO_PRODUCTOS.Name = "PANEL_DE_PRECIOS_PROMO_PRODUCTOS"
-        Me.PANEL_DE_PRECIOS_PROMO_PRODUCTOS.Size = New System.Drawing.Size(316, 54)
+        Me.PANEL_DE_PRECIOS_PROMO_PRODUCTOS.Size = New System.Drawing.Size(385, 54)
         Me.PANEL_DE_PRECIOS_PROMO_PRODUCTOS.Text = "PANEL DE PRECIOS - PROMO PRODUCTOS"
         '
         'PROVEEDORToolStripMenuItem
@@ -181,7 +181,7 @@ Partial Class MENU_PRINCIPAL
         Me.PROVEEDORToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.PROVEEDORToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.PROVEEDORToolStripMenuItem.Name = "PROVEEDORToolStripMenuItem"
-        Me.PROVEEDORToolStripMenuItem.Size = New System.Drawing.Size(149, 52)
+        Me.PROVEEDORToolStripMenuItem.Size = New System.Drawing.Size(179, 52)
         Me.PROVEEDORToolStripMenuItem.Text = "PROVEEDOR"
         '
         'REGISTRO_DE_PROVEEDORES
@@ -190,7 +190,7 @@ Partial Class MENU_PRINCIPAL
         Me.REGISTRO_DE_PROVEEDORES.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.REGISTRO_DE_PROVEEDORES.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.REGISTRO_DE_PROVEEDORES.Name = "REGISTRO_DE_PROVEEDORES"
-        Me.REGISTRO_DE_PROVEEDORES.Size = New System.Drawing.Size(252, 54)
+        Me.REGISTRO_DE_PROVEEDORES.Size = New System.Drawing.Size(297, 54)
         Me.REGISTRO_DE_PROVEEDORES.Text = "REGISTRO DE PROVEEDORES"
         '
         'DEPOSITOToolStripMenuItem
@@ -201,7 +201,7 @@ Partial Class MENU_PRINCIPAL
         Me.DEPOSITOToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.DEPOSITOToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.DEPOSITOToolStripMenuItem.Name = "DEPOSITOToolStripMenuItem"
-        Me.DEPOSITOToolStripMenuItem.Size = New System.Drawing.Size(149, 52)
+        Me.DEPOSITOToolStripMenuItem.Size = New System.Drawing.Size(179, 52)
         Me.DEPOSITOToolStripMenuItem.Text = "DEPOSITO"
         '
         'VER_PRODUCTOS_EN_DEPOSITO
@@ -210,7 +210,7 @@ Partial Class MENU_PRINCIPAL
         Me.VER_PRODUCTOS_EN_DEPOSITO.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.VER_PRODUCTOS_EN_DEPOSITO.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.VER_PRODUCTOS_EN_DEPOSITO.Name = "VER_PRODUCTOS_EN_DEPOSITO"
-        Me.VER_PRODUCTOS_EN_DEPOSITO.Size = New System.Drawing.Size(307, 54)
+        Me.VER_PRODUCTOS_EN_DEPOSITO.Size = New System.Drawing.Size(369, 54)
         Me.VER_PRODUCTOS_EN_DEPOSITO.Text = "VER PRODUCTOS EN DEPOSITO"
         '
         'TRASLADO_DE_PRODUCTOS
@@ -219,7 +219,7 @@ Partial Class MENU_PRINCIPAL
         Me.TRASLADO_DE_PRODUCTOS.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.TRASLADO_DE_PRODUCTOS.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.TRASLADO_DE_PRODUCTOS.Name = "TRASLADO_DE_PRODUCTOS"
-        Me.TRASLADO_DE_PRODUCTOS.Size = New System.Drawing.Size(307, 54)
+        Me.TRASLADO_DE_PRODUCTOS.Size = New System.Drawing.Size(369, 54)
         Me.TRASLADO_DE_PRODUCTOS.Text = "TRASLADO DE PRODUCTOS"
         '
         'VISUALIZAR_STOCK
@@ -228,7 +228,7 @@ Partial Class MENU_PRINCIPAL
         Me.VISUALIZAR_STOCK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.VISUALIZAR_STOCK.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.VISUALIZAR_STOCK.Name = "VISUALIZAR_STOCK"
-        Me.VISUALIZAR_STOCK.Size = New System.Drawing.Size(307, 54)
+        Me.VISUALIZAR_STOCK.Size = New System.Drawing.Size(369, 54)
         Me.VISUALIZAR_STOCK.Text = "REPORTE DE PRODUCTOS EN DEPOSITO"
         '
         'COMPRASToolStripMenuItem
@@ -239,7 +239,7 @@ Partial Class MENU_PRINCIPAL
         Me.COMPRASToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.COMPRASToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.COMPRASToolStripMenuItem.Name = "COMPRASToolStripMenuItem"
-        Me.COMPRASToolStripMenuItem.Size = New System.Drawing.Size(149, 52)
+        Me.COMPRASToolStripMenuItem.Size = New System.Drawing.Size(179, 52)
         Me.COMPRASToolStripMenuItem.Text = "COMPRAS"
         '
         'COMPRAS_DE_PROVEEDORES
@@ -248,7 +248,7 @@ Partial Class MENU_PRINCIPAL
         Me.COMPRAS_DE_PROVEEDORES.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.COMPRAS_DE_PROVEEDORES.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.COMPRAS_DE_PROVEEDORES.Name = "COMPRAS_DE_PROVEEDORES"
-        Me.COMPRAS_DE_PROVEEDORES.Size = New System.Drawing.Size(259, 54)
+        Me.COMPRAS_DE_PROVEEDORES.Size = New System.Drawing.Size(309, 54)
         Me.COMPRAS_DE_PROVEEDORES.Text = "COMPRAS DE PROVEEDORES"
         '
         'INGRESAR_COMPRAS
@@ -257,7 +257,7 @@ Partial Class MENU_PRINCIPAL
         Me.INGRESAR_COMPRAS.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.INGRESAR_COMPRAS.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.INGRESAR_COMPRAS.Name = "INGRESAR_COMPRAS"
-        Me.INGRESAR_COMPRAS.Size = New System.Drawing.Size(259, 54)
+        Me.INGRESAR_COMPRAS.Size = New System.Drawing.Size(309, 54)
         Me.INGRESAR_COMPRAS.Text = "INGRESAR COMPRAS A STOCK"
         '
         'FACTURACIONToolStripMenuItem
@@ -268,7 +268,7 @@ Partial Class MENU_PRINCIPAL
         Me.FACTURACIONToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.FACTURACIONToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.FACTURACIONToolStripMenuItem.Name = "FACTURACIONToolStripMenuItem"
-        Me.FACTURACIONToolStripMenuItem.Size = New System.Drawing.Size(149, 52)
+        Me.FACTURACIONToolStripMenuItem.Size = New System.Drawing.Size(179, 52)
         Me.FACTURACIONToolStripMenuItem.Text = "VENTAS"
         '
         'FACTURACION
@@ -277,7 +277,7 @@ Partial Class MENU_PRINCIPAL
         Me.FACTURACION.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.FACTURACION.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.FACTURACION.Name = "FACTURACION"
-        Me.FACTURACION.Size = New System.Drawing.Size(317, 54)
+        Me.FACTURACION.Size = New System.Drawing.Size(382, 54)
         Me.FACTURACION.Text = "FACTURACION"
         '
         'REIMPRESION_FACTURACIONES
@@ -286,7 +286,7 @@ Partial Class MENU_PRINCIPAL
         Me.REIMPRESION_FACTURACIONES.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.REIMPRESION_FACTURACIONES.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.REIMPRESION_FACTURACIONES.Name = "REIMPRESION_FACTURACIONES"
-        Me.REIMPRESION_FACTURACIONES.Size = New System.Drawing.Size(317, 54)
+        Me.REIMPRESION_FACTURACIONES.Size = New System.Drawing.Size(382, 54)
         Me.REIMPRESION_FACTURACIONES.Text = "REIMPRESION FACTURACIONES"
         '
         'ANULAR_FACTURACION
@@ -295,7 +295,7 @@ Partial Class MENU_PRINCIPAL
         Me.ANULAR_FACTURACION.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.ANULAR_FACTURACION.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.ANULAR_FACTURACION.Name = "ANULAR_FACTURACION"
-        Me.ANULAR_FACTURACION.Size = New System.Drawing.Size(317, 54)
+        Me.ANULAR_FACTURACION.Size = New System.Drawing.Size(382, 54)
         Me.ANULAR_FACTURACION.Text = "ANULAR FACTURACION"
         '
         'REPORTE_DOCUMENTO_DE_FACTURACION
@@ -304,7 +304,7 @@ Partial Class MENU_PRINCIPAL
         Me.REPORTE_DOCUMENTO_DE_FACTURACION.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.REPORTE_DOCUMENTO_DE_FACTURACION.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.REPORTE_DOCUMENTO_DE_FACTURACION.Name = "REPORTE_DOCUMENTO_DE_FACTURACION"
-        Me.REPORTE_DOCUMENTO_DE_FACTURACION.Size = New System.Drawing.Size(317, 54)
+        Me.REPORTE_DOCUMENTO_DE_FACTURACION.Size = New System.Drawing.Size(382, 54)
         Me.REPORTE_DOCUMENTO_DE_FACTURACION.Text = "REPORTE DOCUMENTO DE FACTURACION"
         '
         'PREPARARPRESUPUESTOToolStripMenuItem
@@ -312,7 +312,7 @@ Partial Class MENU_PRINCIPAL
         Me.PREPARARPRESUPUESTOToolStripMenuItem.Image = Global.SGCV_CO_V1._0.My.Resources.Resources.icons8_verificar_48
         Me.PREPARARPRESUPUESTOToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.PREPARARPRESUPUESTOToolStripMenuItem.Name = "PREPARARPRESUPUESTOToolStripMenuItem"
-        Me.PREPARARPRESUPUESTOToolStripMenuItem.Size = New System.Drawing.Size(317, 54)
+        Me.PREPARARPRESUPUESTOToolStripMenuItem.Size = New System.Drawing.Size(382, 54)
         Me.PREPARARPRESUPUESTOToolStripMenuItem.Text = "PREPARAR PRESUPUESTO"
         '
         'CAJAToolStripMenuItem
@@ -325,7 +325,7 @@ Partial Class MENU_PRINCIPAL
         Me.CAJAToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.CAJAToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.CAJAToolStripMenuItem.Name = "CAJAToolStripMenuItem"
-        Me.CAJAToolStripMenuItem.Size = New System.Drawing.Size(149, 52)
+        Me.CAJAToolStripMenuItem.Size = New System.Drawing.Size(179, 52)
         Me.CAJAToolStripMenuItem.Text = "CAJA"
         '
         'APERTURA_CIERRE
@@ -334,7 +334,7 @@ Partial Class MENU_PRINCIPAL
         Me.APERTURA_CIERRE.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.APERTURA_CIERRE.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.APERTURA_CIERRE.Name = "APERTURA_CIERRE"
-        Me.APERTURA_CIERRE.Size = New System.Drawing.Size(313, 54)
+        Me.APERTURA_CIERRE.Size = New System.Drawing.Size(381, 54)
         Me.APERTURA_CIERRE.Text = "APERTURA - RENDICION - MOVIMIENTOS"
         '
         'VER_CUENTA_CLIENTE
@@ -343,7 +343,7 @@ Partial Class MENU_PRINCIPAL
         Me.VER_CUENTA_CLIENTE.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.VER_CUENTA_CLIENTE.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.VER_CUENTA_CLIENTE.Name = "VER_CUENTA_CLIENTE"
-        Me.VER_CUENTA_CLIENTE.Size = New System.Drawing.Size(313, 54)
+        Me.VER_CUENTA_CLIENTE.Size = New System.Drawing.Size(381, 54)
         Me.VER_CUENTA_CLIENTE.Text = "VER CUENTA CLIENTE"
         '
         'GESTIONAR_COBRO
@@ -352,7 +352,7 @@ Partial Class MENU_PRINCIPAL
         Me.GESTIONAR_COBRO.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.GESTIONAR_COBRO.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.GESTIONAR_COBRO.Name = "GESTIONAR_COBRO"
-        Me.GESTIONAR_COBRO.Size = New System.Drawing.Size(313, 54)
+        Me.GESTIONAR_COBRO.Size = New System.Drawing.Size(381, 54)
         Me.GESTIONAR_COBRO.Text = "GESTIONAR COBRO"
         '
         'REPORTE_RENDICION_DE_CAJA
@@ -361,7 +361,7 @@ Partial Class MENU_PRINCIPAL
         Me.REPORTE_RENDICION_DE_CAJA.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.REPORTE_RENDICION_DE_CAJA.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.REPORTE_RENDICION_DE_CAJA.Name = "REPORTE_RENDICION_DE_CAJA"
-        Me.REPORTE_RENDICION_DE_CAJA.Size = New System.Drawing.Size(313, 54)
+        Me.REPORTE_RENDICION_DE_CAJA.Size = New System.Drawing.Size(381, 54)
         Me.REPORTE_RENDICION_DE_CAJA.Text = "REPORTE RENDICION DE CAJA"
         '
         'VER_DOCUMENTOS_ANULADOS
@@ -370,7 +370,7 @@ Partial Class MENU_PRINCIPAL
         Me.VER_DOCUMENTOS_ANULADOS.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.VER_DOCUMENTOS_ANULADOS.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.VER_DOCUMENTOS_ANULADOS.Name = "VER_DOCUMENTOS_ANULADOS"
-        Me.VER_DOCUMENTOS_ANULADOS.Size = New System.Drawing.Size(313, 54)
+        Me.VER_DOCUMENTOS_ANULADOS.Size = New System.Drawing.Size(381, 54)
         Me.VER_DOCUMENTOS_ANULADOS.Text = "VER DOCUMENTOS ANULADOS"
         '
         'ANULAR_RECIBO
@@ -379,7 +379,7 @@ Partial Class MENU_PRINCIPAL
         Me.ANULAR_RECIBO.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.ANULAR_RECIBO.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.ANULAR_RECIBO.Name = "ANULAR_RECIBO"
-        Me.ANULAR_RECIBO.Size = New System.Drawing.Size(313, 54)
+        Me.ANULAR_RECIBO.Size = New System.Drawing.Size(381, 54)
         Me.ANULAR_RECIBO.Text = "ANULAR RECIBO"
         '
         'REPORTE_DE_RECIBOS_DE_DINERO
@@ -388,7 +388,7 @@ Partial Class MENU_PRINCIPAL
         Me.REPORTE_DE_RECIBOS_DE_DINERO.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.REPORTE_DE_RECIBOS_DE_DINERO.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.REPORTE_DE_RECIBOS_DE_DINERO.Name = "REPORTE_DE_RECIBOS_DE_DINERO"
-        Me.REPORTE_DE_RECIBOS_DE_DINERO.Size = New System.Drawing.Size(313, 54)
+        Me.REPORTE_DE_RECIBOS_DE_DINERO.Size = New System.Drawing.Size(381, 54)
         Me.REPORTE_DE_RECIBOS_DE_DINERO.Text = "REPORTE DE RECIBOS DE DINERO"
         '
         'RE_IMPRESION_DE_RECIBOS_DE_DINERO
@@ -396,7 +396,7 @@ Partial Class MENU_PRINCIPAL
         Me.RE_IMPRESION_DE_RECIBOS_DE_DINERO.Image = Global.SGCV_CO_V1._0.My.Resources.Resources.icons8_imprimir_48
         Me.RE_IMPRESION_DE_RECIBOS_DE_DINERO.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.RE_IMPRESION_DE_RECIBOS_DE_DINERO.Name = "RE_IMPRESION_DE_RECIBOS_DE_DINERO"
-        Me.RE_IMPRESION_DE_RECIBOS_DE_DINERO.Size = New System.Drawing.Size(313, 54)
+        Me.RE_IMPRESION_DE_RECIBOS_DE_DINERO.Size = New System.Drawing.Size(381, 54)
         Me.RE_IMPRESION_DE_RECIBOS_DE_DINERO.Text = "RE IMPRECION DE RECIBOS DE PAGO"
         '
         'COBRANZAToolStripMenuItem
@@ -407,7 +407,7 @@ Partial Class MENU_PRINCIPAL
         Me.COBRANZAToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.COBRANZAToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.COBRANZAToolStripMenuItem.Name = "COBRANZAToolStripMenuItem"
-        Me.COBRANZAToolStripMenuItem.Size = New System.Drawing.Size(149, 52)
+        Me.COBRANZAToolStripMenuItem.Size = New System.Drawing.Size(179, 52)
         Me.COBRANZAToolStripMenuItem.Text = "COBRANZA"
         '
         'SEGUIMIENTO_COBRANZA_CLIENTE
@@ -416,7 +416,7 @@ Partial Class MENU_PRINCIPAL
         Me.SEGUIMIENTO_COBRANZA_CLIENTE.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.SEGUIMIENTO_COBRANZA_CLIENTE.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.SEGUIMIENTO_COBRANZA_CLIENTE.Name = "SEGUIMIENTO_COBRANZA_CLIENTE"
-        Me.SEGUIMIENTO_COBRANZA_CLIENTE.Size = New System.Drawing.Size(287, 54)
+        Me.SEGUIMIENTO_COBRANZA_CLIENTE.Size = New System.Drawing.Size(343, 54)
         Me.SEGUIMIENTO_COBRANZA_CLIENTE.Text = "SEGUIMIENTO COBRANZA CLIENTE"
         '
         'REPORTE_SEGUIMIENTO_COBRANZA
@@ -425,7 +425,7 @@ Partial Class MENU_PRINCIPAL
         Me.REPORTE_SEGUIMIENTO_COBRANZA.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.REPORTE_SEGUIMIENTO_COBRANZA.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.REPORTE_SEGUIMIENTO_COBRANZA.Name = "REPORTE_SEGUIMIENTO_COBRANZA"
-        Me.REPORTE_SEGUIMIENTO_COBRANZA.Size = New System.Drawing.Size(287, 54)
+        Me.REPORTE_SEGUIMIENTO_COBRANZA.Size = New System.Drawing.Size(343, 54)
         Me.REPORTE_SEGUIMIENTO_COBRANZA.Text = "REPORTE SEGUIMIENTO COBRANZA"
         '
         'REPORTE_CLIENTES_CON_ATRASO
@@ -434,70 +434,64 @@ Partial Class MENU_PRINCIPAL
         Me.REPORTE_CLIENTES_CON_ATRASO.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.REPORTE_CLIENTES_CON_ATRASO.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.REPORTE_CLIENTES_CON_ATRASO.Name = "REPORTE_CLIENTES_CON_ATRASO"
-        Me.REPORTE_CLIENTES_CON_ATRASO.Size = New System.Drawing.Size(287, 54)
+        Me.REPORTE_CLIENTES_CON_ATRASO.Size = New System.Drawing.Size(343, 54)
         Me.REPORTE_CLIENTES_CON_ATRASO.Text = "REPORTE CLIENTES CON ATRASO"
         '
         'INFORMEToolStripMenuItem
         '
-        Me.INFORMEToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.UTILIDAD_COSTOVsVENTA, Me.ESTADISTICAS_DE_CUENTAS_POR_COBRAR, Me.ROTACION_DE_MERCADERIAS, Me.REPORTEVENTASPORVENDEDORVSFECHAToolStripMenuItem, Me.REPORTECOBRANZASPORVENDEDORVSFECHAToolStripMenuItem})
+        Me.INFORMEToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.UTILIDAD_COSTOVsVENTA, Me.ROTACION_DE_MERCADERIAS, Me.CLIENTESToolStripMenuItem1})
         Me.INFORMEToolStripMenuItem.ForeColor = System.Drawing.Color.MediumBlue
         Me.INFORMEToolStripMenuItem.Image = Global.SGCV_CO_V1._0.My.Resources.Resources.icons8_lista_de_quehaceres_48
         Me.INFORMEToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.INFORMEToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.INFORMEToolStripMenuItem.Name = "INFORMEToolStripMenuItem"
-        Me.INFORMEToolStripMenuItem.Size = New System.Drawing.Size(149, 52)
-        Me.INFORMEToolStripMenuItem.Text = "INFORME"
+        Me.INFORMEToolStripMenuItem.Size = New System.Drawing.Size(179, 52)
+        Me.INFORMEToolStripMenuItem.Text = "REPORTES"
         '
         'UTILIDAD_COSTOVsVENTA
         '
-        Me.UTILIDAD_COSTOVsVENTA.Image = Global.SGCV_CO_V1._0.My.Resources.Resources.icons8_flujo_de_fondos_48
+        Me.UTILIDAD_COSTOVsVENTA.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.UtilidadCostoVsVentaToolStripMenuItem, Me.ESTADISTICAS_DE_CUENTAS_POR_COBRAR, Me.CobranzaPorVendedorVsFEchaToolStripMenuItem, Me.VentasPorVendedorVsFechaToolStripMenuItem})
         Me.UTILIDAD_COSTOVsVENTA.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.UTILIDAD_COSTOVsVENTA.Name = "UTILIDAD_COSTOVsVENTA"
-        Me.UTILIDAD_COSTOVsVENTA.Size = New System.Drawing.Size(372, 70)
-        Me.UTILIDAD_COSTOVsVENTA.Text = "UTILIDAD (COSTO vs VENTA)"
+        Me.UTILIDAD_COSTOVsVENTA.Size = New System.Drawing.Size(267, 24)
+        Me.UTILIDAD_COSTOVsVENTA.Text = "ESTADISTICOS"
+        '
+        'UtilidadCostoVsVentaToolStripMenuItem
+        '
+        Me.UtilidadCostoVsVentaToolStripMenuItem.Name = "UtilidadCostoVsVentaToolStripMenuItem"
+        Me.UtilidadCostoVsVentaToolStripMenuItem.Size = New System.Drawing.Size(294, 24)
+        Me.UtilidadCostoVsVentaToolStripMenuItem.Text = "Utilidad Costo vs Venta"
         '
         'ESTADISTICAS_DE_CUENTAS_POR_COBRAR
         '
-        Me.ESTADISTICAS_DE_CUENTAS_POR_COBRAR.Image = Global.SGCV_CO_V1._0.My.Resources.Resources.icons8_contabilidad_48
-        Me.ESTADISTICAS_DE_CUENTAS_POR_COBRAR.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.ESTADISTICAS_DE_CUENTAS_POR_COBRAR.Name = "ESTADISTICAS_DE_CUENTAS_POR_COBRAR"
-        Me.ESTADISTICAS_DE_CUENTAS_POR_COBRAR.Size = New System.Drawing.Size(372, 70)
-        Me.ESTADISTICAS_DE_CUENTAS_POR_COBRAR.Text = "ESTADISTICAS DE CUENTAS POR COBRAR"
+        Me.ESTADISTICAS_DE_CUENTAS_POR_COBRAR.Size = New System.Drawing.Size(294, 24)
+        Me.ESTADISTICAS_DE_CUENTAS_POR_COBRAR.Text = "Estadisticas de Cuentas por Cobrar"
+        '
+        'CobranzaPorVendedorVsFEchaToolStripMenuItem
+        '
+        Me.CobranzaPorVendedorVsFEchaToolStripMenuItem.Name = "CobranzaPorVendedorVsFEchaToolStripMenuItem"
+        Me.CobranzaPorVendedorVsFEchaToolStripMenuItem.Size = New System.Drawing.Size(294, 24)
+        Me.CobranzaPorVendedorVsFEchaToolStripMenuItem.Text = "Cobranza por Vendedor vs Fecha"
+        '
+        'VentasPorVendedorVsFechaToolStripMenuItem
+        '
+        Me.VentasPorVendedorVsFechaToolStripMenuItem.Name = "VentasPorVendedorVsFechaToolStripMenuItem"
+        Me.VentasPorVendedorVsFechaToolStripMenuItem.Size = New System.Drawing.Size(294, 24)
+        Me.VentasPorVendedorVsFechaToolStripMenuItem.Text = "Ventas por Vendedor vs Fecha"
         '
         'ROTACION_DE_MERCADERIAS
         '
-        Me.ROTACION_DE_MERCADERIAS.Image = Global.SGCV_CO_V1._0.My.Resources.Resources.icons8_producto_nuevo_48
         Me.ROTACION_DE_MERCADERIAS.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.ROTACION_DE_MERCADERIAS.Name = "ROTACION_DE_MERCADERIAS"
-        Me.ROTACION_DE_MERCADERIAS.Size = New System.Drawing.Size(372, 70)
+        Me.ROTACION_DE_MERCADERIAS.Size = New System.Drawing.Size(267, 24)
         Me.ROTACION_DE_MERCADERIAS.Text = "ROTACION DE MERCADERIAS"
         '
-        'REPORTEVENTASPORVENDEDORVSFECHAToolStripMenuItem
+        'CLIENTESToolStripMenuItem1
         '
-        Me.REPORTEVENTASPORVENDEDORVSFECHAToolStripMenuItem.Image = CType(resources.GetObject("REPORTEVENTASPORVENDEDORVSFECHAToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.REPORTEVENTASPORVENDEDORVSFECHAToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.REPORTEVENTASPORVENDEDORVSFECHAToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
-        Me.REPORTEVENTASPORVENDEDORVSFECHAToolStripMenuItem.Name = "REPORTEVENTASPORVENDEDORVSFECHAToolStripMenuItem"
-        Me.REPORTEVENTASPORVENDEDORVSFECHAToolStripMenuItem.Size = New System.Drawing.Size(372, 70)
-        Me.REPORTEVENTASPORVENDEDORVSFECHAToolStripMenuItem.Text = "REPORTE VENTAS POR VENDEDOR VS FECHA"
-        '
-        'REPORTECOBRANZASPORVENDEDORVSFECHAToolStripMenuItem
-        '
-        Me.REPORTECOBRANZASPORVENDEDORVSFECHAToolStripMenuItem.Image = CType(resources.GetObject("REPORTECOBRANZASPORVENDEDORVSFECHAToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.REPORTECOBRANZASPORVENDEDORVSFECHAToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
-        Me.REPORTECOBRANZASPORVENDEDORVSFECHAToolStripMenuItem.Name = "REPORTECOBRANZASPORVENDEDORVSFECHAToolStripMenuItem"
-        Me.REPORTECOBRANZASPORVENDEDORVSFECHAToolStripMenuItem.Size = New System.Drawing.Size(372, 70)
-        Me.REPORTECOBRANZASPORVENDEDORVSFECHAToolStripMenuItem.Text = "REPORTE COBRANZAS POR VENDEDOR VS FECHA"
-        '
-        'EMPRESAToolStripMenuItem
-        '
-        Me.EMPRESAToolStripMenuItem.ForeColor = System.Drawing.Color.MediumBlue
-        Me.EMPRESAToolStripMenuItem.Image = Global.SGCV_CO_V1._0.My.Resources.Resources.icons8_tienda_48
-        Me.EMPRESAToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.EMPRESAToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
-        Me.EMPRESAToolStripMenuItem.Name = "EMPRESAToolStripMenuItem"
-        Me.EMPRESAToolStripMenuItem.Size = New System.Drawing.Size(149, 52)
-        Me.EMPRESAToolStripMenuItem.Text = "EMPRESA"
+        Me.CLIENTESToolStripMenuItem1.Name = "CLIENTESToolStripMenuItem1"
+        Me.CLIENTESToolStripMenuItem1.Size = New System.Drawing.Size(267, 24)
+        Me.CLIENTESToolStripMenuItem1.Text = "CLIENTES"
         '
         'ROLESToolStripMenuItem
         '
@@ -507,7 +501,7 @@ Partial Class MENU_PRINCIPAL
         Me.ROLESToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.ROLESToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.ROLESToolStripMenuItem.Name = "ROLESToolStripMenuItem"
-        Me.ROLESToolStripMenuItem.Size = New System.Drawing.Size(149, 52)
+        Me.ROLESToolStripMenuItem.Size = New System.Drawing.Size(179, 52)
         Me.ROLESToolStripMenuItem.Text = "CONFIGURACION "
         '
         'AGREGAR_USUARIO
@@ -516,7 +510,7 @@ Partial Class MENU_PRINCIPAL
         Me.AGREGAR_USUARIO.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.AGREGAR_USUARIO.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.AGREGAR_USUARIO.Name = "AGREGAR_USUARIO"
-        Me.AGREGAR_USUARIO.Size = New System.Drawing.Size(283, 54)
+        Me.AGREGAR_USUARIO.Size = New System.Drawing.Size(340, 54)
         Me.AGREGAR_USUARIO.Text = "AGREGAR USUARIO"
         '
         'HABILITAR_DESHABILITAR_ROLES_USUARIO
@@ -525,7 +519,7 @@ Partial Class MENU_PRINCIPAL
         Me.HABILITAR_DESHABILITAR_ROLES_USUARIO.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.HABILITAR_DESHABILITAR_ROLES_USUARIO.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.HABILITAR_DESHABILITAR_ROLES_USUARIO.Name = "HABILITAR_DESHABILITAR_ROLES_USUARIO"
-        Me.HABILITAR_DESHABILITAR_ROLES_USUARIO.Size = New System.Drawing.Size(283, 54)
+        Me.HABILITAR_DESHABILITAR_ROLES_USUARIO.Size = New System.Drawing.Size(340, 54)
         Me.HABILITAR_DESHABILITAR_ROLES_USUARIO.Text = "ROLES DE USUARIO"
         '
         'FACTURACIONES_SIN_DOCUMENTO
@@ -534,7 +528,7 @@ Partial Class MENU_PRINCIPAL
         Me.FACTURACIONES_SIN_DOCUMENTO.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.FACTURACIONES_SIN_DOCUMENTO.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.FACTURACIONES_SIN_DOCUMENTO.Name = "FACTURACIONES_SIN_DOCUMENTO"
-        Me.FACTURACIONES_SIN_DOCUMENTO.Size = New System.Drawing.Size(283, 54)
+        Me.FACTURACIONES_SIN_DOCUMENTO.Size = New System.Drawing.Size(340, 54)
         Me.FACTURACIONES_SIN_DOCUMENTO.Text = "FACTURACIONES SIN DOCUMENTO"
         '
         'ESTADO_DE_DOCUMENTOS
@@ -543,7 +537,7 @@ Partial Class MENU_PRINCIPAL
         Me.ESTADO_DE_DOCUMENTOS.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.ESTADO_DE_DOCUMENTOS.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.ESTADO_DE_DOCUMENTOS.Name = "ESTADO_DE_DOCUMENTOS"
-        Me.ESTADO_DE_DOCUMENTOS.Size = New System.Drawing.Size(283, 54)
+        Me.ESTADO_DE_DOCUMENTOS.Size = New System.Drawing.Size(340, 54)
         Me.ESTADO_DE_DOCUMENTOS.Text = "ESTADO DE DOCUMENTOS"
         '
         'GESTIONAR_INTERES_PARACUOTAS
@@ -551,7 +545,7 @@ Partial Class MENU_PRINCIPAL
         Me.GESTIONAR_INTERES_PARACUOTAS.Image = Global.SGCV_CO_V1._0.My.Resources.Resources.icons8_estimar_48
         Me.GESTIONAR_INTERES_PARACUOTAS.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.GESTIONAR_INTERES_PARACUOTAS.Name = "GESTIONAR_INTERES_PARACUOTAS"
-        Me.GESTIONAR_INTERES_PARACUOTAS.Size = New System.Drawing.Size(283, 54)
+        Me.GESTIONAR_INTERES_PARACUOTAS.Size = New System.Drawing.Size(340, 54)
         Me.GESTIONAR_INTERES_PARACUOTAS.Text = "GESTIONAR INTERES PARA CUOTAS"
         '
         'CONTACTOToolStripMenuItem
@@ -562,7 +556,7 @@ Partial Class MENU_PRINCIPAL
         Me.CONTACTOToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.CONTACTOToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.CONTACTOToolStripMenuItem.Name = "CONTACTOToolStripMenuItem"
-        Me.CONTACTOToolStripMenuItem.Size = New System.Drawing.Size(149, 52)
+        Me.CONTACTOToolStripMenuItem.Size = New System.Drawing.Size(179, 52)
         Me.CONTACTOToolStripMenuItem.Text = "SOPORTE"
         '
         'DATOS_PARA_CONTACTOS
@@ -571,7 +565,7 @@ Partial Class MENU_PRINCIPAL
         Me.DATOS_PARA_CONTACTOS.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.DATOS_PARA_CONTACTOS.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.DATOS_PARA_CONTACTOS.Name = "DATOS_PARA_CONTACTOS"
-        Me.DATOS_PARA_CONTACTOS.Size = New System.Drawing.Size(234, 54)
+        Me.DATOS_PARA_CONTACTOS.Size = New System.Drawing.Size(278, 54)
         Me.DATOS_PARA_CONTACTOS.Text = "DATOS PARA CONTACTOS"
         '
         'CERRARToolStripMenuItem
@@ -583,7 +577,7 @@ Partial Class MENU_PRINCIPAL
         Me.CERRARToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.CERRARToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.CERRARToolStripMenuItem.Name = "CERRARToolStripMenuItem"
-        Me.CERRARToolStripMenuItem.Size = New System.Drawing.Size(149, 52)
+        Me.CERRARToolStripMenuItem.Size = New System.Drawing.Size(179, 52)
         Me.CERRARToolStripMenuItem.Text = "CERRAR"
         '
         'Timer1
@@ -596,7 +590,7 @@ Partial Class MENU_PRINCIPAL
         Me.Label1.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(251, 34)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(184, 19)
+        Me.Label1.Size = New System.Drawing.Size(220, 24)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "SUMARIO DEL SISTEMA"
         '
@@ -619,7 +613,7 @@ Partial Class MENU_PRINCIPAL
         '
         'MENU_PRINCIPAL
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 21.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 28.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1335, 733)
@@ -672,7 +666,6 @@ Partial Class MENU_PRINCIPAL
     Friend WithEvents REPORTE_SEGUIMIENTO_COBRANZA As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ANULAR_FACTURACION As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents UTILIDAD_COSTOVsVENTA As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ESTADISTICAS_DE_CUENTAS_POR_COBRAR As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ROTACION_DE_MERCADERIAS As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents CERRARToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ANULAR_RECIBO As System.Windows.Forms.ToolStripMenuItem
@@ -691,11 +684,13 @@ Partial Class MENU_PRINCIPAL
     Friend WithEvents PANEL_DE_PRECIOS_PROMO_PRODUCTOS As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents GESTIONAR_INTERES_PARACUOTAS As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents RE_IMPRESION_DE_RECIBOS_DE_DINERO As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents EMPRESAToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents PREPARARPRESUPUESTOToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents REPORTEVENTASPORVENDEDORVSFECHAToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents REPORTECOBRANZASPORVENDEDORVSFECHAToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents TareaSegundoPlano As System.ComponentModel.BackgroundWorker
     Friend WithEvents btnGenerarDash As System.Windows.Forms.Button
+    Friend WithEvents UtilidadCostoVsVentaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ESTADISTICAS_DE_CUENTAS_POR_COBRAR As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents CobranzaPorVendedorVsFEchaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents VentasPorVendedorVsFechaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents CLIENTESToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
 End Class
