@@ -40,7 +40,7 @@ Public Class EstadoClientes
                 Dim ds As New Data.DataSet
                 ds.Tables.Add(dt)
 
-                Dim info As New VENTAS_POR_VENDEDOR_MES
+                Dim info As New EstadoGeneralCuentaCliente
 
                 info.SetDataSource(ds)
                 SetDBLogonForReport(iconexion, info)
@@ -51,5 +51,9 @@ Public Class EstadoClientes
                 SQLconexion.Close()
             End Try
         End If
+    End Sub
+
+    Private Sub btnSalir_Click(sender As System.Object, e As System.EventArgs) Handles btnSalir.Click
+        Me.Close()
     End Sub
 End Class

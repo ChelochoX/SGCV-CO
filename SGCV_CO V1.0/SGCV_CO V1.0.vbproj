@@ -468,6 +468,12 @@
     <Compile Include="INFORMES\EstadoClientes.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="INFORMES\EstadoGeneralCuentaCliente.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EstadoGeneralCuentaCliente.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="INFORMES\INF_COBRANZAPORVEND_PORMES.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -977,6 +983,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="INFORMES\EstadoClientes.resx">
       <DependentUpon>EstadoClientes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INFORMES\EstadoGeneralCuentaCliente.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>EstadoGeneralCuentaCliente.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="INFORMES\INF_COBRANZAPORVEND_PORMES.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

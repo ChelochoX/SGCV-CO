@@ -26,8 +26,6 @@ Partial Class EstadoClientes
         Me.rbDeudaTotalClienteListado = New System.Windows.Forms.RadioButton()
         Me.rbDeudaTotalClienteResumen = New System.Windows.Forms.RadioButton()
         Me.lbporcentaje = New System.Windows.Forms.Label()
-        Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
-        Me.lbprogreso = New System.Windows.Forms.Label()
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.crw = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
         Me.btnCerrar_Periodo = New System.Windows.Forms.Button()
@@ -96,34 +94,12 @@ Partial Class EstadoClientes
         Me.lbporcentaje.TabIndex = 1268
         Me.lbporcentaje.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'ProgressBar1
-        '
-        Me.ProgressBar1.BackColor = System.Drawing.Color.White
-        Me.ProgressBar1.ForeColor = System.Drawing.Color.Blue
-        Me.ProgressBar1.Location = New System.Drawing.Point(31, 584)
-        Me.ProgressBar1.Margin = New System.Windows.Forms.Padding(4)
-        Me.ProgressBar1.Name = "ProgressBar1"
-        Me.ProgressBar1.Size = New System.Drawing.Size(307, 28)
-        Me.ProgressBar1.TabIndex = 1267
-        '
-        'lbprogreso
-        '
-        Me.lbprogreso.BackColor = System.Drawing.Color.White
-        Me.lbprogreso.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbprogreso.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.lbprogreso.Location = New System.Drawing.Point(32, 646)
-        Me.lbprogreso.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lbprogreso.Name = "lbprogreso"
-        Me.lbprogreso.Size = New System.Drawing.Size(307, 170)
-        Me.lbprogreso.TabIndex = 1266
-        Me.lbprogreso.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
         'btnSalir
         '
         Me.btnSalir.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.btnSalir.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSalir.ForeColor = System.Drawing.Color.Navy
-        Me.btnSalir.Location = New System.Drawing.Point(36, 839)
+        Me.btnSalir.Location = New System.Drawing.Point(48, 679)
         Me.btnSalir.Margin = New System.Windows.Forms.Padding(4)
         Me.btnSalir.Name = "btnSalir"
         Me.btnSalir.Size = New System.Drawing.Size(296, 34)
@@ -142,7 +118,7 @@ Partial Class EstadoClientes
         Me.crw.Location = New System.Drawing.Point(352, 59)
         Me.crw.Margin = New System.Windows.Forms.Padding(4)
         Me.crw.Name = "crw"
-        Me.crw.Size = New System.Drawing.Size(1221, 830)
+        Me.crw.Size = New System.Drawing.Size(1221, 654)
         Me.crw.TabIndex = 1265
         Me.crw.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None
         '
@@ -258,11 +234,9 @@ Partial Class EstadoClientes
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1604, 902)
+        Me.ClientSize = New System.Drawing.Size(1604, 812)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.lbporcentaje)
-        Me.Controls.Add(Me.ProgressBar1)
-        Me.Controls.Add(Me.lbprogreso)
         Me.Controls.Add(Me.btnSalir)
         Me.Controls.Add(Me.crw)
         Me.Controls.Add(Me.GroupBox4)
@@ -273,6 +247,7 @@ Partial Class EstadoClientes
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Estado Clientes ** SGCV + CO (E) V1.1.0          CONSULTAS Y PRECIOS AL 0994 60 6" & _
     "0 48  / 0982 12 12 69     *** TU VENDEDOR SOFT ***"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.GroupBox4.ResumeLayout(False)
@@ -284,8 +259,6 @@ Partial Class EstadoClientes
     Friend WithEvents rbDeudaTotalClienteListado As System.Windows.Forms.RadioButton
     Friend WithEvents rbDeudaTotalClienteResumen As System.Windows.Forms.RadioButton
     Friend WithEvents lbporcentaje As System.Windows.Forms.Label
-    Friend WithEvents ProgressBar1 As System.Windows.Forms.ProgressBar
-    Friend WithEvents lbprogreso As System.Windows.Forms.Label
     Friend WithEvents btnSalir As System.Windows.Forms.Button
     Friend WithEvents crw As CrystalDecisions.Windows.Forms.CrystalReportViewer
     Friend WithEvents btnCerrar_Periodo As System.Windows.Forms.Button
