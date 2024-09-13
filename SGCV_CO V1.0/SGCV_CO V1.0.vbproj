@@ -450,6 +450,11 @@
     <Compile Include="DEPOSITO\VISUALIZAR STOCK EN DEPOSITO.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="INFORMES\CarteradeCliente.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CarteradeCliente.rpt</DependentUpon>
+    </Compile>
     <Compile Include="INFORMES\ESTADISTICA DEUDA PAGO.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -973,6 +978,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DEPOSITO\VISUALIZAR STOCK EN DEPOSITO.resx">
       <DependentUpon>VISUALIZAR STOCK EN DEPOSITO.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INFORMES\CarteradeCliente.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CarteradeCliente.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="INFORMES\ESTADISTICA DEUDA PAGO.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
