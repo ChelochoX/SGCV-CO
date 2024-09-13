@@ -18,7 +18,7 @@ Imports System
 Imports System.ComponentModel
 
 
-Public Class CarteradeCliente
+Public Class CarteraCliente
     Inherits ReportClass
     
     Public Sub New()
@@ -27,7 +27,7 @@ Public Class CarteradeCliente
     
     Public Overrides Property ResourceName() As String
         Get
-            Return "CarteradeCliente.rpt"
+            Return "CarteraCliente.rpt"
         End Get
         Set
             'Do nothing
@@ -45,7 +45,7 @@ Public Class CarteradeCliente
     
     Public Overrides Property FullResourceName() As String
         Get
-            Return "SGCV_CO_V1._0.CarteradeCliente.rpt"
+            Return "SGCV_CO_V1._0.CarteraCliente.rpt"
         End Get
         Set
             'Do nothing
@@ -94,7 +94,7 @@ Public Class CarteradeCliente
 End Class
 
 <System.Drawing.ToolboxBitmapAttribute(GetType(CrystalDecisions.[Shared].ExportOptions), "report.bmp")>  _
-Public Class CachedCarteradeCliente
+Public Class CachedCarteraCliente
     Inherits Component
     Implements ICachedReport
     
@@ -136,7 +136,7 @@ Public Class CachedCarteradeCliente
     End Property
     
     Public Overridable Function CreateReport() As CrystalDecisions.CrystalReports.Engine.ReportDocument Implements CrystalDecisions.ReportSource.ICachedReport.CreateReport
-        Dim rpt As CarteradeCliente = New CarteradeCliente()
+        Dim rpt As CarteraCliente = New CarteraCliente()
         rpt.Site = Me.Site
         Return rpt
     End Function
