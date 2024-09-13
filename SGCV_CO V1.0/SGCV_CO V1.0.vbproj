@@ -454,6 +454,7 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CarteradeCliente.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="INFORMES\ESTADISTICA DEUDA PAGO.vb">
       <AutoGen>True</AutoGen>
