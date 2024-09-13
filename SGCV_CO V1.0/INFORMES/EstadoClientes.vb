@@ -50,6 +50,30 @@ Public Class EstadoClientes
                 MessageBox.Show(ex.ToString)
                 SQLconexion.Close()
             End Try
+        Else
+            If rbCarteraClienteDetallado.Checked = True Then
+                'VENTAS POR VENDEDOR!!
+                Try
+                    conectar()
+                    Dim dt As New DataTable
+                    Dim da As New SqlDataAdapter("CARTERADECLIENTE", SQLconexion)
+                    da.SelectCommand.CommandType = CommandType.StoredProcedure
+                    da.Fill(dt)
+
+                    Dim ds As New Data.DataSet
+                    ds.Tables.Add(dt)
+
+                    Dim info As New CarteraCliente
+
+                    info.SetDataSource(ds)
+                    SetDBLogonForReport(iconexion, info)
+                    Me.crw.ReportSource = info
+
+                Catch ex As Exception
+                    MessageBox.Show(ex.ToString)
+                    SQLconexion.Close()
+                End Try
+            End If
         End If
     End Sub
 

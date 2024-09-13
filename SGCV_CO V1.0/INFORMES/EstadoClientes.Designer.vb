@@ -24,8 +24,7 @@ Partial Class EstadoClientes
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.rbDeudaTotalClienteListado = New System.Windows.Forms.RadioButton()
-        Me.rbDeudaTotalClienteResumen = New System.Windows.Forms.RadioButton()
-        Me.lbporcentaje = New System.Windows.Forms.Label()
+        Me.rbCarteraClienteDetallado = New System.Windows.Forms.RadioButton()
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.crw = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
         Me.btnCerrar_Periodo = New System.Windows.Forms.Button()
@@ -36,6 +35,7 @@ Partial Class EstadoClientes
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.rbDeudaTotalClienteResumido = New System.Windows.Forms.RadioButton()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -43,8 +43,9 @@ Partial Class EstadoClientes
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.rbDeudaTotalClienteResumido)
         Me.GroupBox1.Controls.Add(Me.rbDeudaTotalClienteListado)
-        Me.GroupBox1.Controls.Add(Me.rbDeudaTotalClienteResumen)
+        Me.GroupBox1.Controls.Add(Me.rbCarteraClienteDetallado)
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.ForeColor = System.Drawing.Color.Green
         Me.GroupBox1.Location = New System.Drawing.Point(27, 204)
@@ -60,7 +61,7 @@ Partial Class EstadoClientes
         '
         Me.rbDeudaTotalClienteListado.AutoSize = True
         Me.rbDeudaTotalClienteListado.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rbDeudaTotalClienteListado.Location = New System.Drawing.Point(16, 60)
+        Me.rbDeudaTotalClienteListado.Location = New System.Drawing.Point(16, 57)
         Me.rbDeudaTotalClienteListado.Margin = New System.Windows.Forms.Padding(4)
         Me.rbDeudaTotalClienteListado.Name = "rbDeudaTotalClienteListado"
         Me.rbDeudaTotalClienteListado.Size = New System.Drawing.Size(248, 24)
@@ -69,40 +70,28 @@ Partial Class EstadoClientes
         Me.rbDeudaTotalClienteListado.Text = "DEUDA TOTAL CLIENTE LISTADO"
         Me.rbDeudaTotalClienteListado.UseVisualStyleBackColor = True
         '
-        'rbDeudaTotalClienteResumen
+        'rbCarteraClienteDetallado
         '
-        Me.rbDeudaTotalClienteResumen.AutoSize = True
-        Me.rbDeudaTotalClienteResumen.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rbDeudaTotalClienteResumen.Location = New System.Drawing.Point(16, 25)
-        Me.rbDeudaTotalClienteResumen.Margin = New System.Windows.Forms.Padding(4)
-        Me.rbDeudaTotalClienteResumen.Name = "rbDeudaTotalClienteResumen"
-        Me.rbDeudaTotalClienteResumen.Size = New System.Drawing.Size(268, 24)
-        Me.rbDeudaTotalClienteResumen.TabIndex = 3
-        Me.rbDeudaTotalClienteResumen.TabStop = True
-        Me.rbDeudaTotalClienteResumen.Text = "DEUDA TOTAL CLIENTES RESUMEN"
-        Me.rbDeudaTotalClienteResumen.UseVisualStyleBackColor = True
-        '
-        'lbporcentaje
-        '
-        Me.lbporcentaje.BackColor = System.Drawing.Color.White
-        Me.lbporcentaje.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbporcentaje.ForeColor = System.Drawing.Color.Blue
-        Me.lbporcentaje.Location = New System.Drawing.Point(32, 616)
-        Me.lbporcentaje.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lbporcentaje.Name = "lbporcentaje"
-        Me.lbporcentaje.Size = New System.Drawing.Size(307, 22)
-        Me.lbporcentaje.TabIndex = 1268
-        Me.lbporcentaje.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.rbCarteraClienteDetallado.AutoSize = True
+        Me.rbCarteraClienteDetallado.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rbCarteraClienteDetallado.Location = New System.Drawing.Point(16, 25)
+        Me.rbCarteraClienteDetallado.Margin = New System.Windows.Forms.Padding(4)
+        Me.rbCarteraClienteDetallado.Name = "rbCarteraClienteDetallado"
+        Me.rbCarteraClienteDetallado.Size = New System.Drawing.Size(239, 24)
+        Me.rbCarteraClienteDetallado.TabIndex = 3
+        Me.rbCarteraClienteDetallado.TabStop = True
+        Me.rbCarteraClienteDetallado.Text = "CARTERA CLIENTE DETALLADO"
+        Me.rbCarteraClienteDetallado.UseVisualStyleBackColor = True
         '
         'btnSalir
         '
         Me.btnSalir.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.btnSalir.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSalir.ForeColor = System.Drawing.Color.Navy
-        Me.btnSalir.Location = New System.Drawing.Point(48, 679)
+        Me.btnSalir.Location = New System.Drawing.Point(43, 642)
         Me.btnSalir.Margin = New System.Windows.Forms.Padding(4)
         Me.btnSalir.Name = "btnSalir"
-        Me.btnSalir.Size = New System.Drawing.Size(296, 34)
+        Me.btnSalir.Size = New System.Drawing.Size(269, 43)
         Me.btnSalir.TabIndex = 1261
         Me.btnSalir.Text = "SALIR"
         Me.btnSalir.UseVisualStyleBackColor = False
@@ -132,7 +121,7 @@ Partial Class EstadoClientes
         Me.btnCerrar_Periodo.Name = "btnCerrar_Periodo"
         Me.btnCerrar_Periodo.Size = New System.Drawing.Size(185, 76)
         Me.btnCerrar_Periodo.TabIndex = 11
-        Me.btnCerrar_Periodo.Text = "GENERAR INFORME"
+        Me.btnCerrar_Periodo.Text = "GENERAR REPORTE"
         Me.btnCerrar_Periodo.UseVisualStyleBackColor = False
         '
         'GroupBox4
@@ -167,9 +156,10 @@ Partial Class EstadoClientes
         Me.GroupBox2.Controls.Add(Me.DateTimePicker1)
         Me.GroupBox2.Controls.Add(Me.Label3)
         Me.GroupBox2.Controls.Add(Me.Label5)
+        Me.GroupBox2.Enabled = False
         Me.GroupBox2.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.GroupBox2.Location = New System.Drawing.Point(25, 55)
+        Me.GroupBox2.Location = New System.Drawing.Point(27, 54)
         Me.GroupBox2.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Padding = New System.Windows.Forms.Padding(4)
@@ -229,6 +219,19 @@ Partial Class EstadoClientes
         Me.Label1.Text = "FORMULARIO ESTADO CUENTA DEL CLIENTE"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'rbDeudaTotalClienteResumido
+        '
+        Me.rbDeudaTotalClienteResumido.AutoSize = True
+        Me.rbDeudaTotalClienteResumido.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rbDeudaTotalClienteResumido.Location = New System.Drawing.Point(16, 92)
+        Me.rbDeudaTotalClienteResumido.Margin = New System.Windows.Forms.Padding(4)
+        Me.rbDeudaTotalClienteResumido.Name = "rbDeudaTotalClienteResumido"
+        Me.rbDeudaTotalClienteResumido.Size = New System.Drawing.Size(266, 24)
+        Me.rbDeudaTotalClienteResumido.TabIndex = 5
+        Me.rbDeudaTotalClienteResumido.TabStop = True
+        Me.rbDeudaTotalClienteResumido.Text = "DEUDA TOTAL CLIENTE RESUMIDO"
+        Me.rbDeudaTotalClienteResumido.UseVisualStyleBackColor = True
+        '
         'EstadoClientes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -236,7 +239,6 @@ Partial Class EstadoClientes
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1604, 812)
         Me.Controls.Add(Me.GroupBox1)
-        Me.Controls.Add(Me.lbporcentaje)
         Me.Controls.Add(Me.btnSalir)
         Me.Controls.Add(Me.crw)
         Me.Controls.Add(Me.GroupBox4)
@@ -257,8 +259,7 @@ Partial Class EstadoClientes
     End Sub
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents rbDeudaTotalClienteListado As System.Windows.Forms.RadioButton
-    Friend WithEvents rbDeudaTotalClienteResumen As System.Windows.Forms.RadioButton
-    Friend WithEvents lbporcentaje As System.Windows.Forms.Label
+    Friend WithEvents rbCarteraClienteDetallado As System.Windows.Forms.RadioButton
     Friend WithEvents btnSalir As System.Windows.Forms.Button
     Friend WithEvents crw As CrystalDecisions.Windows.Forms.CrystalReportViewer
     Friend WithEvents btnCerrar_Periodo As System.Windows.Forms.Button
@@ -269,4 +270,5 @@ Partial Class EstadoClientes
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents rbDeudaTotalClienteResumido As System.Windows.Forms.RadioButton
 End Class

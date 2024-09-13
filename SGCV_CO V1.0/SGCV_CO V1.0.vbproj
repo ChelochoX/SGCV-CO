@@ -552,6 +552,12 @@
     <Compile Include="INFORMES\soporte.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="INFORMES\TotalaCarteraClienteResumido.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TotalaCarteraClienteResumido.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="INFORMES\UTILIDAD COMPRA VS VENTA.Designer.vb">
       <DependentUpon>UTILIDAD COMPRA VS VENTA.vb</DependentUpon>
     </Compile>
@@ -1041,6 +1047,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="INFORMES\soporte.resx">
       <DependentUpon>soporte.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INFORMES\TotalaCarteraClienteResumido.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>TotalaCarteraClienteResumido.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="INFORMES\UTILIDAD COMPRA VS VENTA.resx">
       <DependentUpon>UTILIDAD COMPRA VS VENTA.vb</DependentUpon>
