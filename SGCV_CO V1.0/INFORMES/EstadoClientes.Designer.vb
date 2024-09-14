@@ -23,6 +23,7 @@ Partial Class EstadoClientes
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.rbDeudaTotalClienteResumido = New System.Windows.Forms.RadioButton()
         Me.rbDeudaTotalClienteListado = New System.Windows.Forms.RadioButton()
         Me.rbCarteraClienteDetallado = New System.Windows.Forms.RadioButton()
         Me.btnSalir = New System.Windows.Forms.Button()
@@ -35,7 +36,6 @@ Partial Class EstadoClientes
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.rbDeudaTotalClienteResumido = New System.Windows.Forms.RadioButton()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -57,6 +57,19 @@ Partial Class EstadoClientes
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "VISUALIZAR POR"
         '
+        'rbDeudaTotalClienteResumido
+        '
+        Me.rbDeudaTotalClienteResumido.AutoSize = True
+        Me.rbDeudaTotalClienteResumido.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rbDeudaTotalClienteResumido.Location = New System.Drawing.Point(16, 92)
+        Me.rbDeudaTotalClienteResumido.Margin = New System.Windows.Forms.Padding(4)
+        Me.rbDeudaTotalClienteResumido.Name = "rbDeudaTotalClienteResumido"
+        Me.rbDeudaTotalClienteResumido.Size = New System.Drawing.Size(233, 24)
+        Me.rbDeudaTotalClienteResumido.TabIndex = 5
+        Me.rbDeudaTotalClienteResumido.TabStop = True
+        Me.rbDeudaTotalClienteResumido.Text = "CARTERA CLIENTE RESUMIDO"
+        Me.rbDeudaTotalClienteResumido.UseVisualStyleBackColor = True
+        '
         'rbDeudaTotalClienteListado
         '
         Me.rbDeudaTotalClienteListado.AutoSize = True
@@ -67,7 +80,7 @@ Partial Class EstadoClientes
         Me.rbDeudaTotalClienteListado.Size = New System.Drawing.Size(248, 24)
         Me.rbDeudaTotalClienteListado.TabIndex = 4
         Me.rbDeudaTotalClienteListado.TabStop = True
-        Me.rbDeudaTotalClienteListado.Text = "DEUDA TOTAL CLIENTE LISTADO"
+        Me.rbDeudaTotalClienteListado.Text = "CARTERA DE CLIENTES ACTIVOS"
         Me.rbDeudaTotalClienteListado.UseVisualStyleBackColor = True
         '
         'rbCarteraClienteDetallado
@@ -77,10 +90,10 @@ Partial Class EstadoClientes
         Me.rbCarteraClienteDetallado.Location = New System.Drawing.Point(16, 25)
         Me.rbCarteraClienteDetallado.Margin = New System.Windows.Forms.Padding(4)
         Me.rbCarteraClienteDetallado.Name = "rbCarteraClienteDetallado"
-        Me.rbCarteraClienteDetallado.Size = New System.Drawing.Size(239, 24)
+        Me.rbCarteraClienteDetallado.Size = New System.Drawing.Size(215, 24)
         Me.rbCarteraClienteDetallado.TabIndex = 3
         Me.rbCarteraClienteDetallado.TabStop = True
-        Me.rbCarteraClienteDetallado.Text = "CARTERA CLIENTE DETALLADO"
+        Me.rbCarteraClienteDetallado.Text = "LISTADO CARTERA CLIENTE"
         Me.rbCarteraClienteDetallado.UseVisualStyleBackColor = True
         '
         'btnSalir
@@ -218,19 +231,6 @@ Partial Class EstadoClientes
         Me.Label1.TabIndex = 1262
         Me.Label1.Text = "FORMULARIO ESTADO CUENTA DEL CLIENTE"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'rbDeudaTotalClienteResumido
-        '
-        Me.rbDeudaTotalClienteResumido.AutoSize = True
-        Me.rbDeudaTotalClienteResumido.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rbDeudaTotalClienteResumido.Location = New System.Drawing.Point(16, 92)
-        Me.rbDeudaTotalClienteResumido.Margin = New System.Windows.Forms.Padding(4)
-        Me.rbDeudaTotalClienteResumido.Name = "rbDeudaTotalClienteResumido"
-        Me.rbDeudaTotalClienteResumido.Size = New System.Drawing.Size(266, 24)
-        Me.rbDeudaTotalClienteResumido.TabIndex = 5
-        Me.rbDeudaTotalClienteResumido.TabStop = True
-        Me.rbDeudaTotalClienteResumido.Text = "DEUDA TOTAL CLIENTE RESUMIDO"
-        Me.rbDeudaTotalClienteResumido.UseVisualStyleBackColor = True
         '
         'EstadoClientes
         '
