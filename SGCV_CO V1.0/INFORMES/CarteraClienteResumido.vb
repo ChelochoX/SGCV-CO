@@ -18,7 +18,7 @@ Imports System
 Imports System.ComponentModel
 
 
-Public Class TotalaCarteraClienteResumido
+Public Class CarteraClienteResumido
     Inherits ReportClass
     
     Public Sub New()
@@ -27,7 +27,7 @@ Public Class TotalaCarteraClienteResumido
     
     Public Overrides Property ResourceName() As String
         Get
-            Return "TotalaCarteraClienteResumido.rpt"
+            Return "CarteraClienteResumido.rpt"
         End Get
         Set
             'Do nothing
@@ -45,7 +45,7 @@ Public Class TotalaCarteraClienteResumido
     
     Public Overrides Property FullResourceName() As String
         Get
-            Return "SGCV_CO_V1._0.TotalaCarteraClienteResumido.rpt"
+            Return "SGCV_CO_V1._0.CarteraClienteResumido.rpt"
         End Get
         Set
             'Do nothing
@@ -94,7 +94,7 @@ Public Class TotalaCarteraClienteResumido
 End Class
 
 <System.Drawing.ToolboxBitmapAttribute(GetType(CrystalDecisions.[Shared].ExportOptions), "report.bmp")>  _
-Public Class CachedTotalaCarteraClienteResumido
+Public Class CachedCarteraClienteResumido
     Inherits Component
     Implements ICachedReport
     
@@ -136,7 +136,7 @@ Public Class CachedTotalaCarteraClienteResumido
     End Property
     
     Public Overridable Function CreateReport() As CrystalDecisions.CrystalReports.Engine.ReportDocument Implements CrystalDecisions.ReportSource.ICachedReport.CreateReport
-        Dim rpt As TotalaCarteraClienteResumido = New TotalaCarteraClienteResumido()
+        Dim rpt As CarteraClienteResumido = New CarteraClienteResumido()
         rpt.Site = Me.Site
         Return rpt
     End Function

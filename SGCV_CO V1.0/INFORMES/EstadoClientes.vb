@@ -86,7 +86,7 @@ Public Class EstadoClientes
                         Dim ds As New Data.DataSet
                         ds.Tables.Add(dt)
 
-                        Dim info As New TotalaCarteraClienteResumido
+                        Dim info As New CarteraClienteResumido
 
                         info.SetDataSource(ds)
                         SetDBLogonForReport(iconexion, info)

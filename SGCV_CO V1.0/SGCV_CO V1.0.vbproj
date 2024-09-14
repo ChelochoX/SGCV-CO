@@ -456,6 +456,12 @@
       <DependentUpon>CarteraCliente.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="INFORMES\CarteraClienteResumido.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CarteraClienteResumido.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="INFORMES\ESTADISTICA DEUDA PAGO.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -551,12 +557,6 @@
     </Compile>
     <Compile Include="INFORMES\soporte.vb">
       <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="INFORMES\TotalaCarteraClienteResumido.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>TotalaCarteraClienteResumido.rpt</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="INFORMES\UTILIDAD COMPRA VS VENTA.Designer.vb">
       <DependentUpon>UTILIDAD COMPRA VS VENTA.vb</DependentUpon>
@@ -990,6 +990,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CarteraCliente.vb</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="INFORMES\CarteraClienteResumido.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CarteraClienteResumido.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="INFORMES\ESTADISTICA DEUDA PAGO.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ESTADISTICA DEUDA PAGO.vb</LastGenOutput>
@@ -1047,10 +1051,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="INFORMES\soporte.resx">
       <DependentUpon>soporte.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="INFORMES\TotalaCarteraClienteResumido.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>TotalaCarteraClienteResumido.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="INFORMES\UTILIDAD COMPRA VS VENTA.resx">
       <DependentUpon>UTILIDAD COMPRA VS VENTA.vb</DependentUpon>
