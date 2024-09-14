@@ -16,15 +16,35 @@ Public Class EstadoClientes
             myTableLogonInfo.ConnectionInfo = myConnectionInfo
             myTable.ApplyLogOnInfo(myTableLogonInfo)
         Next
+
+        ' Configurar las credenciales para los subreportes, si existen
+        For Each section As Section In myReportDocument.ReportDefinition.Sections
+            For Each reportObject As ReportObject In section.ReportObjects
+                If reportObject.Kind = ReportObjectKind.SubreportObject Then
+                    Dim subReport As SubreportObject = CType(reportObject, SubreportObject)
+                    Dim subReportDocument As ReportDocument = subReport.OpenSubreport(subReport.SubreportName)
+
+                    Dim subTables As Tables = subReportDocument.Database.Tables
+                    For Each subTable As CrystalDecisions.CrystalReports.Engine.Table In subTables
+                        Dim subTableLogonInfo As TableLogOnInfo = subTable.LogOnInfo
+                        subTableLogonInfo.ConnectionInfo = myConnectionInfo
+                        subTable.ApplyLogOnInfo(subTableLogonInfo)
+                    Next
+                End If
+            Next
+        Next
     End Sub
 
     Private Sub EstadoClientes_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
 
+        ' Configurar las credenciales de conexión
         iconexion.DatabaseName = bbdd
         iconexion.UserID = usuario_
         iconexion.Password = contrasena_
         iconexion.ServerName = servidor
         iconexion.Type = ConnectionInfoType.SQL
+        iconexion.IntegratedSecurity = False ' Desactivar autenticación integrada si no se utiliza
+
     End Sub
 
     Private Sub btnCerrar_Periodo_Click(sender As System.Object, e As System.EventArgs) Handles btnCerrar_Periodo.Click
@@ -45,6 +65,10 @@ Public Class EstadoClientes
                 info.SetDataSource(ds)
                 SetDBLogonForReport(iconexion, info)
                 Me.crw.ReportSource = info
+                ' Desactivar diálogos de login
+                Me.crw.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None
+                Me.crw.ShowParameterPanelButton = False
+                Me.crw.ShowGroupTreeButton = False
 
             Catch ex As Exception
                 MessageBox.Show(ex.ToString)
@@ -68,6 +92,10 @@ Public Class EstadoClientes
                     info.SetDataSource(ds)
                     SetDBLogonForReport(iconexion, info)
                     Me.crw.ReportSource = info
+                    ' Desactivar diálogos de login
+                    Me.crw.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None
+                    Me.crw.ShowParameterPanelButton = False
+                    Me.crw.ShowGroupTreeButton = False
 
                 Catch ex As Exception
                     MessageBox.Show(ex.ToString)
@@ -91,6 +119,10 @@ Public Class EstadoClientes
                         info.SetDataSource(ds)
                         SetDBLogonForReport(iconexion, info)
                         Me.crw.ReportSource = info
+                        ' Desactivar diálogos de login
+                        Me.crw.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None
+                        Me.crw.ShowParameterPanelButton = False
+                        Me.crw.ShowGroupTreeButton = False
 
                     Catch ex As Exception
                         MessageBox.Show(ex.ToString)
